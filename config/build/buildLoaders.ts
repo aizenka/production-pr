@@ -9,7 +9,7 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
       // Creates `style` nodes from JS strings
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
-        // Translates CSS into CommonJS
+        // Translates CSS into CommonJS, isolation classes
         loader: 'css-loader',
         options: {
           modules: {
