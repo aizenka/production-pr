@@ -6,7 +6,8 @@ export interface IBuildEnv {
 export interface IBuildPaths {
   entry: string,
   build: string,
-  html: string
+  html: string,
+  src: string,
 }
 
 export interface IBuildOptions {
