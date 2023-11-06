@@ -7,7 +7,7 @@ export default (env: IBuildEnv) => {
 
   const paths: IBuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
-    build: path.resolve(__dirname, 'dist'),
+    build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html')
   }
 
