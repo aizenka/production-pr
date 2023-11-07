@@ -3,7 +3,13 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import { IBuildOptions } from './types/config'
 
 export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
-  const cssLoaders =  {
+  const typescriptLoader = {
+    test: /\.tsx?$/,
+    use: 'ts-loader',
+    exclude: /node_modules/,
+  }
+
+  const cssLoaders = {
     test: /\.s[ac]ss$/i,
     use: [
       // Creates `style` nodes from JS strings
@@ -25,12 +31,21 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
     ]
   }
 
-  const typescriptLoader = {
-      test: /\.tsx?$/,
-      use: 'ts-loader',
-      exclude: /node_modules/,
-    }
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
+  const imageLoader = {
+    test: /\.(png|jpg|jpeg|gif)$/i,
+    type: 'asset/resource',
+  }
+
+  const fontsLoader = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    type: 'asset/resource',
+  }
 
   // webpack expects js to be returned by the last loader in the chain
-  return [cssLoaders, typescriptLoader]
+  return [fontsLoader, imageLoader, svgLoader, cssLoaders, typescriptLoader]
 }
