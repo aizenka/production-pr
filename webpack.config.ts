@@ -12,7 +12,7 @@ export default (env: IBuildEnv) => {
     src: path.resolve(__dirname, 'src')
   }
 
-  // tmp (use cross-env)
+  // TODO: tmp (use cross-env)
   const mode = env.mode || 'development'
   const PORT = env.port || 3000
 

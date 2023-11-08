@@ -1,7 +1,12 @@
+import { useTranslation } from 'react-i18next'
+import { ABOUT_PAGE_NAMESPACE } from 'constants/i18n'
+
 const AboutPage = () => {
+  const { t } = useTranslation(ABOUT_PAGE_NAMESPACE)
+
   return (
     <div>
-      About page
+      {t('aboutPage')}
     </div>
   );
 };
