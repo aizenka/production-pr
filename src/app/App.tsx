@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
 import { useTheme } from 'app/providers/ThemeProvider'
 import { AppRouter } from 'app/providers/router'
 import { Navbar } from 'widgets/Navbar'
+import { Sidebar } from 'widgets/Sidebar'
 import { classNames } from 'shared/lib'
 import './styles/index.scss'
 
@@ -11,7 +11,10 @@ const App = () => {
   return (
     <div className={classNames('app', {}, [theme])}>
       <Navbar />
-      <AppRouter />
+      <div className='contentLayout'>
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };
