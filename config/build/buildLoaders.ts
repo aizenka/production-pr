@@ -6,7 +6,7 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
-    exclude: /node_modules/,
+    exclude: /node_modules/
   }
 
   const cssLoaders = {
@@ -23,27 +23,27 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
             localIdentName: isDev
               ? '[path][name]__[local]--[hash:base64:3]'
               : '[hash:base64:8]'
-          },
+          }
         }
       },
       // Compiles Sass to CSS
-      "sass-loader",
+      'sass-loader'
     ]
   }
 
   const svgLoader = {
     test: /\.svg$/,
-    use: ['@svgr/webpack'],
+    use: ['@svgr/webpack']
   }
 
   const imageLoader = {
     test: /\.(png|jpg|jpeg|gif)$/i,
-    type: 'asset/resource',
+    type: 'asset/resource'
   }
 
   const fontsLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
-    type: 'asset/resource',
+    type: 'asset/resource'
   }
 
   // webpack expects js to be returned by the last loader in the chain

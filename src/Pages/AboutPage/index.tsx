@@ -8,7 +8,7 @@ const AboutPage = () => {
     <div>
       {t('aboutPage')}
     </div>
-  );
-};
+  )
+}
 
-export default AboutPage;
+export default AboutPage

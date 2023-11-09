@@ -1,15 +1,15 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui'
-import { classNames } from 'shared/lib';
+import { classNames } from 'shared/lib'
 import { LANGUAGE_EN, LANGUAGE_RU } from 'constants/i18n'
-import cls from './LangSwitcher.module.scss';
+import cls from './LangSwitcher.module.scss'
 
 interface LangSwitcherProps {
   className?: string
 }
 
-export const LangSwitcher = ({className}: LangSwitcherProps) => {
-  const { t, i18n } = useTranslation();
+export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+  const { t, i18n } = useTranslation()
 
   const changeLanguage = () => {
     i18n.changeLanguage(
@@ -25,5 +25,5 @@ export const LangSwitcher = ({className}: LangSwitcherProps) => {
     >
       {t('translateButton')}
     </Button>
-  );
-};
+  )
+}
