@@ -38,7 +38,13 @@
     "semi": ["error", "never"],
     "comma-dangle": ["error", "never"],
     "indent": ["error", 2],
-    "max-len": ["error", { "ignoreComments": true }],
+    "max-len": [
+      "error",
+      {
+        "code": 90,
+        "ignoreComments": true
+      }
+    ],
     "object-curly-spacing": [
       "error",
       "always",
