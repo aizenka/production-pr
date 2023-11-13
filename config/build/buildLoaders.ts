@@ -31,6 +31,17 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
     ]
   }
 
+  const babelLoader =  {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env']
+      }
+    }
+  }
+
   const svgLoader = {
     test: /\.svg$/,
     use: ['@svgr/webpack']
@@ -47,5 +58,5 @@ export function buildLoaders ({ isDev }: IBuildOptions): webpack.RuleSetRule[] {
   }
 
   // webpack expects js to be returned by the last loader in the chain
-  return [fontsLoader, imageLoader, svgLoader, cssLoaders, typescriptLoader]
+  return [fontsLoader, imageLoader, svgLoader, cssLoaders, babelLoader, typescriptLoader]
 }

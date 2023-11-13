@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -33,22 +34,11 @@
     "i18next"
   ],
   "rules": {
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
-    "indent": [
-      "error",
-      2
-    ],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "comma-dangle": ["error", "never"],
+    "indent": ["error", 2],
+    "max-len": ["error", { "ignoreComments": true }],
     "object-curly-spacing": [
       "error",
       "always",
@@ -58,10 +48,7 @@
       }
     ],
     "import/extentions": "off",
-    "react/jsx-indent": [
-      "error",
-      2
-    ],
+    "react/jsx-indent": ["error", 2],
     "react/react-in-jsx-scope": "off",
     "react/no-deprecated": "off",
     "react/jsx-filename-extension": [
@@ -80,11 +67,6 @@
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "@typescript-eslint/no-explicit-any": "warn",
-    "i18next/no-literal-string": [
-      "error",
-      {
-        "markupOnly": true
-      }
-    ]
+    "i18next/no-literal-string": ["error", { "markupOnly": true }]
   }
 }
