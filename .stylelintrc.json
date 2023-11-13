@@ -2,6 +2,8 @@
   "extends": "stylelint-config-standard-scss",
   "rules": {
     "selector-class-pattern": null,
-    "scss/comment-no-empty": null
+    "scss/comment-no-empty": null,
+    "length-zero-no-unit": null,
+    "keyframes-name-pattern": null
   }
 }
