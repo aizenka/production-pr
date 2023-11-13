@@ -53,6 +53,7 @@
         "objectsInObjects": true
       }
     ],
+    "space-before-function-paren": "error",
     "import/extentions": "off",
     "react/jsx-indent": ["error", 2],
     "react/react-in-jsx-scope": "off",
@@ -73,6 +74,12 @@
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "@typescript-eslint/no-explicit-any": "warn",
-    "i18next/no-literal-string": ["error", { "markupOnly": true }]
+    "i18next/no-literal-string": [
+      "error",
+      {
+        "markupOnly": true,
+        "ignoreAttribute": ["to"]
+      }
+    ]
   }
 }

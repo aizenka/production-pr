@@ -1,4 +1,8 @@
 {
   "translateButton": "Translate",
-  "notFoundPage": "Page not found"
+  "notFoundPage": "Page not found",
+  "pageError": "Something went wrong",
+  "pageErrorReloadButton": "Reload page",
+  "hideSidebar": "Hide sidebar",
+  "showSidebar": "Show sidebar"
 }

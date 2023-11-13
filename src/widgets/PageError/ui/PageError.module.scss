@@ -1,0 +1,16 @@
+.pageError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.reloadButton {
+  margin-top: 8px;
+  padding: 4px 8px;
+  border: 1px solid #365B61;
+  border-radius: 8px;
+  background: #FDFDFD;
+  color: #365B61;
+}

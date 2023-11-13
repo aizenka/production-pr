@@ -2,6 +2,7 @@ import { ButtonHTMLAttributes, FC } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './Button.module.scss'
 
+// TODO: add variant flat/outlined
 export enum ButtonVariant {
   TEXT = 'text'
 }

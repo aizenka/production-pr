@@ -1,4 +1,8 @@
 {
   "translateButton": "Перевести",
-  "notFoundPage": "Страница не найдена"
+  "notFoundPage": "Страница не найдена",
+  "pageError": "Произошла непредвиденная ошибка",
+  "pageErrorReloadButton": "Обновить страницу",
+  "hideSidebar": "Скрыть сайдбар",
+  "showSidebar": "Показать сайдбар"
 }
