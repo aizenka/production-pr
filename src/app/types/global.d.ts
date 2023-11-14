@@ -1,4 +1,4 @@
-// /* eslint-disable  @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 declare const __IS_DEV__: boolean
 

@@ -10,14 +10,18 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:i18next/recommended"
   ],
-  "overrides": [
+    "overrides": [
     {
       "env": {
         "node": true
       },
       "files": [
-        ".eslintrc.{js,cjs}"
+        ".eslintrc.{json,jsonc}",
+        "**/src/**/*.test.{ts,tsx}"
       ],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      },
       "parserOptions": {
         "sourceType": "script"
       }
@@ -78,7 +82,7 @@
       "error",
       {
         "markupOnly": true,
-        "ignoreAttribute": ["to"]
+        "ignoreAttribute": ["to", "data-testid"]
       }
     ]
   }
