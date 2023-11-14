@@ -10,6 +10,8 @@
     "lint:scss-fix": "npx stylelint \"**/*.scss\" --fix",
     "build": "webpack --env mode=development",
     "build-production": "webpack --env mode=production",
+    "analyze-dev": "webpack --env mode=development analyze=true",
+    "analyze-prod": "webpack --env mode=production analyze=true",
     "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "repository": "git@github.com:aizenka/production-pr.git",
@@ -54,6 +56,7 @@
     "ts-node": "10.5.0",
     "typescript": "4.5.5",
     "webpack": "5.69.1",
+    "webpack-bundle-analyzer": "4.5.0",
     "webpack-cli": "4.10.0",
     "webpack-dev-server": "4.7.4"
   },

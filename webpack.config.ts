@@ -15,6 +15,7 @@ export default (env: BuildEnv) => {
   // TODO: tmp (use cross-env)
   const mode = env.mode || 'development'
   const PORT = env.port || 3000
+  const analyze = env.analyze || false
 
   const isDev = mode === 'development'
 
@@ -28,7 +29,8 @@ export default (env: BuildEnv) => {
     mode,
     paths,
     isDev,
-    port: PORT
+    port: PORT,
+    analyze
   })
 
   return config
