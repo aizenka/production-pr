@@ -10,10 +10,6 @@ export default {
   testPathIgnorePatterns: [
     '/node_modules/'
   ],
-  moduleDirectories: [
-    'node_modules',
-    'src'
-  ],
   modulePaths: [
     '<rootDir>src'
   ],
