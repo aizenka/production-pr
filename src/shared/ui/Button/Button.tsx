@@ -4,7 +4,8 @@ import cls from './Button.module.scss'
 
 // TODO: add variant flat/outlined
 export enum ButtonVariant {
-  TEXT = 'text'
+  TEXT = 'text',
+  OUTLINED = 'outlined'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

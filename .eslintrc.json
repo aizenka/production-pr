@@ -8,9 +8,10 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:i18next/recommended"
+    "plugin:i18next/recommended",
+    "plugin:storybook/recommended"
   ],
-    "overrides": [
+  "overrides": [
     {
       "env": {
         "node": true
@@ -38,10 +39,22 @@
     "i18next"
   ],
   "rules": {
-    "quotes": ["error", "single"],
-    "semi": ["error", "never"],
-    "comma-dangle": ["error", "never"],
-    "indent": ["error", 2],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "indent": [
+      "error",
+      2
+    ],
     "max-len": [
       "error",
       {
@@ -59,7 +72,10 @@
     ],
     "space-before-function-paren": "error",
     "import/extentions": "off",
-    "react/jsx-indent": ["error", 2],
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
     "react/react-in-jsx-scope": "off",
     "react/no-deprecated": "off",
     "react/jsx-filename-extension": [
@@ -72,6 +88,7 @@
         ]
       }
     ],
+    "react/display-name": "off",
     "react/button-has-type": "error",
     "react/self-closing-comp": "error",
     "react/jsx-closing-tag-location": "error",
@@ -82,7 +99,10 @@
       "error",
       {
         "markupOnly": true,
-        "ignoreAttribute": ["to", "data-testid"]
+        "ignoreAttribute": [
+          "to",
+          "data-testid"
+        ]
       }
     ]
   }
