@@ -11,6 +11,5 @@ describe('Button', () => {
   test('class \'text\' to be in button styles', () => {
     render(<Button variant={ButtonVariant.TEXT} />)
     expect(screen.getByTestId('button')).toHaveClass('text')
-    // screen.debug()
   })
 })
