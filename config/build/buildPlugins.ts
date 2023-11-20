@@ -10,7 +10,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 export function buildPlugins (
   { paths, isDev, analyze }: BuildOptions): webpack.WebpackPluginInstance[]
 {
-  return [
+  const plugins = [
     new HTMLWebpackPlugin({
       template: paths.html
     }),
@@ -21,9 +21,16 @@ export function buildPlugins (
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev)
-    }),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: analyze
     })
   ]
+
+  if (isDev) {
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: analyze
+      })
+    )
+  }
+
+  return plugins
 }
