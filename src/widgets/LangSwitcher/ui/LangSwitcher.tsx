@@ -17,6 +17,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
         : LANGUAGE_RU
     )
   }
+
   return (
     <Button
       className={classNames('', {}, [className])}
