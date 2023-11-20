@@ -13,3 +13,6 @@ yarn-error.log
 /build
 *.jsbundle
 
+# storybook
+/storybook-static
+
