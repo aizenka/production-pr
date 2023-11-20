@@ -15,7 +15,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build -c ./config/storybook",
     "test-unit": "jest --config ./config/jest/jest.config.ts",
-    "test-ui": "yarn build-storybook && loki --requireReference --reactUri file:./storybook-static"
+    "test-ui": "yarn build-storybook && loki --requireReference --reactUri file:./storybook-static",
+    "test-ui-approve": "npx loki approve"
   },
   "repository": "git@github.com:aizenka/production-pr.git",
   "author": "aizenka",
