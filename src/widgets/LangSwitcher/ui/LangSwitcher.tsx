@@ -4,10 +4,11 @@ import { classNames } from 'shared/lib'
 import { LANGUAGE_EN, LANGUAGE_RU } from 'constants/i18n'
 
 interface LangSwitcherProps {
-  className?: string
+  className?: string,
+  shortLng?: boolean
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = ({ className, shortLng }: LangSwitcherProps) => {
   const { t, i18n } = useTranslation()
 
   const changeLanguage = async () => {
@@ -24,7 +25,7 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       className={classNames('', {}, [className])}
       onClick={changeLanguage}
     >
-      {t('translateButton')}
+      {t(shortLng ? 'shortLng' :  'translateButton')}
     </Button>
   )
 }

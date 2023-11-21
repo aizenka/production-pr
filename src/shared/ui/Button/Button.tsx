@@ -2,15 +2,24 @@ import { ButtonHTMLAttributes, FC } from 'react'
 import { classNames } from 'shared/lib'
 import cls from './Button.module.scss'
 
-// TODO: add variant flat/outlined
 export enum ButtonVariant {
   TEXT = 'text',
-  OUTLINED = 'outlined'
+  OUTLINED = 'outlined',
+  FLAT = 'flat',
+  FLAT_INVERTED = 'flatInverted'
+}
+
+export enum ButtonSize {
+  M = 'm',
+  L = 'l',
+  XL = 'xl'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string,
-  variant?: ButtonVariant
+  variant?: ButtonVariant,
+  size?: ButtonSize,
+  square?: boolean,
 }
 
 export const Button: FC<ButtonProps> = (props) => {
@@ -18,14 +27,28 @@ export const Button: FC<ButtonProps> = (props) => {
     className,
     children,
     variant = ButtonVariant.TEXT,
+    size = ButtonSize.M,
+    square,
     ...extraProps
   } = props
+
+  const additionalClasses: string[] = [
+    className,
+    cls[variant],
+    cls[size]
+  ]
 
   return (
     <button
       type='button'
       data-testid='button'
-      className={classNames(cls.button, {}, [className, cls[variant]])}
+      className={classNames(
+        cls.button,
+        {
+          [cls.square]: !!square
+        },
+        additionalClasses
+      )}
       {...extraProps}
     >
       {children}

@@ -3,6 +3,7 @@
   "notFoundPage": "Page not found",
   "pageError": "Something went wrong",
   "pageErrorReloadButton": "Reload page",
-  "hideSidebar": "Hide sidebar",
-  "showSidebar": "Show sidebar"
+  "shortLng": "Ru",
+  "mainPage": "Main page",
+  "aboutPage": "About application"
 }

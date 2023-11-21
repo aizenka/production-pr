@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook'
 
-import { Button, ButtonVariant } from './Button'
+import { Button, ButtonSize, ButtonVariant } from './Button'
 
 const meta: Meta<typeof Button> = {
   title: 'shared/Button',
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof Button>;
 
 export const TextLight: Story = {
   args: {
-    children: 'text button',
+    children: 'Text button',
     variant: ButtonVariant.TEXT
   }
 }
@@ -31,7 +31,7 @@ export const OutlinedLight: Story = {
 
 export const TextDark: Story = {
   args: {
-    children: 'text button',
+    children: 'Text button',
     variant: ButtonVariant.TEXT
   },
   decorators: [ThemeDecorator(Theme.DARK)]
@@ -43,4 +43,60 @@ export const OutlinedDark: Story = {
     variant: ButtonVariant.OUTLINED
   },
   decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const OutlinedSizeL: Story = {
+  args: {
+    children: 'Outlined button',
+    variant: ButtonVariant.OUTLINED,
+    size: ButtonSize.L
+  }
+}
+
+export const OutlinedSizeXL: Story = {
+  args: {
+    children: 'Outlined button',
+    variant: ButtonVariant.OUTLINED,
+    size: ButtonSize.XL
+  }
+}
+
+export const Flat: Story = {
+  args: {
+    children: 'Flat button',
+    variant: ButtonVariant.FLAT
+  }
+}
+
+export const FlatInverted: Story = {
+  args: {
+    children: 'Flat button',
+    variant: ButtonVariant.FLAT_INVERTED
+  }
+}
+
+export const Square: Story = {
+  args: {
+    children: '>',
+    variant: ButtonVariant.FLAT_INVERTED,
+    square: true
+  }
+}
+
+export const SquareSizeL: Story = {
+  args: {
+    children: '>',
+    variant: ButtonVariant.FLAT_INVERTED,
+    square: true,
+    size: ButtonSize.L
+  }
+}
+
+export const SquareXL: Story = {
+  args: {
+    children: '>',
+    variant: ButtonVariant.FLAT_INVERTED,
+    square: true,
+    size: ButtonSize.XL
+  }
 }

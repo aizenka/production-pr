@@ -3,6 +3,7 @@
   "notFoundPage": "Страница не найдена",
   "pageError": "Произошла непредвиденная ошибка",
   "pageErrorReloadButton": "Обновить страницу",
-  "hideSidebar": "Скрыть сайдбар",
-  "showSidebar": "Показать сайдбар"
+  "shortLng": "En",
+  "mainPage": "Домашняя страница",
+  "aboutPage": "О приложении"
 }
