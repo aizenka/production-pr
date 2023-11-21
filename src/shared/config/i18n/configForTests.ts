@@ -1,9 +1,9 @@
-import i18next, { i18n } from 'i18next'
+import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-const i18n = i18next.createInstance()
+const i18nForTests = i18next.createInstance()
 
-i18n
+i18nForTests
   .use(initReactI18next)
   .init({
     lng: 'en',
@@ -18,4 +18,4 @@ i18n
     resources: { en: { translations: {} } }
   })
 
-export default i18n
+export default i18nForTests
