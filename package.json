@@ -16,7 +16,10 @@
     "build-storybook": "storybook build -c ./config/storybook",
     "test-unit": "jest --config ./config/jest/jest.config.ts",
     "test-ui": "yarn build-storybook && loki --requireReference --reactUri file:./storybook-static",
-    "test-ui-approve": "npx loki approve"
+    "test-ui-approve": "npx loki approve",
+    "test-ui-report": "yarn test-ui-json && yarn test-ui-html",
+    "test-ui-json": "node scripts/generate-visual-json-report.js",
+    "test-ui-html": "npx reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "repository": "git@github.com:aizenka/production-pr.git",
   "author": "aizenka",
@@ -65,6 +68,7 @@
     "jest": "27.5.1",
     "loki": "^0.33.1",
     "mini-css-extract-plugin": "2.5.3",
+    "reg-cli": "^0.17.7",
     "sass": "1.49.9",
     "sass-loader": "12.6.0",
     "storybook": "^7.5.3",
