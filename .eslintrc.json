@@ -18,10 +18,11 @@
       },
       "files": [
         ".eslintrc.{json,jsonc}",
-        "**/src/**/*.test.{ts,tsx}"
+        "**/src/**/*.{test,stories}.{ts,tsx}"
       ],
       "rules": {
-        "i18next/no-literal-string": "off"
+        "i18next/no-literal-string": "off",
+        "max-len": "off"
       },
       "parserOptions": {
         "sourceType": "script"
@@ -35,6 +36,7 @@
   },
   "plugins": [
     "react",
+    "react-hooks",
     "@typescript-eslint",
     "i18next"
   ],
@@ -78,6 +80,8 @@
     ],
     "react/react-in-jsx-scope": "off",
     "react/no-deprecated": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
     "react/jsx-filename-extension": [
       2,
       {

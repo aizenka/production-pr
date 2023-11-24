@@ -4,6 +4,7 @@ import cls from './Button.module.scss'
 
 export enum ButtonVariant {
   TEXT = 'text',
+  TEXT_INVERTED = 'textInverted',
   OUTLINED = 'outlined',
   FLAT = 'flat',
   FLAT_INVERTED = 'flatInverted'

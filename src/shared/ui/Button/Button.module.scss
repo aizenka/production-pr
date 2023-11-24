@@ -4,11 +4,16 @@
   color: var(--primary-color)
 }
 
-.text {
+.text,
+.textInverted {
   padding: 0;
   border: none;
   outline: 0;
   background-color: transparent;
+}
+
+.textInverted {
+  color: var(--inverted-primary-color);
 }
 
 .outlined {

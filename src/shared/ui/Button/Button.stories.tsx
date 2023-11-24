@@ -22,6 +22,13 @@ export const TextLight: Story = {
   }
 }
 
+export const TextInverted: Story = {
+  args: {
+    children: 'Text button',
+    variant: ButtonVariant.TEXT_INVERTED
+  }
+}
+
 export const OutlinedLight: Story = {
   args: {
     children: 'Outlined button',
