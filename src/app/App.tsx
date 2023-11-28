@@ -3,7 +3,6 @@ import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import './styles/index.scss'
 
-// TODO: fix loki CI
 const App = () => {
   return (
     <div className='app'>
