@@ -4,6 +4,9 @@ export default {
   rootDir: '../../',
   clearMocks: true,
   testEnvironment: 'jsdom',
+  globals: {
+    __IS_DEV__: true
+  },
   coveragePathIgnorePatterns: [
     '/node_modules/'
   ],
