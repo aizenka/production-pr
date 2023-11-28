@@ -19,11 +19,11 @@ export default meta
 type Story = StoryObj<typeof Modal>;
 
 
-export const ModalLight: Story = {
+export const Light: Story = {
   args: {}
 }
 
-export const ModalDark: Story = {
+export const Dark: Story = {
   args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
 }
