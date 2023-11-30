@@ -20,7 +20,8 @@
     "test:ui:approve": "npx loki approve",
     "test:ui:report": "yarn test:ui:json && yarn test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
-    "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html"
+    "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
+    "prepare": "husky install"
   },
   "repository": "git@github.com:aizenka/production-pr.git",
   "author": "aizenka",
@@ -86,7 +87,8 @@
     "webpack": "5.69.1",
     "webpack-bundle-analyzer": "4.5.0",
     "webpack-cli": "4.10.0",
-    "webpack-dev-server": "4.7.4"
+    "webpack-dev-server": "4.7.4",
+    "husky": "^8.0.0"
   },
   "resolutions": {
     "@types/react": "17.0.39",
