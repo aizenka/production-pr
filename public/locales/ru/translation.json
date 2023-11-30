@@ -6,5 +6,7 @@
   "shortLng": "En",
   "mainPage": "Домашняя страница",
   "aboutPage": "О приложении",
-  "login": "Войти"
+  "login": "Войти",
+    "EnterUsername": "Введите username",
+    "EnterPassword": "Введите пароль"
 }

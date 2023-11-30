@@ -6,5 +6,7 @@
   "shortLng": "Ru",
   "mainPage": "Main page",
   "aboutPage": "About application",
-  "login": "Log-in"
+  "login": "Log-in",
+  "EnterUsername": "Enter username",
+  "EnterPassword": "Enter password"
 }
