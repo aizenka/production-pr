@@ -29,6 +29,7 @@ export default {
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
   ],
   moduleNameMapper: {
+    axios: 'axios/dist/node/axios.cjs',
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'JestMockSvgComponent.tsx')
   }

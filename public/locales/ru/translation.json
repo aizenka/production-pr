@@ -7,6 +7,9 @@
   "mainPage": "Домашняя страница",
   "aboutPage": "О приложении",
   "login": "Войти",
-    "EnterUsername": "Введите username",
-    "EnterPassword": "Введите пароль"
+  "logout": "Выйти",
+  "EnterUsername": "Введите username",
+  "EnterPassword": "Введите пароль",
+  "authForm": "Форма авторизации",
+  "incorrectAuthData": "Вы ввели неверный логин или пароль"
 }

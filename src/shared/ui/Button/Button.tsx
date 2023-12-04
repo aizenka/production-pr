@@ -30,6 +30,7 @@ export const Button: FC<ButtonProps> = (props) => {
     variant = ButtonVariant.TEXT,
     size = ButtonSize.M,
     square,
+    disabled,
     ...extraProps
   } = props
 
@@ -46,10 +47,12 @@ export const Button: FC<ButtonProps> = (props) => {
       className={classNames(
         cls.button,
         {
-          [cls.square]: !!square
+          [cls.square]: !!square,
+          [cls.disabled]: !!disabled
         },
         additionalClasses
       )}
+      disabled={disabled}
       {...extraProps}
     >
       {children}

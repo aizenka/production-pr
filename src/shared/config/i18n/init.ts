@@ -25,7 +25,12 @@ i18n
       useSuspense: false
     },
     backend: {
-      loadPath: '/locales/{{lng}}/{{ns}}.json'
+      loadPath: () => {
+        const isStorybookStatic = window.location.pathname.includes('storybook-static')
+        return isStorybookStatic
+          ? '/storybook-static/locales/{{lng}}/{{ns}}.json'
+          : '/locales/{{lng}}/{{ns}}.json'
+      }
     }
   })
 
