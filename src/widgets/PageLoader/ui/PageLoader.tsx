@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib'
+import { classNames } from 'shared/lib/common'
 import { RippleLoader } from 'shared/ui'
 import cls from './PageLoader.module.scss'
 

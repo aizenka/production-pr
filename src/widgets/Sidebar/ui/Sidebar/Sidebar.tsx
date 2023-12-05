@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib'
+import { classNames } from 'shared/lib/common'
 import { AppLink, Button } from 'shared/ui'
 import { ButtonVariant, ButtonSize } from 'shared/ui/Button/Button'
 import { AppLinkVariant } from 'shared/ui/AppLink/AppLink'

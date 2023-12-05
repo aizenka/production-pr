@@ -6,7 +6,7 @@ import {
   useRef,
   useState
 } from 'react'
-import { classNames } from 'shared/lib'
+import { classNames } from 'shared/lib/common'
 import { Portal } from 'shared/ui'
 import cls from './Modal.module.scss'
 

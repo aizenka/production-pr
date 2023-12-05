@@ -1,1 +1,5 @@
 export { getLoginState } from './getLoginState/getLoginState'
+export { getLoginUsername } from './getLoginUsername/getLoginUsername'
+export { getLoginPassword } from './getLoginPassword/getLoginPassword'
+export { getLoginLoading } from './getLoginLoading/getLoginLoading'
+export { getLoginError } from './getLoginError/getLoginError'

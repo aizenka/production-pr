@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui'
-import { classNames } from 'shared/lib'
+import { classNames } from 'shared/lib/common'
 import { LANGUAGE_EN, LANGUAGE_RU } from 'shared/constants/i18n'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 

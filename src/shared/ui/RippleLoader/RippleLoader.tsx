@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib'
+import { classNames } from 'shared/lib/common'
 import cls from './RippleLoader.module.scss'
 
 interface RippleLoaderProps {

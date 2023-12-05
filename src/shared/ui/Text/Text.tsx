@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib'
+import { classNames } from 'shared/lib/common'
 import cls from './Text.module.scss'
 
 export enum TextType {

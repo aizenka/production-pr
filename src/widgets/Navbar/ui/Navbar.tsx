@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react'
 import { Button } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
-import { classNames } from 'shared/lib'
+import { classNames } from 'shared/lib/common'
 import cls from './Navbar.module.scss'
 import { useTranslation } from 'react-i18next'
 import { LoginModal } from 'features/AuthByUsername'
@@ -51,10 +51,14 @@ export const Navbar = ({ className }: NavbarProps) => {
           >
             {t('login')}
           </Button>
-          <LoginModal
-            isOpen={openAuthModal}
-            onClose={onCloseAuthModal}
-          />
+          {
+            openAuthModal && (
+              <LoginModal
+                isOpen={openAuthModal}
+                onClose={onCloseAuthModal}
+              />
+            )
+          }
         </>
       )
     }
