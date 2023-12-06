@@ -28,6 +28,10 @@ export const loginByUsername =
           authData
         )
 
+        if (!response.data) {
+          throw new Error()
+        }
+
         localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(authData))
         thunkAPI.dispatch(userActions.setAuthData(response.data))
 

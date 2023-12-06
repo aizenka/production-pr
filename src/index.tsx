@@ -6,6 +6,10 @@ import { StoreProvider } from 'app/providers/StoreProvider'
 import App from './app/App'
 import 'shared/config/i18n/init'
 
+/* TODO (global)
+  add test coverage map
+*/
+
 render (
   <StoreProvider>
     <BrowserRouter>
