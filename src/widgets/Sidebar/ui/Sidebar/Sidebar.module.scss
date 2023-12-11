@@ -15,16 +15,6 @@
   bottom: 20px;
 }
 
-.link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.linkText {
-  opacity: 1;
-}
-
 .navigateItems {
   display: flex;
   margin-top: 16px;
@@ -33,22 +23,12 @@
   gap: 8px;
 }
 
-.navigateIcon {
-  fill: var(--inverted-primary-color);
-}
-
 .collapsed {
   width: var(--collapsed-sidebar-width);
 
   .switchers {
     flex-direction: column;
     gap: 8px;
-  }
-
-  .linkText {
-    opacity: 0;
-    transition: opacity 0.3s;
-    width: 0;
   }
 }
 

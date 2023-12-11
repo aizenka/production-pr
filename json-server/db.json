@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "test",
+    "lastName": "user",
+    "age": 33,
+    "currensy": "RUB",
+    "county": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/UserTest.io_Logo.jpg"
+  }
 }

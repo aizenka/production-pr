@@ -22,7 +22,7 @@ export const LoginModal = (props: LoginModalProps) => {
       lazy
     >
       <Suspense fallback={<RippleLoader />}>
-        <LoginForm />
+        <LoginForm onSuccess={onClose} />
       </Suspense>
     </Modal>
   )

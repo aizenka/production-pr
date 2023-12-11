@@ -13,4 +13,9 @@ export const AboutPage = lazy(() => new Promise(resolve => {
   setTimeout(() => resolve(import('./AboutPage/ui/AboutPage')), 1500)
 }))
 
-export { NotFoundPage } from './NotFoundPage/ui/NotFoundPage'
+export const ProfilePage = lazy(() => new Promise(resolve => {
+  // @ts-expect-error test suspense
+  setTimeout(() => resolve(import('./ProfilePage/ui/ProfilePage')), 1500)
+}))
+
+export { default as NotFoundPage } from './NotFoundPage/ui/NotFoundPage'

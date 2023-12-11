@@ -6,6 +6,8 @@ import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { StateSchema } from './StateSchema'
 
+export type AppDispatch = ReturnType<typeof createRudexStore>['dispatch']
+
 export function createRudexStore (
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>

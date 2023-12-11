@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ABOUT_PAGE_NAMESPACE } from 'shared/constants/i18n'
 
@@ -5,7 +6,7 @@ import { ABOUT_PAGE_NAMESPACE } from 'shared/constants/i18n'
 //   className?: string
 // }
 
-export default function AboutPage () {
+export default memo(function AboutPage () {
   const { t } = useTranslation(ABOUT_PAGE_NAMESPACE)
 
   return (
@@ -13,4 +14,4 @@ export default function AboutPage () {
       {t('aboutPage')}
     </div>
   )
-}
+})

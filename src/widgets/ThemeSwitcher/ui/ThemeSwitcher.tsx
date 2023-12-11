@@ -4,12 +4,13 @@ import { ButtonVariant } from 'shared/ui/Button/Button'
 import { classNames } from 'shared/lib/common'
 import SwitchThemeIcon from 'shared/assets/icons/icon-switch-theme.svg'
 import cls from './ThemeSwitcher.module.scss'
+import { memo } from 'react'
 
 interface ThemeSwitcherProps {
   className?: string
 }
 
-export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
@@ -21,4 +22,4 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
       <SwitchThemeIcon className={cls[theme]}/>
     </Button>
   )
-}
+})

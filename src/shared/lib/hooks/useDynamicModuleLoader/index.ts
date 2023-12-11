@@ -1,8 +1,9 @@
 import { Reducer } from '@reduxjs/toolkit'
 import { useEffect } from 'react'
-import { useDispatch, useStore } from 'react-redux'
+import { useStore } from 'react-redux'
 import { ReduxStoreWithManager } from 'shared/config/store'
 import { StateSchemaKey } from 'shared/config/store/StateSchema'
+import useAppDispatch from '../useAppDispatch'
 
 export interface DynamicModuleLoaderOptions {
   removeAfterUnmount?: boolean
@@ -21,7 +22,7 @@ export default function useDynamicModuleLoader (
   const { removeAfterUnmount = true } = options
 
   const store = useStore() as ReduxStoreWithManager
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
     Object.entries(reducers).forEach(([name, reducer]: ReducersListEntry) => {
