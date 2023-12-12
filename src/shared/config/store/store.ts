@@ -3,6 +3,7 @@ import {
   ReducersMapObject
 } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
+import $api from 'shared/api'
 import { createReducerManager } from './reducerManager'
 import { StateSchema } from './StateSchema'
 
@@ -19,9 +20,16 @@ export function createRudexStore (
 
   const reducerManager = createReducerManager(rootReducer)
 
-  const store = configureStore<StateSchema>({
+  const store = configureStore({
     reducer: reducerManager.reduce,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      thunk: {
+        extraArgument: {
+          api: $api
+        }
+      }
+    }),
     devTools: __IS_DEV__
   })
 

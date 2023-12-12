@@ -5,7 +5,8 @@ export default {
   clearMocks: true,
   testEnvironment: 'jsdom',
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API_URL__: ''
   },
   coveragePathIgnorePatterns: [
     '/node_modules/'

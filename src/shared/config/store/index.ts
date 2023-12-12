@@ -1,2 +1,6 @@
 export { createRudexStore } from './store'
-export type { StateSchema, ReduxStoreWithManager } from './StateSchema'
+export type {
+  StateSchema,
+  ReduxStoreWithManager,
+  ThunkConfig
+} from './StateSchema'
