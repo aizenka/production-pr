@@ -33,7 +33,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config!.plugins!.push(
     new DefinePlugin({
       __IS_DEV__: true,
-      __API_URL__: ''
+      __API_URL__: true
     })
   )
 
