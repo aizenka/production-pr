@@ -12,36 +12,30 @@ export default ({ config }: { config: webpack.Configuration }) => {
     src: path.resolve(__dirname, '..', '..', 'src')
   }
 
-  if (config.resolve?.modules) {
-    config.resolve.modules = [ paths.src, 'node_modules' ]
-  }
+  config!.resolve!.modules = [ paths.src, 'node_modules' ]
 
-  if (config.module?.rules) {
-    config.module.rules = config.module?.rules?.map(
-      (rule: RuleSetRule | '...') => {
-        if (rule !== '...' && /svg/.test(rule.test as string)) {
-          return { ...rule, exclude: /\.svg$/i }
-        }
+  config!.module!.rules = config!.module!.rules!.map(
+    (rule: RuleSetRule | '...') => {
+      if (rule !== '...' && /svg/.test(rule.test as string)) {
+        return { ...rule, exclude: /\.svg$/i }
+      }
 
-        return rule
-      })
-
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack']
+      return rule
     })
-    config.module.rules.push(buildCssLoader(true))
-  }
 
-  if (config?.plugins) {
-    config.plugins.push(
-      new DefinePlugin({
-        __IS_DEV__: true,
-        __API_URL__: ''
-      })
-    )
-  }
+  config!.module!.rules.push({
+    test: /\.svg$/,
+    use: ['@svgr/webpack']
+  })
 
+  config!.module!.rules.push(buildCssLoader(true))
+
+  config!.plugins!.push(
+    new DefinePlugin({
+      __IS_DEV__: true,
+      __API_URL__: ''
+    })
+  )
 
   return config
 }

@@ -6,7 +6,7 @@ import { ABOUT_PAGE_NAMESPACE } from 'shared/constants/i18n'
 //   className?: string
 // }
 
-export default memo(function AboutPage () {
+const AboutPage = memo(() => {
   const { t } = useTranslation(ABOUT_PAGE_NAMESPACE)
 
   return (
@@ -15,3 +15,5 @@ export default memo(function AboutPage () {
     </div>
   )
 })
+
+export default AboutPage

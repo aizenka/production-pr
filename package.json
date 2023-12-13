@@ -91,10 +91,16 @@
     "webpack-dev-server": "4.7.4"
   },
   "resolutions": {
+    "@storybook/react/webpack": "^5",
+    "@storybook/core-common/webpack": "^5",
+    "@storybook/core-server/webpack": "^5",
+    "@storybook/builder-webpack4/webpack": "^5",
+    "@storybook/manager-webpack4/webpack": "^5",
     "@types/react": "17.0.39",
     "string-width": "^1.0.2 || 2 || 3 || 4"
   },
   "loki": {
+    "fetchFailIgnore": ".*",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",

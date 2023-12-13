@@ -1,9 +1,10 @@
-type Mods = Record<string, string | boolean>
+export type ClsMods = Record<string, string | boolean | undefined>
+export type ClsAdditional = Array<string | undefined>
 
 export default function classNames (
   rcsl: string,
-  mods: Mods = {},
-  additional: string[] = []
+  mods: ClsMods = {},
+  additional:ClsAdditional = []
 ): string {
   return [
     rcsl,

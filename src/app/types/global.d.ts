@@ -5,6 +5,10 @@ declare const __API_URL__: string
 
 declare module '*.module.css'
 
+declare type DeepPartial<T> = T extends object ? {
+  [P in keyof T]?: DeepPartial<T[P]>
+} : T
+
 // declare module '*.module.scss'
 declare module '*.scss' {
   const cls: { [className: string]: string }

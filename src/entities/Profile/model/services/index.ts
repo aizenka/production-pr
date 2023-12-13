@@ -1,0 +1,1 @@
+export { fetchProfileData } from './fetchProfileData/fetchProfieData'

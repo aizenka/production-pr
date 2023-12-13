@@ -1,5 +1,6 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react'
 import { classNames } from 'shared/lib/common'
+import { ClsAdditional } from 'shared/lib/common/classNames/classNames'
 import cls from './Button.module.scss'
 
 export enum ButtonVariant {
@@ -35,7 +36,7 @@ export const Button = memo((props: ButtonProps) => {
     ...extraProps
   } = props
 
-  const additionalClasses: string[] = [
+  const additionalClasses: ClsAdditional= [
     className,
     cls[variant],
     cls[size]

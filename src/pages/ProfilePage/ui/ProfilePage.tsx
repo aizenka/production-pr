@@ -1,8 +1,11 @@
-import { profileReducer } from 'entities/Profile'
-import { memo } from 'react'
-import { useTranslation } from 'react-i18next'
+import { memo, useEffect } from 'react'
+import {
+  fetchProfileData,
+  ProfileCard,
+  profileReducer
+} from 'entities/Profile'
 import { classNames } from 'shared/lib/common'
-import { useDynamicModuleLoader } from 'shared/lib/hooks'
+import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib/hooks'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 // import cls from './ProfilePage.module.scss'
 
@@ -16,11 +19,15 @@ interface ProfilePageProps {
 
 export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   useDynamicModuleLoader(reducers)
-  const { t } = useTranslation()
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchProfileData())
+  }, [dispatch])
 
   return (
     <div className={classNames('', {}, [className])}>
-      {t('profilePage')}
+      <ProfileCard />
     </div>
   )
 })

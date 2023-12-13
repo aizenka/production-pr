@@ -1,0 +1,21 @@
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+  border: 2px solid var(--inverted-bg-color);
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+}
+
+.editBtn {
+  margin-left: auto;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

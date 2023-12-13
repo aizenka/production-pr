@@ -8,17 +8,18 @@ import 'shared/config/i18n/init'
 
 /* TODO (global)
   add test coverage map
+  move types to a separate folder and add public api (all components)
 */
 
 render (
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundary>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>,
+    </StoreProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 )

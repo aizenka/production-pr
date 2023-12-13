@@ -1,6 +1,7 @@
 import {
   InputHTMLAttributes,
   memo,
+  MutableRefObject,
   useEffect,
   useRef,
   useState
@@ -28,7 +29,7 @@ export const Input = memo((props: InputProps) => {
     ...extraProps
   } = props
 
-  const inputRef = useRef<HTMLInputElement>()
+  const inputRef = useRef() as MutableRefObject<HTMLInputElement>
   const [isFocused, setIsFocused] = useState(false)
   const [caretPosition, setCaretPosition] = useState(0)
 

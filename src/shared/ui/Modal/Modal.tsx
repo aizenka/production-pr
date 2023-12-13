@@ -1,5 +1,6 @@
 import {
   MouseEvent,
+  MutableRefObject,
   ReactNode,
   useCallback,
   useEffect,
@@ -7,6 +8,7 @@ import {
   useState
 } from 'react'
 import { classNames } from 'shared/lib/common'
+import { ClsMods } from 'shared/lib/common/classNames/classNames'
 import { Portal } from 'shared/ui'
 import cls from './Modal.module.scss'
 
@@ -31,7 +33,7 @@ export const Modal = (props: ModalProps) => {
 
   const [isClosing, setIsClosing] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
-  const timerRef = useRef<ReturnType<typeof setTimeout>>(null)
+  const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
 
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -67,7 +69,7 @@ export const Modal = (props: ModalProps) => {
     }
   }, [open, onKeyDown])
 
-  const mods: Record<string, boolean> = {
+  const mods: ClsMods = {
     [cls.opened]: !!open,
     [cls.closing]: isClosing
   }

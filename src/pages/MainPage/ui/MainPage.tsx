@@ -3,7 +3,7 @@ import { MAIN_PAGE_NAMESPACE } from 'shared/constants/i18n'
 import { BugButton } from 'app/providers/ErrorBoundary'
 import { memo } from 'react'
 
-export default memo(function MainPage () {
+const MainPage = memo(() => {
   const { t } = useTranslation(MAIN_PAGE_NAMESPACE)
 
   return (
@@ -13,3 +13,5 @@ export default memo(function MainPage () {
     </div>
   )
 })
+
+export default MainPage

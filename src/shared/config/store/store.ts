@@ -1,5 +1,7 @@
 import {
+  CombinedState,
   configureStore,
+  Reducer,
   ReducersMapObject
 } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
@@ -21,7 +23,7 @@ export function createRudexStore (
   const reducerManager = createReducerManager(rootReducer)
 
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: {
