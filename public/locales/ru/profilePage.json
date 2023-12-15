@@ -2,5 +2,15 @@
   "profile": "Профиль",
   "edit": "Редактировать",
   "typeName": "Введите имя",
-  "typeLastName": "Введите фамилию"
+  "typeLastName": "Введите фамилию",
+  "typeAge": "Введите возраст",
+  "typeCity": " Введите город",
+  "selectCountry": "Выберите страну",
+  "selectCurrency": "Выберите валюту",
+  "typeAvatarUrl": "Вставьте ссылку на аватар",
+  "typeUsername": "Введите имя пользователя",
+  "profileLoadingErrorTitle": "Произошла ошибка при загрузке профиля",
+  "profileLoadingErrorDescription": "Попробуйте обновить страницу",
+  "cancelEdit": "Отменить",
+  "save": "Сохранить"
 }

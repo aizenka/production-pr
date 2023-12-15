@@ -2,5 +2,15 @@
   "profile": "Profile",
   "edit": "Edit",
   "typeName": "Type name",
-  "typeLastName": "Type lastname"
+  "typeLastName": "Type lastname",
+  "typeAge": "Type age",
+  "typeCity": "Type city",
+  "typeAvatarUrl": "Type avatar url",
+  "typeUsername": "Type username",
+  "selectCountry": "Select country",
+  "selectCurrency": "Select currency",
+  "profileLoadingErrorTitle": "There was an error loading profile",
+  "profileLoadingErrorDescription": "Try refreshing the page",
+  "cancelEdit": "Cancel",
+  "save": "Save"
 }

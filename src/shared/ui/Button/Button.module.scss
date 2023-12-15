@@ -22,6 +22,12 @@
   background: none;
 }
 
+.outlinedDanger {
+  border: 1px solid var(--error-red-light-color);
+  color: var(--error-red-light-color);
+  background: none;
+}
+
 .flat {
   background: var(--bg-color);
   color: var(--primary-color);

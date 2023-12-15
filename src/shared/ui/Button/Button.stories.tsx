@@ -36,6 +36,14 @@ export const OutlinedLight: Story = {
   }
 }
 
+export const OutlinedDanger: Story = {
+  args: {
+    children: 'Outlined button',
+    variant: ButtonVariant.OUTLINED_DANGER,
+    disabled: true
+  }
+}
+
 export const TextDark: Story = {
   args: {
     children: 'Text button',

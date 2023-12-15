@@ -3,10 +3,13 @@ import { classNames } from 'shared/lib/common'
 import { ClsAdditional } from 'shared/lib/common/classNames/classNames'
 import cls from './Button.module.scss'
 
+
+//TODO: use union type
 export enum ButtonVariant {
   TEXT = 'text',
   TEXT_INVERTED = 'textInverted',
   OUTLINED = 'outlined',
+  OUTLINED_DANGER = 'outlinedDanger',
   FLAT = 'flat',
   FLAT_INVERTED = 'flatInverted'
 }

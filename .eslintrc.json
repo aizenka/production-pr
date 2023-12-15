@@ -9,7 +9,8 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:i18next/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
   "overrides": [
     {
@@ -38,7 +39,8 @@
     "react",
     "react-hooks",
     "@typescript-eslint",
-    "i18next"
+    "i18next",
+    "jsx-a11y"
   ],
   "rules": {
     "quotes": [
@@ -101,6 +103,8 @@
     "react/function-component-definition": "off",
     "@typescript-eslint/no-explicit-any": "warn",
     "no-param-reassign": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
     "i18next/no-literal-string": [
       "error",
       {
@@ -108,7 +112,9 @@
         "ignoreAttribute": [
           "to",
           "data-testid",
-          "placeholder"
+          "placeholder",
+          "src",
+          "alt"
         ]
       }
     ]

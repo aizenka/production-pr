@@ -6,16 +6,26 @@
   gap: 16px;
 }
 
-.header {
-  display: flex;
-}
-
-.editBtn {
-  margin-left: auto;
-}
-
 .data {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.loading,
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.isEdit {
+  border: 2px solid var(--inverted-primary-color)
 }

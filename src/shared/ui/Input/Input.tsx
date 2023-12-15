@@ -3,18 +3,24 @@ import {
   memo,
   MutableRefObject,
   useEffect,
+  useMemo,
   useRef,
   useState
 } from 'react'
 import { classNames } from 'shared/lib/common'
+import { ClsMods } from 'shared/lib/common/classNames/classNames'
 import cls from './Input.module.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>
 
 interface InputProps extends HTMLInputProps {
   className?: string,
   autofocus?: boolean,
-  value?: string,
+  value?: string | number,
+  readonly?: boolean,
   onChange?: (value: string) => void
 }
 
@@ -26,6 +32,7 @@ export const Input = memo((props: InputProps) => {
     type = 'text',
     placeholder,
     autofocus,
+    readonly,
     ...extraProps
   } = props
 
@@ -39,6 +46,10 @@ export const Input = memo((props: InputProps) => {
       inputRef.current.focus()
     }
   }, [autofocus])
+
+  const isCaretVisible = useMemo(() => {
+    return isFocused && !readonly
+  }, [isFocused, readonly])
 
   const onFocus = () => {
     setIsFocused(true)
@@ -60,8 +71,12 @@ export const Input = memo((props: InputProps) => {
     setCaretPosition(e.target.value.length)
   }
 
+  const mods:ClsMods = {
+    [cls.readonly]: !!readonly
+  }
+
   return (
-    <div className={classNames(cls.inputWrapper, {}, [className])}>
+    <div className={classNames(cls.inputWrapper, mods, [className])}>
       {
         placeholder && (
           <div>
@@ -73,6 +88,7 @@ export const Input = memo((props: InputProps) => {
         <input
           ref={inputRef}
           className={cls.input}
+          readOnly={readonly}
           value={value}
           onChange={onChangeValue}
           type={type}
@@ -82,7 +98,7 @@ export const Input = memo((props: InputProps) => {
           {...extraProps}
         />
         {
-          isFocused && (
+          isCaretVisible && (
             <span
               className={cls.caret}
               style={{ left: `${caretPosition * 7}px` }}
