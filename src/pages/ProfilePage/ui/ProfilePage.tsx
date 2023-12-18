@@ -1,4 +1,12 @@
 import { memo, useCallback, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import { Text } from 'shared/ui'
+import { TextType } from 'shared/ui/Text/Text'
+import { classNames } from 'shared/lib/common'
+import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib/hooks'
+import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
+import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import {
   fetchProfileData,
   getProfileError,
@@ -6,17 +14,17 @@ import {
   getProfileReadOnly,
   profileActions,
   ProfileCard,
-  profileReducer
+  profileReducer,
+  ValidateProfileError
 } from 'entities/Profile'
-import { classNames } from 'shared/lib/common'
-import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib/hooks'
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
-import { useSelector } from 'react-redux'
-import { ProfilePageHeader } from './components'
-import cls from './ProfilePage.module.scss'
-import { getProfileForm } from 'entities/Profile/model/selectors'
+import {
+  getProfileForm,
+  getProfileValidateErrors
+} from 'entities/Profile/model/selectors'
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
+import { ProfilePageHeader } from './components'
+import cls from './ProfilePage.module.scss'
 
 const reducers: ReducersList = {
   profile: profileReducer
@@ -29,6 +37,7 @@ interface ProfilePageProps {
 export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   useDynamicModuleLoader(reducers)
   const dispatch = useAppDispatch()
+  const { t } = useTranslation(PROFILE_PAGE_NAMESPACE)
 
   /* TODO:
     Create an EditableProfileCard feature that contains all the necessary logic and sells
@@ -37,11 +46,21 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   const formData = useSelector(getProfileForm)
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
+  const validateErrors = useSelector(getProfileValidateErrors)
   const readonly = useSelector(getProfileReadOnly)
 
   useEffect(() => {
     dispatch(fetchProfileData())
   }, [dispatch])
+
+  const VALIDATE_ERROR_TRASLATES_MAP: Record<ValidateProfileError, string> = {
+    [ValidateProfileError.NO_DATA]: t('noProfileData'),
+    [ValidateProfileError.SERVER_ERROR]: t('serverError'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('incorrectUserData'),
+    [ValidateProfileError.INCORRECT_USER_AGE]: t('incorrectAge'),
+    [ValidateProfileError.INCORRECT_USER_CITY]: t('incorrectCity'),
+    [ValidateProfileError.INCORRECT_USERNAME]: t('incorrectUsername')
+  }
 
   const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfileForm({ firstName: value }))
@@ -78,6 +97,19 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   return (
     <div className={classNames(cls.profilePage, {}, [className])}>
       <ProfilePageHeader />
+      {
+        !!validateErrors?.length && (
+          validateErrors.map(err => {
+            return (
+              <Text
+                key={err}
+                type={TextType.ERROR}
+                text={VALIDATE_ERROR_TRASLATES_MAP[err]}
+              />
+            )
+          })
+        )
+      }
       <ProfileCard
         profileData={formData}
         isLoading={isLoading}

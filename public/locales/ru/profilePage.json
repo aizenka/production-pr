@@ -12,5 +12,11 @@
   "profileLoadingErrorTitle": "Произошла ошибка при загрузке профиля",
   "profileLoadingErrorDescription": "Попробуйте обновить страницу",
   "cancelEdit": "Отменить",
-  "save": "Сохранить"
+  "save": "Сохранить",
+  "noProfileData": "Отсутствуют данные профиля",
+  "serverError": "Серверная ошибка при сохранении",
+  "incorrectUserData": "Имя и фамилия обязательны",
+  "incorrectAge": "Некорректный возраст",
+  "incorrectCity": "Некорретный город",
+  "incorrectUsername": "Некорретный username"
 }
