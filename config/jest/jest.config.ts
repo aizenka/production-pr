@@ -1,4 +1,5 @@
 import path from 'path'
+import { ProjectType } from '../build/types/config'
 
 export default {
   rootDir: '../../',
@@ -6,7 +7,8 @@ export default {
   testEnvironment: 'jsdom',
   globals: {
     __IS_DEV__: true,
-    __API_URL__: ''
+    __API_URL__: '',
+    __PROJECT__: ProjectType.JEST
   },
   coveragePathIgnorePatterns: [
     '/node_modules/'

@@ -1,6 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
-import { BuildPaths, BuildEnv } from './config/build/types/config'
+import { BuildPaths, BuildEnv, ProjectType } from './config/build/types/config'
 import { buildWebpackConfig } from './config/build/buildWebpackConfig'
 
 export default (env: BuildEnv) => {
@@ -32,7 +32,8 @@ export default (env: BuildEnv) => {
     isDev,
     port: PORT,
     apiUrl,
-    analyze
+    analyze,
+    project: ProjectType.FRONTEND
   })
 
   return config

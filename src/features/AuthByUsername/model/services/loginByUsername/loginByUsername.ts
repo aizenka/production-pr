@@ -8,13 +8,6 @@ interface LoginByUsernameProps {
   password: string
 }
 
-
-
-// enum LoginErrors {
-//   INCORRECT_DATA = '',
-//   SERVER_ERROR = ''
-// }
-
 export const loginByUsername =
   createAsyncThunk<User, LoginByUsernameProps, ThunkConfig<string>>
   (

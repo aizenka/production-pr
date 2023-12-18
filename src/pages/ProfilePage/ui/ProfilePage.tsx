@@ -50,7 +50,9 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   const readonly = useSelector(getProfileReadOnly)
 
   useEffect(() => {
-    dispatch(fetchProfileData())
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData())
+    }
   }, [dispatch])
 
   const VALIDATE_ERROR_TRASLATES_MAP: Record<ValidateProfileError, string> = {

@@ -1,7 +1,7 @@
 import path from 'path'
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack'
 import buildCssLoader from '../build/loaders/buildCssLoader'
-import { BuildPaths } from '../build/types/config'
+import { BuildPaths, ProjectType } from '../build/types/config'
 
 // TODO: fix ts
 export default ({ config }: { config: webpack.Configuration }) => {
@@ -33,7 +33,8 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config!.plugins!.push(
     new DefinePlugin({
       __IS_DEV__: true,
-      __API_URL__: true
+      __API_URL__: true,
+      __PROJECT__: JSON.stringify(ProjectType.STORYBOOK)
     })
   )
 

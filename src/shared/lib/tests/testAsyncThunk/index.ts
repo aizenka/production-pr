@@ -10,10 +10,11 @@ jest.mock('axios')
 const mockedAxios = jest.mocked(axios, true)
 
 export default function testAsyncThunk <Return, Arg, RejectedValue> (
-  actionCreator: ActionCreatorType<Return, Arg, RejectedValue>
+  actionCreator: ActionCreatorType<Return, Arg, RejectedValue>,
+  state?: DeepPartial<StateSchema>
 ) {
   const dispatch: jest.MockedFn<ReturnType<typeof jest.fn>> = jest.fn()
-  const getState: () => StateSchema = jest.fn()
+  const getState: () => StateSchema = jest.fn(() => state as StateSchema)
   const api: jest.MockedFunctionDeep<AxiosStatic> = mockedAxios
 
   const callThunk = async (arg: Arg) => {

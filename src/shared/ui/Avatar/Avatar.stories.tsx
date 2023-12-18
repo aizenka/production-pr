@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import UserIcon from 'shared/assets/images/icon-user-avatar.png'
+import UserIcon from 'shared/assets/tests/storybook-test-avatar.jpg'
 
 import { Avatar } from './Avatar'
 
