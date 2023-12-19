@@ -14,7 +14,8 @@ export default {
     '/node_modules/'
   ],
   testPathIgnorePatterns: [
-    '/node_modules/'
+    '/node_modules/',
+    '/fttemplates/'
   ],
   modulePaths: [
     '<rootDir>src'
