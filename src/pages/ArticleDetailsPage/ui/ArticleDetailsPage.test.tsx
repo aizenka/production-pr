@@ -1,0 +1,4 @@
+describe('articleDetailsPageTest', () => {
+  test('should', () => {
+  })
+})
