@@ -1,12 +1,14 @@
 import { AppRouter } from 'app/providers/Router'
-import { userActions } from 'entities/User'
+import { getUserMounted, userActions } from 'entities/User'
 import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'shared/lib/hooks'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import './styles/index.scss'
 
 const App = () => {
+  const _mounted = useSelector(getUserMounted)
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -19,7 +21,11 @@ const App = () => {
       <Navbar />
       <div className='contentLayout'>
         <Sidebar />
-        <AppRouter />
+        {
+          _mounted && (
+            <AppRouter />
+          )
+        }
       </div>
     </div>
   )

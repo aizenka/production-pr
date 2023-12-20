@@ -1,7 +1,6 @@
 import { RouteProps } from 'react-router-dom'
 
-// TODO: refactor to normal private routes
-type AppRoutesProps = RouteProps & {
+export type AppRoutesProps = RouteProps & {
   authOnly?: boolean
 }
 

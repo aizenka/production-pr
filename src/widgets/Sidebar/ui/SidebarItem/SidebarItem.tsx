@@ -15,7 +15,7 @@ interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
   const { t } = useTranslation()
-  // TODO: refactor to normal private routes
+
   const isAuth = useSelector(getUserAuthData)
 
   if (item.authOnly && !isAuth) return null
