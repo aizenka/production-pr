@@ -1,0 +1,13 @@
+.articleDetails {
+  height: 100%;
+}
+
+.skeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skeletonAvatar {
+  margin: 0 auto;
+}

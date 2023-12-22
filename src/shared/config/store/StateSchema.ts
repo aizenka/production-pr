@@ -7,6 +7,7 @@ import {
   ReducersMapObject
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
+import { ArticleDetailsSchema } from 'entities/Article'
 import { ProfileSchema } from 'entities/Profile'
 import type { UserSchema } from 'entities/User'
 import type { LoginSchema } from 'features/AuthByUsername'
@@ -16,7 +17,8 @@ export interface StateSchema {
 
   // async reducers
   loginForm?: LoginSchema,
-  profile?: ProfileSchema
+  profile?: ProfileSchema,
+  articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -19,6 +19,8 @@ body {
 }
 
 .cotnentPage {
-  padding: 24px;
+  padding: 20px 20px 20px 45px;
   flex-grow: 1;
+  height: calc(100vh - var(--navbar-height));
+  overflow-y: auto;
 }
