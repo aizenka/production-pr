@@ -20,36 +20,40 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install and start docker
-        run: |
-          brew install --cask docker
-          open -a Docker.app
+      - name: Install Colima
+        run: brew install colima docker
+      - name: Provides Daemon
+        run: colima start
+      # - name: Install and Start Docker
+      #   run: |
+      #     brew install --cask docker
+      #     open -a Docker.app
 
-      - name: check docker daemon
-        run: |
-          # Make sure Docker Daemon is running
-          if ! docker info; then
-            echo "Restarting Docker..."
-            osascript -e 'quit app "Docker"'
-            sleep 5
-            open -a Docker.app
-            # Wait for Docker to be ready
-            while ! docker info >/dev/null 2>&1; do sleep 1; done
-          fi
-      - name: install node_modules
+      # - name: Check Docker Daemon
+      #   run: |
+      #     # Make sure Docker Daemon is running
+      #     if ! docker info; then
+      #       echo "Restarting Docker..."
+      #       osascript -e 'quit app "Docker"'
+      #       sleep 5
+      #       open -a Docker.app
+      #       # Wait for Docker to be ready
+      #       while ! docker info >/dev/null 2>&1; do sleep 1; done
+      #     fi
+      - name: Install node_modules
         run: yarn
-      - name: build production
+      - name: Build production
         run: yarn build:production
         if: always()
-      - name: linting typescript
+      - name: Linting typescript
         run: yarn lint:ts
         if: always()
-      - name: linting scss
+      - name: Linting scss
         run: yarn lint:scss
         if: always()
-      - name: unit testing
+      - name: Unit testing
         run: yarn test:unit
         if: always()
-      - name: ui testing
+      - name: Ui testing
         run: yarn test:ui
         if: always()
