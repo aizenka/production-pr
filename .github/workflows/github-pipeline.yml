@@ -20,16 +20,19 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install docker
+      - name: install and start docker
         run: |
-          mkdir -p ~/.docker/machine/cache
-          curl -Lo ~/.docker/machine/cache/boot2docker.iso https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso
-          brew install docker docker-machine
-      - name: start docker
+          brew install --cask docker
+          open -a Docker
+
+      - name: check docker daemon
         run: |
-          # Start Docker.app if not already running
-          if ! pgrep -f Docker.app; then
-            open -a /Applications/Docker.app
+          # Make sure Docker Daemon is running
+          if ! docker info; then
+            echo "Restarting Docker..."
+            osascript -e 'quit app "Docker"'
+            sleep 5
+            open -a Docker
             # Wait for Docker to be ready
             while ! docker info >/dev/null 2>&1; do sleep 1; done
           fi
