@@ -8,7 +8,7 @@ on:
 jobs:
   pipeline:
     # TODO: fix CI ui tests
-    # ubuntu crash some ui tests
+    # ubuntu crash some UI tests (tests with rgba color)
     runs-on: macos-latest
     strategy:
       matrix:
@@ -22,24 +22,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install Colima
         run: brew install colima docker
-      - name: Provides Daemon
-        run: colima start
-      # - name: Install and Start Docker
-      #   run: |
-      #     brew install --cask docker
-      #     open -a Docker.app
-
-      # - name: Check Docker Daemon
-      #   run: |
-      #     # Make sure Docker Daemon is running
-      #     if ! docker info; then
-      #       echo "Restarting Docker..."
-      #       osascript -e 'quit app "Docker"'
-      #       sleep 5
-      #       open -a Docker.app
-      #       # Wait for Docker to be ready
-      #       while ! docker info >/dev/null 2>&1; do sleep 1; done
-      #     fi
+        if: always()
+      - name: Provide Docker Daemon
+        run: colima start --arch x86_64
+        if: always()
       - name: Install node_modules
         run: yarn
       - name: Build production
@@ -54,6 +40,6 @@ jobs:
       - name: Unit testing
         run: yarn test:unit
         if: always()
-      - name: Ui testing
+      - name: UI testing
         run: yarn test:ui
         if: always()
