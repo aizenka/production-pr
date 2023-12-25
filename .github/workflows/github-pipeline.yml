@@ -9,7 +9,8 @@ jobs:
   pipeline:
     # TODO: fix CI ui tests
     # ubuntu crash some UI tests (tests with rgba color)
-    runs-on: macos-latest
+    # macos with Colima (Loki takes too long to execute and also fails some tests)
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 16.x ]
@@ -20,12 +21,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install Colima
-        run: brew install colima docker
-        if: always()
-      - name: Provide Docker Daemon
-        run: colima start --arch x86_64
-        if: always()
+      # - name: Install Colima
+      #   run: brew install colima docker
+      #   if: always()
+      # - name: Provide Docker Daemon
+      #   run: colima start --arch x86_64
+      #   if: always()
       - name: Install node_modules
         run: yarn
       - name: Build production
