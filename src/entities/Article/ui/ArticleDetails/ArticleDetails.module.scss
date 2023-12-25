@@ -2,12 +2,29 @@
   height: 100%;
 }
 
-.skeletonWrapper {
+.contentWrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.skeletonAvatar {
+.avatar {
   margin: 0 auto;
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.articleInfo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.skeletonInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

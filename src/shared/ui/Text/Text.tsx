@@ -3,6 +3,11 @@ import { classNames } from 'shared/lib/common'
 import { ClsMods } from 'shared/lib/common/classNames/classNames'
 import cls from './Text.module.scss'
 
+export enum TextSize {
+  M = 'm',
+  L = 'l'
+}
+
 export enum TextType {
   PRIMARY = 'primary',
   ERROR = 'error'
@@ -19,7 +24,8 @@ interface TextProps {
   title?: string,
   text?: string,
   type?: TextType,
-  align?: TextAlign
+  align?: TextAlign,
+  size?: TextSize
 }
 
 export const Text = memo((props: TextProps) => {
@@ -28,12 +34,14 @@ export const Text = memo((props: TextProps) => {
     title,
     text,
     type = TextType.PRIMARY,
-    align = TextAlign.LEFT
+    align = TextAlign.LEFT,
+    size = TextSize.M
   } = props
 
   const mods: ClsMods = {
     [cls[type]]: !!type,
-    [cls[align]]: !!align
+    [cls[align]]: !!align,
+    [cls[size]]: !!size
   }
 
   return (

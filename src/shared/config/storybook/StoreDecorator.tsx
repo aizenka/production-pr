@@ -1,6 +1,7 @@
 import { ReducersMapObject } from '@reduxjs/toolkit'
 import { Decorator } from '@storybook/react'
 import { StoreProvider } from 'app/providers/StoreProvider'
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { profileReducer } from 'entities/Profile'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
@@ -8,7 +9,8 @@ import { StateSchema } from '../store'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
-  profile: profileReducer
+  profile: profileReducer,
+  articleDetails: articleDetailsReducer
 }
 
 const StoreDecorator = (

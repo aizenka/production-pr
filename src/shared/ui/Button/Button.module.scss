@@ -1,7 +1,13 @@
 .button {
   cursor: pointer;
   padding: 8px 16px;
-  color: var(--primary-color)
+  color: var(--primary-color);
+
+  &:hover {
+    opacity: 0.8;
+    fill-opacity: 0.8;
+    stroke-opacity: 0.8;
+  }
 }
 
 .text,
