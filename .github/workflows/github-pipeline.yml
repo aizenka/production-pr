@@ -45,7 +45,7 @@ jobs:
         run: yarn test:ui
         if: always()
       - name: Hack Loki update
-        run: loki update --storiesFilter="^entities\\/ArticleDetails Loading|shared\\/Modal Dark|shared\\/Skeleton Circle Light|entities\\/ProfileCard Light|entities\\/ProfileCard Dark|shared\\/Skeleton Light\$" --reactUri="file:./storybook-static"
+        run: npx loki update --storiesFilter="^entities\\/ArticleDetails Loading|shared\\/Modal Dark|shared\\/Skeleton Circle Light|entities\\/ProfileCard Light|entities\\/ProfileCard Dark|shared\\/Skeleton Light\$" --reactUri="file:./storybook-static"
       - name: Re-run UI testing
         run: yarn test:ui
         if: always()
