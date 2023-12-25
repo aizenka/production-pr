@@ -23,7 +23,7 @@ jobs:
       - name: install and start docker
         run: |
           brew install --cask docker
-          open -a Docker
+          open -a Docker.app
 
       - name: check docker daemon
         run: |
@@ -32,7 +32,7 @@ jobs:
             echo "Restarting Docker..."
             osascript -e 'quit app "Docker"'
             sleep 5
-            open -a Docker
+            open -a Docker.app
             # Wait for Docker to be ready
             while ! docker info >/dev/null 2>&1; do sleep 1; done
           fi
