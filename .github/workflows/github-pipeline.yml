@@ -26,8 +26,14 @@ jobs:
           curl -Lo ~/.docker/machine/cache/boot2docker.iso https://github.com/boot2docker/boot2docker/releases/download/v19.03.12/boot2docker.iso
           brew install docker docker-machine
       - name: start docker
-        run: sudo service docker start
-      - name: install modules
+        run: |
+          # Start Docker.app if not already running
+          if ! pgrep -f Docker.app; then
+            open -a /Applications/Docker.app
+            # Wait for Docker to be ready
+            while ! docker info >/dev/null 2>&1; do sleep 1; done
+          fi
+      - name: install node_modules
         run: yarn
       - name: build production
         run: yarn build:production
