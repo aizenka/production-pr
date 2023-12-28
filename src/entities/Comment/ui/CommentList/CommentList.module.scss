@@ -1,0 +1,28 @@
+.commentList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.commentsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.commentSkeleton {
+  padding: 16px;
+  border: 1px solid var(--primary-color);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

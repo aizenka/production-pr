@@ -1,10 +1,14 @@
-import { memo, useCallback, useEffect } from 'react'
+import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { Text } from 'shared/ui'
 import { TextType } from 'shared/ui/Text/Text'
 import { classNames } from 'shared/lib/common'
-import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib/hooks'
+import {
+  useAppDispatch,
+  useDynamicModuleLoader,
+  useInitialEffect
+} from 'shared/lib/hooks'
 import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import {
@@ -49,11 +53,9 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   const validateErrors = useSelector(getProfileValidateErrors)
   const readonly = useSelector(getProfileReadOnly)
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchProfileData())
-    }
-  }, [dispatch])
+  useInitialEffect(() => {
+    dispatch(fetchProfileData())
+  }, [])
 
   const VALIDATE_ERROR_TRASLATES_MAP: Record<ValidateProfileError, string> = {
     [ValidateProfileError.NO_DATA]: t('noProfileData'),

@@ -1,10 +1,14 @@
-import { memo, useEffect } from 'react'
+import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
 import { Avatar, Icon, Skeleton, Text } from 'shared/ui'
 import { TextAlign, TextSize } from 'shared/ui/Text/Text'
-import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib/hooks'
+import {
+  useAppDispatch,
+  useDynamicModuleLoader,
+  useInitialEffect
+} from 'shared/lib/hooks'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
 import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
@@ -69,11 +73,9 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const isLoading = useSelector(getArticleDetailsLoading)
   const error = useSelector(getArticleDetailsError)
 
-  useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
+  useInitialEffect(() => {
+    dispatch(fetchArticleById(id))
+  }, [id])
 
   const getArticleDetailsContent = () => {
     if (isLoading) {

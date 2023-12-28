@@ -1,0 +1,1 @@
+export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema'

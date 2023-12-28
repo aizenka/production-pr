@@ -11,6 +11,7 @@ import { ArticleDetailsSchema } from 'entities/Article'
 import { ProfileSchema } from 'entities/Profile'
 import type { UserSchema } from 'entities/User'
 import type { LoginSchema } from 'features/AuthByUsername'
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 
 export interface StateSchema {
   user: UserSchema,
@@ -18,7 +19,8 @@ export interface StateSchema {
   // async reducers
   loginForm?: LoginSchema,
   profile?: ProfileSchema,
-  articleDetails?: ArticleDetailsSchema
+  articleDetails?: ArticleDetailsSchema,
+  articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
