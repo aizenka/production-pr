@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react'
+import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { Text } from 'shared/ui'
@@ -40,6 +41,7 @@ interface ProfilePageProps {
 
 export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   useDynamicModuleLoader(reducers)
+  const { id: profileId } = useParams<{id: string}>()
   const dispatch = useAppDispatch()
   const { t } = useTranslation(PROFILE_PAGE_NAMESPACE)
 
@@ -54,8 +56,10 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   const readonly = useSelector(getProfileReadOnly)
 
   useInitialEffect(() => {
-    dispatch(fetchProfileData())
-  }, [])
+    if (profileId) {
+      dispatch(fetchProfileData(profileId))
+    }
+  }, [profileId])
 
   const VALIDATE_ERROR_TRASLATES_MAP: Record<ValidateProfileError, string> = {
     [ValidateProfileError.NO_DATA]: t('noProfileData'),

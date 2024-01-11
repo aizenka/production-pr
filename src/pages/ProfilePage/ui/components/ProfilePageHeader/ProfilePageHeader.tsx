@@ -1,8 +1,10 @@
 import {
+  getProfileData,
   getProfileReadOnly,
   profileActions,
   updateProfileData
 } from 'entities/Profile'
+import { getUserAuthData } from 'entities/User'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -20,6 +22,10 @@ interface ProfilePageHeaderProps {
 const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const { t } = useTranslation(PROFILE_PAGE_NAMESPACE)
   const dispatch = useAppDispatch()
+  const authData = useSelector(getUserAuthData)
+  const profileData = useSelector(getProfileData)
+
+  const canEdit = authData?.id === profileData?.id
 
   const readonly = useSelector(getProfileReadOnly)
 
@@ -39,30 +45,36 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     <div className={classNames(cls.profilePageHeader, {}, [className])}>
       <Text title={t('profile')}/>
       {
-        readonly ? (
-          <Button
-            variant={ButtonVariant.OUTLINED}
-            onClick={onEdit}
-          >
-            {t('edit')}
-          </Button>
+        canEdit && (
+          <div>
+            {
+              readonly ? (
+                <Button
+                  variant={ButtonVariant.OUTLINED}
+                  onClick={onEdit}
+                >
+                  {t('edit')}
+                </Button>
+              )
+                : (
+                  <div className={cls.btnGroup}>
+                    <Button
+                      variant={ButtonVariant.OUTLINED_DANGER}
+                      onClick={onEditCancel}
+                    >
+                      {t('cancelEdit')}
+                    </Button>
+                    <Button
+                      variant={ButtonVariant.OUTLINED}
+                      onClick={onSave}
+                    >
+                      {t('save')}
+                    </Button>
+                  </div>
+                )
+            }
+          </div>
         )
-          : (
-            <div className={cls.btnGroup}>
-              <Button
-                variant={ButtonVariant.OUTLINED_DANGER}
-                onClick={onEditCancel}
-              >
-                {t('cancelEdit')}
-              </Button>
-              <Button
-                variant={ButtonVariant.OUTLINED}
-                onClick={onSave}
-              >
-                {t('save')}
-              </Button>
-            </div>
-          )
       }
     </div>
   )

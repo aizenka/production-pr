@@ -20,7 +20,7 @@ export const loginByUsername =
           throw new Error()
         }
 
-        localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(authData))
+        localStorage.setItem(LOCAL_STORAGE_USER_KEY, JSON.stringify(response.data))
         dispatch(userActions.setAuthData(response.data))
 
         return response.data

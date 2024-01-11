@@ -3,15 +3,18 @@ import { Decorator } from '@storybook/react'
 import { StoreProvider } from 'app/providers/StoreProvider'
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { profileReducer } from 'entities/Profile'
+import { addCommentFormReducer } from 'features/AddCommentForm'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
+import { articleDetailCommentsReducer } from 'pages/ArticleDetailsPage'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { StateSchema } from '../store'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
-  articleDetails: articleDetailsReducer
-  // articleDetailsComments: articleDetailCommentsReducer
+  articleDetails: articleDetailsReducer,
+  addCommentForm: addCommentFormReducer,
+  articleDetailsComments: articleDetailCommentsReducer
 }
 
 const StoreDecorator = (

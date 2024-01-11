@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useCallback } from 'react'
 import { ArticleDetails } from 'entities/Article'
 import { classNames } from 'shared/lib/common'
 import cls from './ArticleDetailsPage.module.scss'
@@ -14,7 +14,8 @@ import {
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { useDispatch, useSelector } from 'react-redux'
 import { getArticleCommentsError, getArticleCommentsLoading } from '../selectors/comments'
-import { fetchCommentsByArticleId } from '../model/services'
+import { addCommentForArticle, fetchCommentsByArticleId } from '../model/services'
+import { AddCommentForm } from 'features/AddCommentForm'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -37,6 +38,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     dispatch(fetchCommentsByArticleId(id))
   }, [])
 
+  const onSendComment = useCallback((text: string) => {
+    dispatch(addCommentForArticle(text))
+  }, [dispatch])
+
   return (
     <div className={classNames(cls.articleDetailsPage, {}, [className])}>
       {
@@ -45,6 +50,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         ) : (
           <>
             <ArticleDetails id={id} />
+            <AddCommentForm onSendComment={onSendComment} />
             <CommentList
               comments={comments}
               isLoading={commentsIsLoading}

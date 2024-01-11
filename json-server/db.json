@@ -116,6 +116,48 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "CbViLSl"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "qwe",
+      "id": "waF7L30"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "eqwe",
+      "id": "duTCJPr"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "4343",
+      "id": "SST_7k7"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "eqweqwewqeq",
+      "id": "VStspRT"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "dsadasdasd",
+      "id": "PsAUz1J"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "313",
+      "id": "H_h5l_h"
     }
   ],
   "users": [
@@ -131,17 +173,31 @@
       "username": "user",
       "password": "123",
       "role": "user",
-      "avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/UserTest.io_Logo.jpg"
+      "avatarUrl": "https://ideastest.org.uk/wp-content/uploads/2019/04/default-avatar-1.jpg"
     }
   ],
-  "profile": {
-    "firstName": "asd",
-    "lastName": "dsa",
-    "age": 33,
-    "currency": "USD",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin",
-    "avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/UserTest.io_Logo.jpg"
-  }
+  "profiles": [
+    {
+      "id": "1",
+      "firstName": "asd",
+      "lastName": "dsa",
+      "age": 33,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/UserTest.io_Logo.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "lsllsllslsaa",
+      "lastName": "dsdkdkdkdkdka",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin 123",
+      "avatarUrl": "https://ideastest.org.uk/wp-content/uploads/2019/04/default-avatar-1.jpg"
+    }
+  ]
 }
