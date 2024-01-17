@@ -1,3 +1,8 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
-export { Article, ArticleDetailsSchema } from './model/types'
 export * from './model/selectors/articleDetails'
+export { ArticleList } from './ui/ArticleList/ArticleList'
+export {
+  Article,
+  ArticleDetailsSchema,
+  ArticleListView
+} from './model/types'

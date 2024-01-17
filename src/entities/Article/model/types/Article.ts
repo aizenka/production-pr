@@ -1,3 +1,9 @@
+import { User } from 'entities/User'
+
+export enum ArticleListView {
+  LIST = 'list',
+  GRID = 'grid'
+}
 
 export enum ArticleBlockType {
   CODE = 'CODE',
@@ -42,6 +48,7 @@ export interface Article {
   img: string,
   views: number,
   createdAt: string,
+  user: User,
   type: ArticleType[],
   blocks: ArticleBlock[]
 }

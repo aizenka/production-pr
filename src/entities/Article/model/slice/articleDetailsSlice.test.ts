@@ -9,6 +9,10 @@ const articleData = {
   img: 'ht',
   views: 1,
   createdAt: '13',
+  'user': {
+    'id': '1',
+    'username': 'test user'
+  },
   type: [],
   blocks: []
 }
