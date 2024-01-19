@@ -28,7 +28,7 @@ export const CommentList = memo((props: CommentListProps) => {
     return (
       <>
         {
-          new Array(3).fill(0).map((index) => {
+          new Array(3).fill(0).map((_, index) => {
             return (
               <div
                 key={index}

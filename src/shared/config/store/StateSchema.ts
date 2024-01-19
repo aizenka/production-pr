@@ -12,6 +12,7 @@ import type { UserSchema } from 'entities/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
 import type { LoginSchema } from 'features/AuthByUsername'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
+import { ArticlesPageSchema } from 'pages/ArticlesPage'
 import { AppDispatch } from './store'
 
 export interface StateSchema {
@@ -20,9 +21,10 @@ export interface StateSchema {
   // async reducers
   loginForm?: LoginSchema,
   profile?: ProfileSchema,
+  articlesPage?: ArticlesPageSchema
   articleDetails?: ArticleDetailsSchema,
-  articleDetailsComments?: ArticleDetailsCommentsSchema,
   addCommentForm?: AddCommentFormSchema
+  articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

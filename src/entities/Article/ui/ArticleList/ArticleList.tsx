@@ -14,7 +14,7 @@ interface ArticleListProps {
 const renderSkeletons = (view: ArticleListView) => {
   return new Array(view === ArticleListView.GRID ? 8 : 3)
     .fill(0)
-    .map(index => {
+    .map((_, index) => {
       return (
         <ArticleListItemSkeleton
           key={index}

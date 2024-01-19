@@ -24,7 +24,6 @@ const articleDetailsCommentSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // fetchProfileData
       .addCase(fetchCommentsByArticleId.pending, (state) => {
         state.error = undefined
         state.isLoading = true

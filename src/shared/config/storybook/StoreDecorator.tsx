@@ -6,12 +6,15 @@ import { profileReducer } from 'entities/Profile'
 import { addCommentFormReducer } from 'features/AddCommentForm'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
 import { articleDetailCommentsReducer } from 'pages/ArticleDetailsPage'
+import { articlesPageReducer } from 'pages/ArticlesPage'
+
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { StateSchema } from '../store'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
   profile: profileReducer,
+  articlesPage: articlesPageReducer,
   articleDetails: articleDetailsReducer,
   addCommentForm: addCommentFormReducer,
   articleDetailsComments: articleDetailCommentsReducer
