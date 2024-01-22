@@ -66,8 +66,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <div className={classNames(cls.navbar, {}, [className])}>
+    <header className={classNames(cls.navbar, {}, [className])}>
       {renderNavbarContent()}
-    </div>
+    </header>
   )
 })

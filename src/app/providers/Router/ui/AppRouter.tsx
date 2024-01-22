@@ -11,9 +11,7 @@ const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
     const element = (
       <Suspense fallback={<PageLoader />}>
-        <div className='cotnentPage'>
-          {route.element}
-        </div>
+        {route.element}
       </Suspense>
     )
 

@@ -12,7 +12,7 @@ interface ArticleListProps {
 }
 
 const renderSkeletons = (view: ArticleListView) => {
-  return new Array(view === ArticleListView.GRID ? 8 : 3)
+  return new Array(view === ArticleListView.GRID ? 8 : 4)
     .fill(0)
     .map((_, index) => {
       return (
@@ -31,14 +31,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
     view = ArticleListView.LIST,
     isLoading
   } = props
-
-  if (isLoading) {
-    return (
-      <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-        {renderSkeletons(view)}
-      </div>
-    )
-  }
 
   const renderArticle = (article: Article) => {
     return (
@@ -59,6 +51,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           )
           : null
       }
+      { isLoading && renderSkeletons(view) }
     </div>
   )
 })

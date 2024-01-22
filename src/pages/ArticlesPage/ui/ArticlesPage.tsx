@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { ArticleList, ArticleListView, ArticlesViewSelector } from 'entities/Article'
+import { PageWrapper } from 'shared/ui'
 import { classNames } from 'shared/lib/common'
 import {
   useAppDispatch,
@@ -12,7 +13,7 @@ import {
   getArticlesPageListView,
   getArticlesPageLoading
 } from '../model/selectors/articlesPageSelectors'
-import { fetchArticleList } from '../model/services'
+import { fetchArticleList, fetchArticleListNextPage } from '../model/services'
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -36,16 +37,25 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const view = useSelector(getArticlesPageListView)
 
   useInitialEffect(() => {
-    dispatch(fetchArticleList())
     dispatch(articlesPageActions.initState())
+    dispatch(fetchArticleList({ page: 1 }))
   }, [])
+
+  const onLoadArticles= useCallback(() => {
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleListNextPage())
+    }
+  }, [dispatch])
 
   const onChangeView = useCallback((view: ArticleListView) => {
     dispatch(articlesPageActions.setView(view))
   }, [dispatch])
 
   return (
-    <div className={classNames(cls.articlesPage, {}, [className])}>
+    <PageWrapper
+      className={classNames(cls.articlesPage, {}, [className])}
+      onScrollEnd={onLoadArticles}
+    >
       <ArticlesViewSelector
         view={view}
         onChangeView={onChangeView}
@@ -55,7 +65,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
         view={view}
         isLoading={isLoading}
       />
-    </div>
+    </PageWrapper>
   )
 }
 

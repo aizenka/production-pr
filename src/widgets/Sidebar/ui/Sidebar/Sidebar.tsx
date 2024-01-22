@@ -22,7 +22,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   }
 
   return (
-    <div
+    <aside
       data-testid='sidebar'
       className={classNames(cls.sidebar, {
         [cls.collapsed]: !!collapsed
@@ -38,7 +38,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={cls.navigateItems}>
+      <nav className={cls.navigateItems}>
         {
           sidebarItemsList.map((item) => {
             return (
@@ -50,7 +50,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
             )
           })
         }
-      </div>
+      </nav>
       <div className={cls.switchers}>
         <ThemeSwitcher />
         <LangSwitcher
@@ -58,6 +58,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           shortLng
         />
       </div>
-    </div>
+    </aside>
   )
 })

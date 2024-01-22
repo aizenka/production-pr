@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getArticleCommentsError, getArticleCommentsLoading } from '../selectors/comments'
 import { addCommentForArticle, fetchCommentsByArticleId } from '../model/services'
 import { AddCommentForm } from 'features/AddCommentForm'
-import { Button } from 'shared/ui'
+import { Button, PageWrapper } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
@@ -51,7 +51,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   }, [navigate])
 
   return (
-    <div className={classNames(cls.articleDetailsPage, {}, [className])}>
+    <PageWrapper className={classNames(cls.articleDetailsPage, {}, [className])}>
       <Button
         className={cls.backButton}
         variant={ButtonVariant.OUTLINED}
@@ -59,22 +59,24 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
       >
         {t('goBack')}
       </Button>
-      {
-        !id ? (
-          <div>{t('articleNotFound')}</div>
-        ) : (
-          <>
-            <ArticleDetails id={id} />
-            <AddCommentForm onSendComment={onSendComment} />
-            <CommentList
-              comments={comments}
-              isLoading={commentsIsLoading}
-              error={commentsError}
-            />
-          </>
-        )
-      }
-    </div>
+      <div className={cls.articleDetailsPage}>
+        {
+          !id ? (
+            <div>{t('articleNotFound')}</div>
+          ) : (
+            <>
+              <ArticleDetails id={id} />
+              <AddCommentForm onSendComment={onSendComment} />
+              <CommentList
+                comments={comments}
+                isLoading={commentsIsLoading}
+                error={commentsError}
+              />
+            </>
+          )
+        }
+      </div>
+    </PageWrapper>
   )
 }
 

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
+import { PageWrapper } from 'shared/ui'
 import cls from './NotFoundPage.module.scss'
 
 interface NotFoundPageProps {
@@ -10,8 +11,8 @@ export default function NotFoundPage ({ className }: NotFoundPageProps) {
   const { t } = useTranslation()
 
   return (
-    <div className={classNames(cls.notFoundPage, {}, [className])}>
+    <PageWrapper className={classNames(cls.notFoundPage, {}, [className])}>
       {t('notFoundPage')}
-    </div>
+    </PageWrapper>
   )
 }

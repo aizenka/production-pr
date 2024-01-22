@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { Text } from 'shared/ui'
+import { PageWrapper, Text } from 'shared/ui'
 import { TextType } from 'shared/ui/Text/Text'
 import { classNames } from 'shared/lib/common'
 import {
@@ -103,7 +103,7 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   }, [dispatch])
 
   return (
-    <div className={classNames(cls.profilePage, {}, [className])}>
+    <PageWrapper className={classNames(cls.profilePage, {}, [className])}>
       <ProfilePageHeader />
       {
         !!validateErrors?.length && (
@@ -132,6 +132,6 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
         onChangeCurrency={onChangeCurrency}
         onChangeCountry={onChangeCountry}
       />
-    </div>
+    </PageWrapper>
   )
 })
