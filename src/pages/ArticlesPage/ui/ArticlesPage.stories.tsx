@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { StoreDecorator } from 'shared/config/storybook'
 
 import ArticlesPage from './ArticlesPage'
 
@@ -12,8 +13,9 @@ const meta: Meta<typeof ArticlesPage> = {
 export default meta
 type Story = StoryObj<typeof ArticlesPage>;
 
+// TODO: add mock data
 
 export const Light: Story = {
   args: {},
-  decorators: []
+  decorators: [StoreDecorator({})]
 }
