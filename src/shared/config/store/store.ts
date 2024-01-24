@@ -9,9 +9,9 @@ import $api from 'shared/api'
 import { createReducerManager } from './reducerManager'
 import { StateSchema } from './StateSchema'
 
-export type AppDispatch = ReturnType<typeof createRudexStore>['dispatch']
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
 
-export function createRudexStore (
+export function createReduxStore (
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>
 ) {

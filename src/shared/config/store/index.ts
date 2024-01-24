@@ -1,4 +1,4 @@
-export { createRudexStore } from './store'
+export { createReduxStore } from './store'
 export type {
   StateSchema,
   ReduxStoreWithManager,

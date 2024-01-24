@@ -13,7 +13,7 @@ import {
   getArticlesPageListView,
   getArticlesPageLoading
 } from '../model/selectors/articlesPageSelectors'
-import { fetchArticleList, fetchArticleListNextPage } from '../model/services'
+import { fetchArticleListNextPage, initArticlesPage } from '../model/services'
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -30,15 +30,14 @@ const reducers: ReducersList = {
 }
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  useDynamicModuleLoader(reducers)
+  useDynamicModuleLoader(reducers, { removeAfterUnmount: false })
   const dispatch = useAppDispatch()
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageLoading)
   const view = useSelector(getArticlesPageListView)
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState())
-    dispatch(fetchArticleList({ page: 1 }))
+    dispatch(initArticlesPage())
   }, [])
 
   const onLoadArticles= useCallback(() => {

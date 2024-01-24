@@ -1,7 +1,7 @@
 import { ReducersMapObject } from '@reduxjs/toolkit'
 import { ReactNode } from 'react'
 import { Provider } from 'react-redux'
-import { createRudexStore, StateSchema } from 'shared/config/store'
+import { createReduxStore, StateSchema } from 'shared/config/store'
 
 interface StoreProviderProps {
   children?: ReactNode,
@@ -17,7 +17,7 @@ export const StoreProvider = (props: StoreProviderProps) => {
   } = props
 
   return (
-    <Provider store={createRudexStore(initialState, asyncReducers)}>
+    <Provider store={createReduxStore(initialState, asyncReducers)}>
       {children}
     </Provider>
   )

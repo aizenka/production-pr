@@ -24,3 +24,7 @@ export const getArticlesPageListLimit = (state:StateSchema) => {
 export const getArticlesPageListHasMore =(state:StateSchema) => {
   return state.articlesPage?.hasMore
 }
+
+export const getArticlesPageInited =(state:StateSchema) => {
+  return state.articlesPage?._inited
+}

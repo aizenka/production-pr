@@ -25,9 +25,15 @@ export default function useDynamicModuleLoader (
   const dispatch = useAppDispatch()
 
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap()
+
     Object.entries(reducers).forEach(([name, reducer]) => {
-      store.reducerManager.add(name as StateSchemaKey, reducer)
-      dispatch({ type: `@INIT ${name} reducer` })
+      const isMounted = !!mountedReducers[name as StateSchemaKey]
+
+      if (!isMounted) {
+        store.reducerManager.add(name as StateSchemaKey, reducer)
+        dispatch({ type: `@INIT ${name} reducer` })
+      }
     })
 
     return () => {
