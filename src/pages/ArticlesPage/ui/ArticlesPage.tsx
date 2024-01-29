@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { ArticleList, ArticleListView, ArticlesViewSelector } from 'entities/Article'
-import { PageWrapper } from 'shared/ui'
+import { PageWrapper } from 'widgets/PageWrapper/PageWrapper'
 import { classNames } from 'shared/lib/common'
 import {
   useAppDispatch,

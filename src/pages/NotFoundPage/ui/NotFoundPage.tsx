@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
-import { PageWrapper } from 'shared/ui'
+import { PageWrapper } from 'widgets/PageWrapper/PageWrapper'
 import cls from './NotFoundPage.module.scss'
 
 interface NotFoundPageProps {
