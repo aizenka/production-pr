@@ -13,10 +13,12 @@ import { AddCommentFormSchema } from 'features/AddCommentForm'
 import type { LoginSchema } from 'features/AuthByUsername'
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage'
 import { ArticlesPageSchema } from 'pages/ArticlesPage'
+import { UISchema } from 'widgets/PageWrapper'
 import { AppDispatch } from './store'
 
 export interface StateSchema {
   user: UserSchema,
+  ui: UISchema
 
   // async reducers
   loginForm?: LoginSchema,

@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ABOUT_PAGE_NAMESPACE } from 'shared/constants/i18n'
-import { PageWrapper } from 'widgets/PageWrapper/PageWrapper'
+import { PageWrapper } from 'widgets/PageWrapper'
 
 // interface AboutPageProps {
 //   className?: string
