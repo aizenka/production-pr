@@ -5,6 +5,10 @@ const useThrottle = (cb: (...args: any[]) => void, delay: number) => {
   const throttleRef = useRef(false)
   const timeoutRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
 
+  useEffect(() => () => {
+    clearTimeout(timeoutRef.current)
+  }, [])
+
   const throttledCallback =  useCallback((...args: any[]) => {
     if (!throttleRef.current) {
       cb(...args)
@@ -15,10 +19,6 @@ const useThrottle = (cb: (...args: any[]) => void, delay: number) => {
       }, delay)
     }
   }, [cb, delay])
-
-  useEffect(() => () => {
-    clearTimeout(timeoutRef.current)
-  }, [])
 
   return throttledCallback
 }
