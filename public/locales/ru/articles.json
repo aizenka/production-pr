@@ -1,3 +1,16 @@
 {
-  "readMore": "Читать далее..."
+  "readMore": "Читать далее...",
+  "sortBy": "Сортировать По",
+  "search": "Поиск",
+  "ascending": "возрастанию",
+  "descending": "убыванию",
+  "by": "По",
+  "creationDate": "дате создания",
+  "title": "названию",
+  "views": "просмотрам",
+  "allArticles": "Все статьи",
+  "IT": "Айти",
+  "economics": "Экономика",
+  "science": "Наука",
+  "articlesNotFoundYet": "Статьи не найдены."
 }

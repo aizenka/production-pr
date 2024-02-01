@@ -2,21 +2,29 @@ import { ChangeEvent, memo, useMemo } from 'react'
 import { classNames } from 'shared/lib/common'
 import cls from './Select.module.scss'
 
-export interface SelectOption {
-  value: string
+export interface SelectOption<T extends string> {
+  value: T
   content: string
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string,
   readonly?: boolean
   label?: string,
-  options?: SelectOption[]
-  value?: string,
-  onChange?: (value: string) => void
+  options?: SelectOption<T>[]
+  value?: T,
+  onChange?: (value: T) => void
 }
 
-export const Select = memo((props: SelectProps) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const typedMemo: <Component extends React.FC<any>>(component: Component,
+  compare?: (
+    prevProps: React.ComponentPropsWithoutRef<Component>,
+    newProps: React.ComponentPropsWithoutRef<Component>
+  ) => boolean
+) => Component = memo
+
+export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
   const {
     className,
     readonly,
@@ -41,7 +49,7 @@ export const Select = memo((props: SelectProps) => {
   }, [options])
 
   const handleOnChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange && onChange(e.target.value)
+    onChange && onChange(e.target.value as T)
   }
 
   return (

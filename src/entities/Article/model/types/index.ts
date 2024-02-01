@@ -1,2 +1,7 @@
-export { Article, ArticleListView } from './Article'
+export {
+  Article,
+  ArticleListView,
+  ArticleSortField,
+  ArticleType
+} from './Article'
 export { ArticleDetailsSchema } from './ArticleDetailsSchema'

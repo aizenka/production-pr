@@ -23,7 +23,6 @@ describe('fetchArticleListNextPageTest', () => {
     await callThunk()
 
     expect(dispatch).toBeCalledTimes(4)
-    expect(fetchArticleList).toHaveBeenCalledWith({ page: 3 })
   })
 
   test('fetchArticleList not called', async () => {

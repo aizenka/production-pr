@@ -3,7 +3,7 @@ import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook'
 import { Text } from '../Text/Text'
 
-import { Card } from './Card'
+import { Card, CardVariant } from './Card'
 
 const meta: Meta<typeof Card> = {
   title: 'shared/Card',
@@ -27,4 +27,10 @@ export const Light: Story = {
 export const Dark: Story = {
   args: {},
   decorators: [ThemeDecorator(Theme.DARK)]
+}
+
+export const Outlined: Story = {
+  args: {
+    variant: CardVariant.OUTLINED
+  }
 }

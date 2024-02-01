@@ -1,6 +1,6 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import { ArticleList, ArticleListView, ArticlesViewSelector } from 'entities/Article'
+import { ArticleList } from 'entities/Article'
 import { PageWrapper } from 'widgets/PageWrapper'
 import { classNames } from 'shared/lib/common'
 import {
@@ -15,11 +15,12 @@ import {
 } from '../model/selectors/articlesPageSelectors'
 import { fetchArticleListNextPage, initArticlesPage } from '../model/services'
 import {
-  articlesPageActions,
   articlesPageReducer,
   getArticles
 } from '../model/slice/articlesPageSlice'
 import cls from './ArticlesPage.module.scss'
+import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters'
+import { useSearchParams } from 'react-router-dom'
 
 interface ArticlesPageProps {
   className?: string
@@ -35,9 +36,10 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const articles = useSelector(getArticles.selectAll)
   const isLoading = useSelector(getArticlesPageLoading)
   const view = useSelector(getArticlesPageListView)
+  const [searchParams] = useSearchParams()
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage())
+    dispatch(initArticlesPage(searchParams))
   }, [])
 
   const onLoadArticles= useCallback(() => {
@@ -46,19 +48,12 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     }
   }, [dispatch])
 
-  const onChangeView = useCallback((view: ArticleListView) => {
-    dispatch(articlesPageActions.setView(view))
-  }, [dispatch])
-
   return (
     <PageWrapper
       className={classNames(cls.articlesPage, {}, [className])}
       onScrollEnd={onLoadArticles}
     >
-      <ArticlesViewSelector
-        view={view}
-        onChangeView={onChangeView}
-      />
+      <ArticlesPageFilters />
       <ArticleList
         articles={articles}
         view={view}

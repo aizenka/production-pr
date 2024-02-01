@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
-import { ThemeDecorator } from 'shared/config/storybook'
+import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 
 import AboutPage from './AboutPage'
 
@@ -8,7 +8,8 @@ const meta: Meta<typeof AboutPage> = {
   title: 'pages/AboutPage',
   component:  AboutPage,
   parameters: {},
-  argTypes: {}
+  argTypes: {},
+  decorators: [StoreDecorator({})]
 }
 
 export default meta
