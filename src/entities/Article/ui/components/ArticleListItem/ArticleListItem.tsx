@@ -1,9 +1,8 @@
-import { memo, useCallback } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Avatar, Button, Card, Icon, Text } from 'shared/ui'
+import { AppLink, Avatar, Button, Card, Icon, Text } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
 import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
@@ -22,17 +21,14 @@ interface ArticleListItemProps {
   className?: string,
   article: Article,
   view: ArticleListView
+  openInNewWindow?: boolean
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view } = props
+  const { className, article, view, openInNewWindow } = props
   const { t } = useTranslation(ARTICLES_NAMESPACE)
-  const navigate = useNavigate()
 
-  const onOpenArticle = useCallback(() => {
-    navigate(`${RoutePath.articleDetails}${article.id}`)
-  }, [navigate, article.id])
-
+  const target:HTMLAttributeAnchorTarget = openInNewWindow ? '_blank' : '_self'
 
   const types = (
     <Text
@@ -62,7 +58,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           <div className={cls.header}>
             <div className={cls.userInfo}>
               <Avatar
-                src={article.user.avatarUrl}
+                src={article.user?.avatarUrl}
                 alt='user avatar'
                 size={30}
               />
@@ -88,12 +84,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             )
           }
           <div className={cls.footer}>
-            <Button
-              variant={ButtonVariant.OUTLINED}
-              onClick={onOpenArticle}
+            <AppLink
+              to={`${RoutePath.articleDetails}${article.id}`}
+              target={target}
             >
-              {t('readMore')}
-            </Button>
+              <Button variant={ButtonVariant.OUTLINED}>
+                {t('readMore')}
+              </Button>
+            </AppLink>
             <div className={cls.viewsWrapper}>
               {views}
             </div>
@@ -104,14 +102,15 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   }
 
   return (
-    <div className={classNames(cls.articleListItem,
-      {},
-      [className, cls[view]]
-    )}>
-      <Card
-        className={cls.card}
-        onClick={onOpenArticle}
-      >
+    <AppLink
+      className={classNames(cls.articleListItem,
+        {},
+        [className, cls[view]]
+      )}
+      to={`${RoutePath.articleDetails}${article.id}`}
+      target={target}
+    >
+      <Card className={cls.card}>
         <div className={cls.imageWrapper}>
           <img
             className={cls.img}
@@ -134,6 +133,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           text={article.title}
         />
       </Card>
-    </div>
+    </AppLink>
   )
 })

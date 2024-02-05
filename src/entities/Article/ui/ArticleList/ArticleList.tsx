@@ -11,7 +11,8 @@ interface ArticleListProps {
   className?: string,
   articles: Article[],
   isLoading?: boolean,
-  view?: ArticleListView
+  view?: ArticleListView,
+  openInNewWindow?: boolean
 }
 
 const renderSkeletons = (view: ArticleListView) => {
@@ -32,7 +33,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
     className,
     articles = [],
     view = ArticleListView.LIST,
-    isLoading
+    isLoading,
+    openInNewWindow
   } = props
   const { t } = useTranslation(ARTICLES_NAMESPACE)
 
@@ -42,6 +44,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         key={article.id}
         article={article}
         view={view}
+        openInNewWindow={openInNewWindow}
       />
     )
   }

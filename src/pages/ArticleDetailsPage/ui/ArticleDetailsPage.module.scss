@@ -1,9 +1,20 @@
 .articleDetailsPage {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
 
 .backButton {
   width: fit-content;
+}
+
+.recommendationsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recommendations {
+  flex-wrap: nowrap !important;
+  overflow: auto hidden;
 }
