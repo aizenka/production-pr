@@ -10,6 +10,7 @@ export enum TextSize {
 
 export enum TextType {
   PRIMARY = 'primary',
+  INVERTED = 'inverted',
   ERROR = 'error'
 }
 

@@ -34,6 +34,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const renderNavbarContent = () => {
     if (authData) {
       return (
+        // TODO: add logo
         <Button
           className={cls.links}
           variant={ButtonVariant.TEXT_INVERTED}

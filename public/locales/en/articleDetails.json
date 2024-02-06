@@ -2,5 +2,7 @@
   "articleNotFound": "Article not found",
   "errorLoadingArticle": "There was an error loading the article",
   "goBack": "Back to list",
-  "recommended": "Recommended"
+  "recommended": "Recommended",
+  "edit": "Edit",
+  "createArticle": "Create new article"
 }
