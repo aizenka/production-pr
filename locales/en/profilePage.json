@@ -1,0 +1,22 @@
+{
+  "profile": "Profile",
+  "edit": "Edit",
+  "typeName": "Type name",
+  "typeLastName": "Type lastname",
+  "typeAge": "Type age",
+  "typeCity": "Type city",
+  "typeAvatarUrl": "Type avatar url",
+  "typeUsername": "Type username",
+  "selectCountry": "Select country",
+  "selectCurrency": "Select currency",
+  "profileLoadingErrorTitle": "There was an error loading profile",
+  "profileLoadingErrorDescription": "Try refreshing the page",
+  "cancelEdit": "Cancel",
+  "save": "Save",
+  "noProfileData": "No profile data avialable",
+  "serverError": "Server error with saving",
+  "incorrectUserData": "First and Last name are required",
+  "incorrectAge": "Incorrect age",
+  "incorrectCity": "Incorrect city",
+  "incorrectUsername": "Incorrect username"
+}

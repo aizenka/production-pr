@@ -1,0 +1,17 @@
+{
+  "translateButton": "Translate",
+  "notFoundPage": "Page not found",
+  "pageError": "Something went wrong",
+  "pageErrorReloadButton": "Reload page",
+  "shortLng": "Ru",
+  "mainPage": "Main page",
+  "aboutPage": "About application",
+  "profilePage": "Profile",
+  "articles": "Articles",
+  "login": "Log-in",
+  "logout": "Logout",
+  "EnterUsername": "Enter username",
+  "EnterPassword": "Enter password",
+  "authForm": "Auth Form",
+  "incorrectAuthData": "You entered an incorrect username or password"
+}

@@ -1,0 +1,22 @@
+{
+  "profile": "Профиль",
+  "edit": "Редактировать",
+  "typeName": "Введите имя",
+  "typeLastName": "Введите фамилию",
+  "typeAge": "Введите возраст",
+  "typeCity": " Введите город",
+  "selectCountry": "Выберите страну",
+  "selectCurrency": "Выберите валюту",
+  "typeAvatarUrl": "Вставьте ссылку на аватар",
+  "typeUsername": "Введите имя пользователя",
+  "profileLoadingErrorTitle": "Произошла ошибка при загрузке профиля",
+  "profileLoadingErrorDescription": "Попробуйте обновить страницу",
+  "cancelEdit": "Отменить",
+  "save": "Сохранить",
+  "noProfileData": "Отсутствуют данные профиля",
+  "serverError": "Серверная ошибка при сохранении",
+  "incorrectUserData": "Имя и фамилия обязательны",
+  "incorrectAge": "Некорректный возраст",
+  "incorrectCity": "Некорретный город",
+  "incorrectUsername": "Некорретный username"
+}
