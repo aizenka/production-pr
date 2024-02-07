@@ -2,6 +2,7 @@
   "name": "production-pr",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://aizenka.github.io/production-pr/",
   "scripts": {
     "start": "webpack serve --env port=3000",
     "start:dev:server": "node ./json-server/index.js",
