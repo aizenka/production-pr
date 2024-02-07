@@ -44,3 +44,5 @@ jobs:
       - name: UI testing
         run: yarn test:ui
         if: always()
+      # - name: deploy
+      #   run: yarn deploy
