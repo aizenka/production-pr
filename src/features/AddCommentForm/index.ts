@@ -6,6 +6,5 @@ export {
 } from './model/slice/addCommentFormSlice'
 import { AddCommentFormProps } from './ui/AddCommentForm'
 
-export const AddCommentForm = lazy<FC<AddCommentFormProps>>(() => new Promise(resolve => {
-  setTimeout(() => resolve(import('./ui/AddCommentForm')), 1500)
-}))
+// eslint-disable-next-line max-len
+export const AddCommentForm = lazy<FC<AddCommentFormProps>>(() => import('./ui/AddCommentForm'))
