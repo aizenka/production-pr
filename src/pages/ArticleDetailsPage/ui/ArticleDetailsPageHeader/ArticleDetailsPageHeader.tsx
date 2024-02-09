@@ -1,4 +1,3 @@
-import { getCanEditArticle } from '../../selectors/article'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -7,8 +6,9 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
-import cls from './ArticleDetailsPageHeader.module.scss'
 import { getArticleDetailsData } from 'entities/Article'
+import { getCanEditArticle } from '../../selectors/article'
+import cls from './ArticleDetailsPageHeader.module.scss'
 
 interface ArticleDetailsPageHeaderProps {
   className?: string

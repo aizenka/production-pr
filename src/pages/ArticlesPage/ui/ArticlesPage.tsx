@@ -1,8 +1,9 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import { ArticleList } from 'entities/Article'
+import { useSearchParams } from 'react-router-dom'
 import { PageWrapper } from 'widgets/PageWrapper'
 import { classNames } from 'shared/lib/common'
+import { ArticleList } from 'entities/Article'
 import {
   useAppDispatch,
   useDynamicModuleLoader,
@@ -18,9 +19,8 @@ import {
   articlesPageReducer,
   getArticles
 } from '../model/slice/articlesPageSlice'
-import cls from './ArticlesPage.module.scss'
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters'
-import { useSearchParams } from 'react-router-dom'
+import cls from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {
   className?: string

@@ -1,12 +1,12 @@
-import { Comment } from '../../model/types/Comment'
 import { memo } from 'react'
-import { classNames } from 'shared/lib/common'
-import cls from './CommentList.module.scss'
 import { useTranslation } from 'react-i18next'
+import { classNames } from 'shared/lib/common'
 import { COMMENTS_NAMESPACE } from 'shared/constants/i18n'
-import { CommentCard } from '../CommentCard/CommentCard'
 import { Skeleton, Text } from 'shared/ui'
 import { TextAlign } from 'shared/ui/Text/Text'
+import { CommentCard } from '../CommentCard/CommentCard'
+import { Comment } from '../../model/types/Comment'
+import cls from './CommentList.module.scss'
 
 interface CommentListProps {
   className?: string,

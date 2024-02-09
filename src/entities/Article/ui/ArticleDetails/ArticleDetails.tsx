@@ -4,15 +4,20 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
 import { Avatar, Icon, Skeleton, Text } from 'shared/ui'
 import { TextAlign, TextSize } from 'shared/ui/Text/Text'
+import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
+import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
+import CalendarIcon from 'shared/assets/icons/icon-calendar.svg'
+import {
+  ArticleCodeBlockComponent,
+  ArticleImageBlockComponent,
+  ArticleTextBlockComponent
+} from '../components'
 import {
   useAppDispatch,
   useDynamicModuleLoader,
   useInitialEffect
 } from 'shared/lib/hooks'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
-import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
-import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
-import CalendarIcon from 'shared/assets/icons/icon-calendar.svg'
 import { fetchArticleById } from '../../model/services'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { ArticleBlock, ArticleBlockType } from '../../model/types/Article'
@@ -22,11 +27,6 @@ import {
   getArticleDetailsError
 } from '../../model/selectors/articleDetails'
 import cls from './ArticleDetails.module.scss'
-import {
-  ArticleCodeBlockComponent,
-  ArticleImageBlockComponent,
-  ArticleTextBlockComponent
-} from '../components'
 
 interface ArticleDetailsProps {
   className?: string

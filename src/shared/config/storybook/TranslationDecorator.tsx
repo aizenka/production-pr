@@ -1,5 +1,5 @@
-import { Decorator } from '@storybook/react'
 import { I18nextProvider } from 'react-i18next'
+import { Decorator } from '@storybook/react'
 import i18n from '../i18n/init'
 
 const TranslationDecorator: Decorator = (Story) => {

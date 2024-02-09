@@ -10,9 +10,11 @@ import {
   ArticleType
 } from 'entities/Article'
 import { classNames } from 'shared/lib/common'
-import { useAppDispatch, useDebounce } from 'shared/lib/hooks'
 import { Card, Input } from 'shared/ui'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
+import { SortOrder } from 'shared/types'
+import { TabItem } from 'shared/ui/Tabs/Tabs'
+import { useAppDispatch, useDebounce } from 'shared/lib/hooks'
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList'
 import {
   getArticlesPageListView,
@@ -22,8 +24,6 @@ import {
   getArticlesPageSort
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
-import { SortOrder } from 'shared/types'
-import { TabItem } from 'shared/ui/Tabs/Tabs'
 import cls from './ArticlesPageFilters.module.scss'
 
 interface ArticlesPageFiltersProps {

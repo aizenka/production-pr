@@ -1,33 +1,33 @@
 import { memo, useCallback } from 'react'
-import { ArticleDetails, ArticleList, ArticleListView } from 'entities/Article'
-import { classNames } from 'shared/lib/common'
-import cls from './ArticleDetailsPage.module.scss'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import { ArticleDetails, ArticleList, ArticleListView } from 'entities/Article'
+import { classNames } from 'shared/lib/common'
 import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
 import { CommentList } from 'entities/Comment'
+import { AddCommentForm } from 'features/AddCommentForm'
+import { PageWrapper } from 'widgets/PageWrapper'
+import { Text } from 'shared/ui'
+import { TextSize } from 'shared/ui/Text/Text'
 import { useDynamicModuleLoader, useInitialEffect } from 'shared/lib/hooks'
-import { getArticleComments } from '../model/slice/articleDetailsCommentsSlice'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
-import { useDispatch, useSelector } from 'react-redux'
+import { getArticleComments } from '../model/slice/articleDetailsCommentsSlice'
 import { getArticleCommentsError, getArticleCommentsLoading } from '../selectors/comments'
 import {
   addCommentForArticle,
   fetchArticleRecommendations,
   fetchCommentsByArticleId
 } from '../model/services'
-import { AddCommentForm } from 'features/AddCommentForm'
-import { PageWrapper } from 'widgets/PageWrapper'
-import { Text } from 'shared/ui'
 import {
   getArticleRecommendations
 } from '../model/slice/articleDetailsRecomendationsSlice'
 import { getArticleDetailsRecommendationsLoading } from '../selectors/recommendations'
-import { TextSize } from 'shared/ui/Text/Text'
 import { articleDetailsPageReducer } from '../model/slice'
 import {
   ArticleDetailsPageHeader
 } from './ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+import cls from './ArticleDetailsPage.module.scss'
 
 interface ArticleDetailsPageProps {
   className?: string

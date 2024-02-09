@@ -1,9 +1,9 @@
-import { Comment } from '../../model/types/Comment'
 import { memo } from 'react'
 import { classNames } from 'shared/lib/common'
-import cls from './CommentCard.module.scss'
 import { AppLink, Avatar, Text } from 'shared/ui'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { Comment } from '../../model/types/Comment'
+import cls from './CommentCard.module.scss'
 
 interface CommentCardProps {
   className?: string,

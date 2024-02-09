@@ -1,18 +1,18 @@
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { getUserAuthData } from 'entities/User'
 import {
   getProfileData,
   getProfileReadOnly,
   profileActions,
   updateProfileData
 } from 'entities/Profile'
-import { getUserAuthData } from 'entities/User'
-import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
 import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
-import { useAppDispatch } from 'shared/lib/hooks'
 import { Button, Text } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
+import { useAppDispatch } from 'shared/lib/hooks'
 import cls from './ProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {

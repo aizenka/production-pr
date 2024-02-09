@@ -6,13 +6,7 @@ import { PageWrapper } from 'widgets/PageWrapper'
 import { Text } from 'shared/ui'
 import { TextType } from 'shared/ui/Text/Text'
 import { classNames } from 'shared/lib/common'
-import {
-  useAppDispatch,
-  useDynamicModuleLoader,
-  useInitialEffect
-} from 'shared/lib/hooks'
 import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import {
   fetchProfileData,
   getProfileError,
@@ -30,6 +24,12 @@ import {
 import { Currency } from 'entities/Currency'
 import { Country } from 'entities/Country'
 import { ProfilePageHeader } from './components'
+import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+import {
+  useAppDispatch,
+  useDynamicModuleLoader,
+  useInitialEffect
+} from 'shared/lib/hooks'
 import cls from './ProfilePage.module.scss'
 
 const reducers: ReducersList = {

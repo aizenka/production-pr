@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { Text } from 'shared/ui'
 import { classNames } from 'shared/lib/common'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
-import { Article, ArticleListView } from '../../model/types/Article'
 import { ArticleListItem, ArticleListItemSkeleton } from '../components'
+import { Article, ArticleListView } from '../../model/types/Article'
 import cls from './ArticleList.module.scss'
 
 interface ArticleListProps {
@@ -28,6 +28,7 @@ const renderSkeletons = (view: ArticleListView) => {
     })
 }
 
+// TODO: refactor with virtualized list
 export const ArticleList = memo((props: ArticleListProps) => {
   const {
     className,

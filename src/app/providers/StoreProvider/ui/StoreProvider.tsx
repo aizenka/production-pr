@@ -1,6 +1,6 @@
-import { ReducersMapObject } from '@reduxjs/toolkit'
 import { ReactNode } from 'react'
 import { Provider } from 'react-redux'
+import { ReducersMapObject } from '@reduxjs/toolkit'
 import { createReduxStore, StateSchema } from 'shared/config/store'
 
 interface StoreProviderProps {
