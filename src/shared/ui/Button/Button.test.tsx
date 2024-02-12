@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Button } from 'shared/ui'
-import { ButtonVariant } from 'shared/ui/Button/Button'
+import { Button, ButtonVariant } from './Button'
 
 describe('Button', () => {
   test('text \'test\' to be in the document', () => {

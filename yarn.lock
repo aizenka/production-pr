@@ -6606,6 +6606,13 @@ escodegen@^2.0.0, escodegen@^2.1.0:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-plugin-feature-sliced-design-path-checker@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-feature-sliced-design-path-checker/-/eslint-plugin-feature-sliced-design-path-checker-1.1.0.tgz#5ffcb212c4b6670313ed5c2c1a1a9765aa92cc43"
+  integrity sha512-pad/7ULy6F4MIJU//11DF5/OdSJal54zs1KolpQeRinlnEDQLWeiUnM5onFWVc3Fe7sQowx3CpLmiskxKxVf6g==
+  dependencies:
+    requireindex "^1.2.0"
+
 eslint-plugin-i18next@5.1.2:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-i18next/-/eslint-plugin-i18next-5.1.2.tgz#322994c99ceddc365a888c4e5fcaf02abc43f1d1"
@@ -11224,7 +11231,7 @@ require-from-string@^2.0.2:
   resolved "https://registry.yarnpkg.com/require-from-string/-/require-from-string-2.0.2.tgz#89a7fdd938261267318eafe14f9c32e598c36909"
   integrity sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==
 
-requireindex@^1.1.0:
+requireindex@^1.1.0, requireindex@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/requireindex/-/requireindex-1.2.0.tgz#3463cdb22ee151902635aa6c9535d4de9c2ef1ef"
   integrity sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==

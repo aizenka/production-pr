@@ -41,7 +41,8 @@
     "@typescript-eslint",
     "i18next",
     "jsx-a11y",
-    "eslint-plugin-import-helpers"
+    "import-helpers",
+    "feature-sliced-design-path-checker"
   ],
   "rules": {
     "quotes": [
@@ -140,6 +141,7 @@
           "/.module.scss/"
         ]
       }
-    ]
+    ],
+    "feature-sliced-design-path-checker/path-checker": "error"
   }
 }

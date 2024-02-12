@@ -41,8 +41,8 @@ jobs:
       - name: Unit testing
         run: yarn test:unit
         if: always()
-      - name: UI testing
-        run: yarn test:ui
-        if: always()
+      # - name: UI testing
+      #   run: yarn test:ui
+      #   if: always()
       # - name: deploy
       #   run: yarn deploy

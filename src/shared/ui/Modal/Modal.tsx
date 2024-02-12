@@ -9,7 +9,7 @@ import {
 } from 'react'
 import { classNames } from 'shared/lib/common'
 import { ClsMods } from 'shared/lib/common/classNames/classNames'
-import { Portal } from 'shared/ui'
+import { Portal } from '../Portal/Portal'
 import cls from './Modal.module.scss'
 
 interface ModalProps {
