@@ -54,7 +54,10 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
       className={classNames(cls.articlesPage, {}, [className])}
       onScrollEnd={onLoadArticles}
     >
-      <Column gap={24}>
+      <Column
+        gap={24}
+        style={{ width: '100%' }}
+      >
         <ArticlesPageFilters />
         <ArticleList
           articles={articles}
