@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
-import { Button } from 'shared/ui'
+import { Button, Column } from 'shared/ui'
 import cls from './PageError.module.scss'
 
 interface PageErrorProps {
@@ -17,7 +17,11 @@ export const PageError = ({ className }: PageErrorProps) => {
   }
 
   return (
-    <div className={classNames(cls.pageError, {}, [className])}>
+    <Column
+      className={classNames(cls.pageError, {}, [className])}
+      align='center'
+      vAlign='center'
+    >
       <p>
         {t('pageError')}
       </p>
@@ -27,6 +31,6 @@ export const PageError = ({ className }: PageErrorProps) => {
       >
         {t('pageErrorReloadButton')}
       </Button>
-    </div>
+    </Column>
   )
 }

@@ -9,6 +9,7 @@ import {
 } from 'react'
 import { classNames } from 'shared/lib/common'
 import { ClsMods } from 'shared/lib/common/classNames/classNames'
+import { Row } from '../Flex'
 import cls from './Input.module.scss'
 
 type HTMLInputProps = Omit<
@@ -76,7 +77,10 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-    <div className={classNames(cls.inputWrapper, mods, [className])}>
+    <Row
+      className={classNames('', mods, [className])}
+      gap={8}
+    >
       {
         placeholder && (
           <div>
@@ -106,6 +110,6 @@ export const Input = memo((props: InputProps) => {
           )
         }
       </div>
-    </div>
+    </Row>
   )
 })

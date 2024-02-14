@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
-import { Avatar, Icon, Skeleton, Text } from 'shared/ui'
+import { Avatar, Column, Icon, Row, Skeleton, Text } from 'shared/ui'
 import { TextAlign, TextSize } from 'shared/ui/Text/Text'
 import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
 import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
@@ -80,24 +80,24 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const getArticleDetailsContent = () => {
     if (isLoading) {
       return (
-        <div className={cls.contentWrapper}>
+        <Column gap={24}>
           <Skeleton
             className={cls.avatar}
             width={200}
             height={200}
             borderRadius={'50%'}
           />
-          <div className={cls.skeletonInfoWrapper}>
+          <Column gap={8}>
             <Skeleton width={300} height={32} />
             <Skeleton width={600} height={24} />
-          </div>
-          <div className={cls.skeletonInfoWrapper}>
+          </Column>
+          <Column gap={8}>
             <Skeleton width={100} height={22} />
             <Skeleton width={200} height={22} />
-          </div>
+          </Column>
           <Skeleton width={'100%'} height={200} />
           <Skeleton width={'100%'} height={200} />
-        </div>
+        </Column>
       )
     } else if (error) {
       return (
@@ -108,7 +108,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
       )
     } else {
       return (
-        <div className={cls.contentWrapper}>
+        <Column gap={24}>
           <Avatar
             className={cls.avatar}
             size={200}
@@ -120,18 +120,24 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
             text={article?.subtitle}
             size={TextSize.L}
           />
-          <div className={cls.infoWrapper}>
-            <div className={cls.articleInfo}>
+          <Column gap={8}>
+            <Row
+              vAlign='center'
+              gap={8}
+            >
               <Icon Svg={EyeIcon}/>
               <Text text={String(article?.views)} />
-            </div>
-            <div className={cls.articleInfo}>
+            </Row>
+            <Row
+              vAlign='center'
+              gap={8}
+            >
               <Icon Svg={CalendarIcon}/>
               <Text text={article?.createdAt} />
-            </div>
-          </div>
+            </Row>
+          </Column>
           {article?.blocks.map(renderBlock)}
-        </div>
+        </Column>
       )
     }
   }

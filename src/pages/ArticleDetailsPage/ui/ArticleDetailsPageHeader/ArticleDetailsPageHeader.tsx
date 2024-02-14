@@ -7,6 +7,7 @@ import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { getArticleDetailsData } from 'entities/Article'
+import { Row } from 'shared/ui'
 import { getCanEditArticle } from '../../selectors/article'
 import cls from './ArticleDetailsPageHeader.module.scss'
 
@@ -30,7 +31,11 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   }, [article?.id, navigate])
 
   return (
-    <div className={classNames(cls.articleDetailsPageHeader, {}, [className])}>
+    <Row
+      className={classNames('', {}, [className])}
+      align='between'
+      vAlign='center'
+    >
       <Button
         className={cls.backButton}
         variant={ButtonVariant.OUTLINED}
@@ -49,6 +54,6 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
           </Button>
         )
       }
-    </div>
+    </Row>
   )
 })

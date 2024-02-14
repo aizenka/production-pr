@@ -116,7 +116,9 @@
           "data-testid",
           "placeholder",
           "src",
-          "alt"
+          "alt",
+          "align",
+          "vAlign"
         ]
       }
     ],

@@ -1,35 +1,38 @@
 import { memo } from 'react'
 import { classNames } from 'shared/lib/common'
-import { Text } from 'shared/ui'
+import { Column, Text } from 'shared/ui'
 import { ArticleTextBlock } from '../../../model/types/Article'
-import cls from './ArticleTextBlockComponent.module.scss'
 
 interface ArticleTextBlockComponentProps {
   className?: string,
   block: ArticleTextBlock
 }
 
-export const ArticleTextBlockComponent = memo(
-  ({ className, block }: ArticleTextBlockComponentProps) => {
-    return (
-      <div className={classNames(cls.articleTextBlockComponent, {}, [className])}>
+export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
+  const { className, block } = props
+
+  return (
+    <Column
+      className={classNames('', {}, [className])}
+      gap={16}
+    >
+      {
+        block.title && (
+          <Text title={block.title} />
+        )
+      }
+      <Column gap={8}>
         {
-          block.title && (
-            <Text title={block.title} />
-          )
+          block.paragraphs.map((paragraph, index) => {
+            return (
+              <Text
+                key={index}
+                text={paragraph}
+              />
+            )
+          })
         }
-        <div className={cls.paragraphsWrapper}>
-          {
-            block.paragraphs.map((paragraph, index) => {
-              return (
-                <Text
-                  key={index}
-                  text={paragraph}
-                />
-              )
-            })
-          }
-        </div>
-      </div>
-    )
-  })
+      </Column>
+    </Column>
+  )
+})

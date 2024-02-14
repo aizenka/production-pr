@@ -36,7 +36,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       return (
         // TODO: add logo
         <Button
-          className={cls.links}
+          className={cls.link}
           variant={ButtonVariant.TEXT_INVERTED}
           onClick={onLogout}
         >
@@ -47,7 +47,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       return (
         <>
           <Button
-            className={cls.links}
+            className={cls.link}
             variant={ButtonVariant.TEXT_INVERTED}
             onClick={onOpenAuthModal}
           >

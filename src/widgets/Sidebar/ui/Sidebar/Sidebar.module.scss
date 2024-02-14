@@ -7,20 +7,14 @@
 }
 
 .switchers {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
   position: absolute;
   width: 100%;
   bottom: 20px;
 }
 
 .navigateItems {
-  display: flex;
   margin-top: 16px;
   margin-left: 16px;
-  flex-direction: column;
-  gap: 8px;
 }
 
 .collapsed {

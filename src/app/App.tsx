@@ -15,7 +15,6 @@ const App = () => {
     dispatch(userActions.initAuthData())
   }, [dispatch])
 
-
   return (
     <div className='app'>
       <Navbar />

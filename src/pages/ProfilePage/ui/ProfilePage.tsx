@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { PageWrapper } from 'widgets/PageWrapper'
-import { Text } from 'shared/ui'
+import { Column, Text } from 'shared/ui'
 import { TextType } from 'shared/ui/Text/Text'
 import { classNames } from 'shared/lib/common'
 import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
@@ -30,7 +30,6 @@ import {
   useDynamicModuleLoader,
   useInitialEffect
 } from 'shared/lib/hooks'
-import cls from './ProfilePage.module.scss'
 
 const reducers: ReducersList = {
   profile: profileReducer
@@ -104,35 +103,40 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   }, [dispatch])
 
   return (
-    <PageWrapper className={classNames(cls.profilePage, {}, [className])}>
-      <ProfilePageHeader />
-      {
-        !!validateErrors?.length && (
-          validateErrors.map(err => {
-            return (
-              <Text
-                key={err}
-                type={TextType.ERROR}
-                text={VALIDATE_ERROR_TRASLATES_MAP[err]}
-              />
-            )
-          })
-        )
-      }
-      <ProfileCard
-        profileData={formData}
-        isLoading={isLoading}
-        error={error}
-        readonly={readonly}
-        onChangeFirstname={onChangeFirstname}
-        onChangeLastname={onChangeLastname}
-        onChangeAge={onChangeAge}
-        onChangeCity={onChangeCity}
-        onChangeAvatar={onChangeAvatar}
-        onChangeUsername={onChangeUsername}
-        onChangeCurrency={onChangeCurrency}
-        onChangeCountry={onChangeCountry}
-      />
+    <PageWrapper className={classNames('', {}, [className])}>
+      <Column
+        gap={32}
+        style={{ width: '100%' }}
+      >
+        <ProfilePageHeader />
+        {
+          !!validateErrors?.length && (
+            validateErrors.map(err => {
+              return (
+                <Text
+                  key={err}
+                  type={TextType.ERROR}
+                  text={VALIDATE_ERROR_TRASLATES_MAP[err]}
+                />
+              )
+            })
+          )
+        }
+        <ProfileCard
+          profileData={formData}
+          isLoading={isLoading}
+          error={error}
+          readonly={readonly}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeAvatar={onChangeAvatar}
+          onChangeUsername={onChangeUsername}
+          onChangeCurrency={onChangeCurrency}
+          onChangeCountry={onChangeCountry}
+        />
+      </Column>
     </PageWrapper>
   )
 })

@@ -1,5 +1,4 @@
-// TODO: add Row/Column components
-// TODO: add skeleton for every shared component
+// TODO: add skeleton for shared components
 
 export { AppLink } from './AppLink/AppLink'
 export { Button } from './Button/Button'
@@ -15,3 +14,4 @@ export { Icon } from './Icon/Icon'
 export { Code } from './Code/Code'
 export { Card } from './Card/Card'
 export { Tabs } from './Tabs/Tabs'
+export { Row, Column } from './Flex'

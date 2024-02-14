@@ -1,7 +1,7 @@
 import { memo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/common'
-import { Button } from 'shared/ui'
+import { Button, Column, Row } from 'shared/ui'
 import { ButtonVariant, ButtonSize } from 'shared/ui/Button/Button'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
 import { ThemeSwitcher } from '../../../ThemeSwitcher'
@@ -39,25 +39,31 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         {collapsed ? '>' : '<'}
       </Button>
       <nav className={cls.navigateItems}>
-        {
-          sidebarItemsList.map((item) => {
-            return (
-              <SidebarItem
-                key={item.path}
-                item={item}
-                collapsed={collapsed}
-              />
-            )
-          })
-        }
+        <Column gap={8}>
+          {
+            sidebarItemsList.map((item) => {
+              return (
+                <SidebarItem
+                  key={item.path}
+                  item={item}
+                  collapsed={collapsed}
+                />
+              )
+            })
+          }
+        </Column>
       </nav>
-      <div className={cls.switchers}>
+      <Row
+        className={cls.switchers}
+        align='center'
+        gap={16}
+      >
         <ThemeSwitcher />
         <LangSwitcher
           className={cls.langSwitcher}
           shortLng
         />
-      </div>
+      </Row>
     </aside>
   )
 })

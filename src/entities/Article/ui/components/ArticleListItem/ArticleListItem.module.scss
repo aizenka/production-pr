@@ -1,14 +1,5 @@
 .card {
-  display: flex;
-  gap: 8px;
-  flex-direction: column;
   width: fit-content;
-}
-
-.viewsWrapper {
-  display: flex;
-  align-items: center;
-  gap: 4px;
 }
 
 .grid {
@@ -45,9 +36,6 @@
   }
 
   .infoWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 8px;
   }
 
@@ -67,18 +55,6 @@
 }
 
 .list {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .userInfo {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
   .types p {
     width: 115px;
     white-space: nowrap;
@@ -95,11 +71,5 @@
   .textBlock {
     max-height: 200px;
     overflow-y: hidden;
-  }
-
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 }

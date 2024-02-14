@@ -1,20 +1,10 @@
 .profileCard {
-  display: flex;
-  flex-direction: column;
   padding: 8px 16px;
   border: 2px solid var(--inverted-bg-color);
-  gap: 16px;
 }
 
-.data {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.avatarWrapper {
-  display: flex;
-  justify-content: center;
+.avatar {
+  align-self: center;
   width: 100%;
 }
 

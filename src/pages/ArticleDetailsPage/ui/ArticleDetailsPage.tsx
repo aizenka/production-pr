@@ -8,7 +8,7 @@ import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
 import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { PageWrapper } from 'widgets/PageWrapper'
-import { Text } from 'shared/ui'
+import { Column, Text } from 'shared/ui'
 import { TextSize } from 'shared/ui/Text/Text'
 import { useDynamicModuleLoader, useInitialEffect } from 'shared/lib/hooks'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
@@ -58,8 +58,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   }, [dispatch])
 
   return (
-    <PageWrapper className={classNames(cls.articleDetailsPage, {}, [className])}>
-      <div className={cls.articleDetailsPage}>
+    <PageWrapper className={classNames('', {}, [className])}>
+      <Column gap={24}>
         <ArticleDetailsPageHeader />
         {
           !id ? (
@@ -67,7 +67,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
           ) : (
             <>
               <ArticleDetails id={id} />
-              <div className={cls.recommendationsWrapper}>
+              <Column gap={16}>
                 <Text size={TextSize.L} title={t('recommended')}/>
                 <ArticleList
                   className={cls.recommendations}
@@ -76,7 +76,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                   view={ArticleListView.GRID}
                   openInNewWindow
                 />
-              </div>
+              </Column>
               <AddCommentForm onSendComment={onSendComment} />
               <CommentList
                 comments={comments}
@@ -86,7 +86,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             </>
           )
         }
-      </div>
+      </Column>
     </PageWrapper>
   )
 }

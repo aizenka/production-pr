@@ -1,5 +1,6 @@
 import { ChangeEvent, memo, useMemo } from 'react'
 import { classNames } from 'shared/lib/common'
+import { Row } from '../Flex'
 import cls from './Select.module.scss'
 
 export interface SelectOption<T extends string> {
@@ -53,7 +54,10 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
   }
 
   return (
-    <div className={classNames(cls.selectWrapper, {}, [className])}>
+    <Row
+      className={classNames('', {}, [className])}
+      gap={8}
+    >
       {
         label && (
           <span className={cls.label}>
@@ -69,6 +73,6 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
       >
         {optionList}
       </select>
-    </div>
+    </Row>
   )
 })

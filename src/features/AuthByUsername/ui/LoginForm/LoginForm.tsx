@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { classNames } from 'shared/lib/common'
-import { Button, Input, Text } from 'shared/ui'
+import { Button, Column, Input, Text } from 'shared/ui'
 import { TextType } from 'shared/ui/Text/Text'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { useAppDispatch } from 'shared/lib/hooks'
@@ -56,9 +56,12 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [dispatch, password, username, onSuccess])
 
   return (
-    <div className={classNames(cls.loginForm, {}, [className])}>
+    <Column
+      className={classNames(cls.loginForm, {}, [className])}
+      gap={16}
+    >
       <Text text={t('authForm')}/>
-      <div className={cls.inputsGroup}>
+      <Column gap={8}>
         <Input
           autofocus
           placeholder={t('EnterUsername')}
@@ -71,7 +74,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           value={password}
           onChange={onChangePassword}
         />
-      </div>
+      </Column>
       {
         error && (
           <Text
@@ -88,7 +91,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       >
         {t('login')}
       </Button>
-    </div>
+    </Column>
   )
 })
 

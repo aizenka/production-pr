@@ -1,7 +1,7 @@
 import { memo, ReactNode, useCallback } from 'react'
 import { classNames } from 'shared/lib/common'
 import { Card, CardVariant } from '../Card/Card'
-import cls from './Tabs.module.scss'
+import { Row } from '../Flex'
 
 export interface TabItem<T extends string> {
   key: T
@@ -31,13 +31,16 @@ export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
   }, [onTabClick])
 
   return (
-    <div className={classNames(cls.tabs, {}, [className])}>
+    <Row
+      className={classNames('', {}, [className])}
+      gap={16}
+    >
       {
         tabs.map(tab => {
           return (
             <Card
               key={tab.key}
-              className={cls.tab}
+              style={{ cursor: 'pointer' }}
               variant={
                 tab.key === selectedKey ? CardVariant.NORMAL : CardVariant.OUTLINED
               }
@@ -48,6 +51,6 @@ export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
           )
         })
       }
-    </div>
+    </Row>
   )
 })

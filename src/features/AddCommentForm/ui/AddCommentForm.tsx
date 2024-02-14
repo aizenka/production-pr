@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { COMMENTS_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
-import { Button, Input } from 'shared/ui'
+import { Button, Input, Row } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib/hooks'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
@@ -40,7 +40,11 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
   }, [onSendComment, onTextChange, text])
 
   return (
-    <div className={classNames(cls.addCommentForm, {}, [className])}>
+    <Row
+      className={classNames(cls.addCommentForm, {}, [className])}
+      align='between'
+      vAlign='center'
+    >
       <Input
         className={cls.input}
         placeholder={t('typeCommentText')}
@@ -53,7 +57,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
       >
         {t('send')}
       </Button>
-    </div>
+    </Row>
   )
 })
 

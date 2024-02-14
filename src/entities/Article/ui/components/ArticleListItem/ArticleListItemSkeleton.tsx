@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { classNames } from 'shared/lib/common'
-import { Card, Skeleton } from 'shared/ui'
+import { Card, Column, Row, Skeleton } from 'shared/ui'
 import { ArticleListView } from '../../../model/types/Article'
 import cls from './ArticleListItem.module.scss'
 
@@ -20,45 +20,56 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
         {},
         [className, cls[view]]
       )}>
-        <Card className={cls.card}>
-          <div className={cls.header}>
-            <div className={cls.userInfo}>
+        <Card>
+          <Column gap={8}>
+            <Row
+              align='between'
+              vAlign='center'
+            >
+              <Row
+                gap={8}
+                vAlign='center'
+              >
+                <Skeleton
+                  width={30}
+                  height={30}
+                  borderRadius={'50%'}
+                />
+                <Skeleton
+                  width={150}
+                  height={16}
+                />
+              </Row>
               <Skeleton
-                width={30}
-                height={30}
-                borderRadius={'50%'}
-              />
-              <Skeleton
-                width={150}
+                width={120}
                 height={16}
               />
-            </div>
+            </Row>
             <Skeleton
-              width={120}
+              width={250}
+              height={24}
+            />
+            <Skeleton
+              width={100}
               height={16}
             />
-          </div>
-          <Skeleton
-            width={250}
-            height={24}
-          />
-          <Skeleton
-            width={100}
-            height={16}
-          />
-          <Skeleton
-            height={250}
-          />
-          <div className={cls.footer}>
             <Skeleton
-              width={150}
-              height={36}
+              height={250}
             />
-            <Skeleton
-              width={120}
-              height={16}
-            />
-          </div>
+            <Row
+              align='between'
+              vAlign='center'
+            >
+              <Skeleton
+                width={150}
+                height={36}
+              />
+              <Skeleton
+                width={120}
+                height={16}
+              />
+            </Row>
+          </Column>
         </Card>
       </div>
     )
@@ -69,27 +80,27 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
       {},
       [className, cls[view]]
     )}>
-      <Card
-        className={cls.card}
-      >
-        <div className={cls.imageWrapper}>
+      <Card>
+        <Column gap={8}>
+          <div className={cls.imageWrapper}>
+            <Skeleton
+              width={200}
+              height={200}
+              // borderRadius={'50%'}
+              className={cls.img}
+            />
+          </div>
+          <div className={cls.infoWrapper}>
+            <Skeleton
+              width={130}
+              height={16}
+            />
+          </div>
           <Skeleton
-            width={200}
-            height={200}
-            // borderRadius={'50%'}
-            className={cls.img}
-          />
-        </div>
-        <div className={cls.infoWrapper}>
-          <Skeleton
-            width={130}
+            width={150}
             height={16}
           />
-        </div>
-        <Skeleton
-          width={150}
-          height={16}
-        />
+        </Column>
       </Card>
     </div>
   )

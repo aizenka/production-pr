@@ -10,10 +10,9 @@ import {
 } from 'entities/Profile'
 import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
-import { Button, Text } from 'shared/ui'
+import { Button, Row, Text } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { useAppDispatch } from 'shared/lib/hooks'
-import cls from './ProfilePageHeader.module.scss'
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -42,7 +41,11 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch])
 
   return (
-    <div className={classNames(cls.profilePageHeader, {}, [className])}>
+    <Row
+      className={classNames('', {}, [className])}
+      align='between'
+      vAlign='center'
+    >
       <Text title={t('profile')}/>
       {
         canEdit && (
@@ -57,7 +60,7 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                 </Button>
               )
                 : (
-                  <div className={cls.btnGroup}>
+                  <Row gap={16}>
                     <Button
                       variant={ButtonVariant.OUTLINED_DANGER}
                       onClick={onEditCancel}
@@ -70,13 +73,13 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                     >
                       {t('save')}
                     </Button>
-                  </div>
+                  </Row>
                 )
             }
           </div>
         )
       }
-    </div>
+    </Row>
   )
 }
 

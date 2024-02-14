@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
 import { COMMENTS_NAMESPACE } from 'shared/constants/i18n'
-import { Skeleton, Text } from 'shared/ui'
+import { Column, Row, Skeleton, Text } from 'shared/ui'
 import { TextAlign } from 'shared/ui/Text/Text'
 import { CommentCard } from '../CommentCard/CommentCard'
 import { Comment } from '../../model/types/Comment'
@@ -34,13 +34,16 @@ export const CommentList = memo((props: CommentListProps) => {
                 key={index}
                 className={cls.commentSkeleton}
               >
-                <div className={cls.contentWrapper}>
-                  <div className={cls.userInfo}>
+                <Column gap={16}>
+                  <Row
+                    gap={8}
+                    vAlign='center'
+                  >
                     <Skeleton width={30} height={30} borderRadius={'50%'} />
                     <Skeleton width={100} height={16} />
-                  </div>
+                  </Row>
                   <Skeleton width={'100%'} height={50} />
-                </div>
+                </Column>
               </div>
             )
           })
@@ -50,9 +53,12 @@ export const CommentList = memo((props: CommentListProps) => {
   }
 
   return (
-    <div className={classNames(cls.commentList, {}, [className])}>
+    <Column
+      className={classNames('', {}, [className])}
+      gap={24}
+    >
       <Text title={t('comments')} />
-      <div className={cls.commentsWrapper}>
+      <Column gap={16}>
         {
           comments?.length
             ? comments.map(comment => (
@@ -68,7 +74,7 @@ export const CommentList = memo((props: CommentListProps) => {
               />
             )
         }
-      </div>
-    </div>
+      </Column>
+    </Column>
   )
 })

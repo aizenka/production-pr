@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import { PageWrapper } from 'widgets/PageWrapper'
 import { classNames } from 'shared/lib/common'
 import { ArticleList } from 'entities/Article'
+import { Column } from 'shared/ui'
 import {
   useAppDispatch,
   useDynamicModuleLoader,
@@ -53,12 +54,14 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
       className={classNames(cls.articlesPage, {}, [className])}
       onScrollEnd={onLoadArticles}
     >
-      <ArticlesPageFilters />
-      <ArticleList
-        articles={articles}
-        view={view}
-        isLoading={isLoading}
-      />
+      <Column gap={24}>
+        <ArticlesPageFilters />
+        <ArticleList
+          articles={articles}
+          view={view}
+          isLoading={isLoading}
+        />
+      </Column>
     </PageWrapper>
   )
 }

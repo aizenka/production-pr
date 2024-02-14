@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from 'entities/User'
 import { classNames } from 'shared/lib/common'
-import { AppLink } from 'shared/ui'
+import { AppLink, Row } from 'shared/ui'
 import { AppLinkVariant } from 'shared/ui/AppLink/AppLink'
 import { SidebarItemType } from '../../model/types/SidebarItem'
 import cls from './SidebarItem.module.scss'
@@ -26,10 +26,15 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
       to={item.path}
       theme={AppLinkVariant.SECONDARY}
     >
-      <item.Icon className={cls.navigateIcon} />
-      <span className={cls.linkText}>
-        {t(item.text)}
-      </span>
+      <Row
+        gap={8}
+        vAlign='center'
+      >
+        <item.Icon className={cls.navigateIcon} />
+        <span className={cls.linkText}>
+          {t(item.text)}
+        </span>
+      </Row>
     </AppLink>
   )
 })

@@ -2,7 +2,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { AppLink, Avatar, Button, Card, Icon, Text } from 'shared/ui'
+import { AppLink, Avatar, Button, Card, Column, Icon, Row, Text } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
 import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
@@ -55,47 +55,61 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         [className, cls[view]]
       )}>
         <Card className={cls.card}>
-          <div className={cls.header}>
-            <div className={cls.userInfo}>
-              <Avatar
-                src={article.user?.avatarUrl}
-                alt='user avatar'
-                size={30}
-              />
-              <Text text={article.user.username} />
-            </div>
-            <Text text={article.createdAt} />
-          </div>
-          <Text title={article.title} />
-          <div className={cls.types}>
-            {types}
-          </div>
-          <img
-            className={cls.img}
-            src={article.img}
-            alt={article.title}
-          />
-          {
-            textBlock && (
-              <ArticleTextBlockComponent
-                className={cls.textBlock}
-                block={textBlock}
-              />
-            )
-          }
-          <div className={cls.footer}>
-            <AppLink
-              to={`${RoutePath.articleDetails}${article.id}`}
-              target={target}
+          <Column gap={8}>
+            <Row
+              align='between'
+              vAlign='center'
             >
-              <Button variant={ButtonVariant.OUTLINED}>
-                {t('readMore')}
-              </Button>
-            </AppLink>
-            <div className={cls.viewsWrapper}>
-              {views}
+              <Row
+                gap={8}
+                vAlign='center'
+              >
+                <Avatar
+                  src={article.user?.avatarUrl}
+                  alt='user avatar'
+                  size={30}
+                />
+                <Text text={article.user.username} />
+              </Row>
+              <Text text={article.createdAt} />
+            </Row>
+            <Text title={article.title} />
+            <div className={cls.types}>
+              {types}
             </div>
-          </div>
+            <img
+              className={cls.img}
+              src={article.img}
+              alt={article.title}
+            />
+            {
+              textBlock && (
+                <ArticleTextBlockComponent
+                  className={cls.textBlock}
+                  block={textBlock}
+                />
+              )
+            }
+            <Row
+              align='between'
+              vAlign='center'
+            >
+              <AppLink
+                to={`${RoutePath.articleDetails}${article.id}`}
+                target={target}
+              >
+                <Button variant={ButtonVariant.OUTLINED}>
+                  {t('readMore')}
+                </Button>
+              </AppLink>
+              <Row
+                gap={4}
+                vAlign={'center'}
+              >
+                {views}
+              </Row>
+            </Row>
+          </Column>
         </Card>
       </div>
     )
@@ -111,27 +125,36 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       target={target}
     >
       <Card className={cls.card}>
-        <div className={cls.imageWrapper}>
-          <img
-            className={cls.img}
-            src={article.img}
-            alt={article.title}
-          />
-          <Text
-            className={cls.createdAt}
-            text={article.createdAt}
-          />
-        </div>
-        <div className={cls.infoWrapper}>
-          {types}
-          <div className={cls.viewsWrapper}>
-            {views}
+        <Column gap={8}>
+          <div className={cls.imageWrapper}>
+            <img
+              className={cls.img}
+              src={article.img}
+              alt={article.title}
+            />
+            <Text
+              className={cls.createdAt}
+              text={article.createdAt}
+            />
           </div>
-        </div>
-        <Text
-          className={cls.title}
-          text={article.title}
-        />
+          <Row
+            className={cls.infoWrapper}
+            align='between'
+            vAlign='center'
+          >
+            {types}
+            <Row
+              gap={4}
+              vAlign='center'
+            >
+              {views}
+            </Row>
+          </Row>
+          <Text
+            className={cls.title}
+            text={article.title}
+          />
+        </Column>
       </Card>
     </AppLink>
   )

@@ -10,7 +10,7 @@ import {
   ArticleType
 } from 'entities/Article'
 import { classNames } from 'shared/lib/common'
-import { Card, Input } from 'shared/ui'
+import { Card, Column, Input, Row } from 'shared/ui'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
 import { SortOrder } from 'shared/types'
 import { TabItem } from 'shared/ui/Tabs/Tabs'
@@ -24,7 +24,6 @@ import {
   getArticlesPageSort
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
-import cls from './ArticlesPageFilters.module.scss'
 
 interface ArticlesPageFiltersProps {
   className?: string
@@ -76,8 +75,14 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
   }, [dispatch, fetchData])
 
   return (
-    <div className={classNames(cls.articlesPageFilters, {}, [className])}>
-      <div className={cls.sortBlock}>
+    <Column
+      className={classNames('', {}, [className])}
+      gap={16}
+    >
+      <Row
+        align='between'
+        vAlign='center'
+      >
         <ArticlesSortSelector
           sort={sort}
           order={order}
@@ -88,8 +93,8 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
           view={view}
           onChangeView={onChangeView}
         />
-      </div>
-      <Card className={cls.searchWrapper}>
+      </Row>
+      <Card>
         <Input
           placeholder={t('search')}
           value={search}
@@ -100,6 +105,6 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
         selectedType={selectedType}
         onChangeType={onChangeTab}
       />
-    </div>
+    </Column>
   )
 })

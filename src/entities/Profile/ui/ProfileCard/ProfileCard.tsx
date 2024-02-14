@@ -5,7 +5,7 @@ import { Country, CountrySelect } from 'entities/Country'
 import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
 import { ClsMods } from 'shared/lib/common/classNames/classNames'
-import { Avatar, Input, RippleLoader, Text } from 'shared/ui'
+import { Avatar, Column, Input, RippleLoader, Text } from 'shared/ui'
 import { TextAlign, TextType } from 'shared/ui/Text/Text'
 import { Profile } from '../../model/types/Profile'
 import cls from './ProfileCard.module.scss'
@@ -72,16 +72,18 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
   }
 
   return (
-    <div className={classNames(cls.profileCard, mods, [className])}>
-      <div className={cls.data}>
+    <Column
+      className={classNames(cls.profileCard, mods, [className])}
+      gap={16}
+    >
+      <Column gap={16}>
         {
           profileData?.avatarUrl && (
-            <div className={cls.avatarWrapper}>
-              <Avatar
-                src={profileData.avatarUrl}
-                alt='profile image'
-              />
-            </div>
+            <Avatar
+              className={cls.avatar}
+              src={profileData.avatarUrl}
+              alt='profile image'
+            />
           )
         }
         <Input
@@ -135,7 +137,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
           readonly={readonly}
           onChange={onChangeUsername}
         />
-      </div>
-    </div>
+      </Column>
+    </Column>
   )
 })
