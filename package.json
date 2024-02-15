@@ -29,6 +29,7 @@
   "author": "aizenka",
   "license": "MIT",
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
     "@reduxjs/toolkit": "1.8.0",
     "axios": "^1.6.2",
     "i18next": "21.6.11",

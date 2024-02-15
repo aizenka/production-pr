@@ -119,7 +119,9 @@
           "alt",
           "align",
           "vAlign",
-          "role"
+          "role",
+          "as",
+          "direction"
         ]
       }
     ],
@@ -130,6 +132,7 @@
         "groups": [
           "/^react$/",
           "/^react.*/",
+          "/^.*react/",
           "module",
           "absolute",
           "/components/",
