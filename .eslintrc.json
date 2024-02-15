@@ -118,7 +118,8 @@
           "src",
           "alt",
           "align",
-          "vAlign"
+          "vAlign",
+          "role"
         ]
       }
     ],

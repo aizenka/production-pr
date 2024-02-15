@@ -29,6 +29,7 @@ export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
       <Row
         gap={8}
         vAlign='center'
+        style={{ width: 'auto', height: 24 }}
       >
         <item.Icon className={cls.navigateIcon} />
         <span className={cls.linkText}>

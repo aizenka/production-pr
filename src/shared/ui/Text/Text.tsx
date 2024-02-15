@@ -4,6 +4,7 @@ import { ClsMods } from 'shared/lib/common/classNames/classNames'
 import cls from './Text.module.scss'
 
 export enum TextSize {
+  S = 's',
   M = 'm',
   L = 'l'
 }
@@ -18,6 +19,14 @@ export enum TextAlign {
   RIGHT = 'right',
   LEFT = 'left',
   CENTER = 'center'
+}
+
+type HeaderTagType = 'h1' | 'h2' | 'h3'
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+  [TextSize.S]: 'h3',
+  [TextSize.M]: 'h2',
+  [TextSize.L]: 'h1'
 }
 
 interface TextProps {
@@ -39,6 +48,8 @@ export const Text = memo((props: TextProps) => {
     size = TextSize.M
   } = props
 
+  const HeaderTag = mapSizeToHeaderTag[size]
+
   const mods: ClsMods = {
     [cls[type]]: !!type,
     [cls[align]]: !!align,
@@ -50,7 +61,7 @@ export const Text = memo((props: TextProps) => {
     >
       {
         title && (
-          <p className={cls.title}>{title}</p>
+          <HeaderTag className={cls.title}>{title}</HeaderTag>
         )
       }
       {

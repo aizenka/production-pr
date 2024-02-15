@@ -14,11 +14,26 @@ const meta: Meta<typeof Text> = {
 export default meta
 type Story = StoryObj<typeof Text>;
 
+export const SizeS: Story = {
+  args: {
+    title: 'Text title',
+    text: 'description description description',
+    size: TextSize.S
+  }
+}
 
-export const Primary: Story = {
+export const SizeM: Story = {
   args: {
     title: 'Text title',
     text: 'description description description'
+  }
+}
+
+export const SizeL: Story = {
+  args: {
+    title: 'Text title',
+    text: 'description description description',
+    size: TextSize.L
   }
 }
 
@@ -62,13 +77,4 @@ export const OnlyDescriptionDark: Story = {
     text: 'description description description'
   },
   decorators: [ThemeDecorator(Theme.DARK)]
-}
-
-
-export const SizeL: Story = {
-  args: {
-    title: 'Text title',
-    text: 'description description description',
-    size: TextSize.L
-  }
 }

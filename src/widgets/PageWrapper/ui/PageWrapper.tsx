@@ -47,13 +47,13 @@ export const PageWrapper = (props: PageWrapperProps) => {
   }, 500)
 
   return (
-    <section
+    <main
       ref={wrapperRef}
       className={classNames(cls.pageWrapper, {}, [className])}
       onScroll={onScroll}
     >
       {children}
       { onScrollEnd ? <div ref={triggerRef} className={cls.triggerDiv} /> : null }
-    </section>
+    </main>
   )
 }

@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes, ReactNode } from 'react'
+import { CSSProperties, DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { classNames } from 'shared/lib/common'
 import { ClsMods } from 'shared/lib/common/classNames/classNames'
 import cls from './Column.module.scss'
@@ -7,7 +7,9 @@ type FlexJustify = 'left' | 'center' | 'right' | 'between' | 'around'
 type FlexAlign = 'start' | 'center' | 'end' | 'stretch'
 type FlexGap = 4 | 8 | 16 | 24 | 32
 
-interface ColumnProps extends HTMLAttributes<HTMLDivElement>  {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+interface ColumnProps extends DivProps {
   className?: string
   children: ReactNode,
   align?: FlexAlign

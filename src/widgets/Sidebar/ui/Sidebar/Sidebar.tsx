@@ -38,21 +38,23 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <nav className={cls.navigateItems}>
-        <Column gap={8}>
-          {
-            sidebarItemsList.map((item) => {
-              return (
-                <SidebarItem
-                  key={item.path}
-                  item={item}
-                  collapsed={collapsed}
-                />
-              )
-            })
-          }
-        </Column>
-      </nav>
+      <Column
+        className={cls.navigateItems}
+        role='navigation'
+        gap={8}
+      >
+        {
+          sidebarItemsList.map((item) => {
+            return (
+              <SidebarItem
+                key={item.path}
+                item={item}
+                collapsed={collapsed}
+              />
+            )
+          })
+        }
+      </Column>
       <Row
         className={cls.switchers}
         align='center'

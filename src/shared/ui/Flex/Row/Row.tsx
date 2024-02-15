@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLAttributes, ReactNode } from 'react'
+import { CSSProperties, DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { classNames } from 'shared/lib/common'
 import { ClsMods } from 'shared/lib/common/classNames/classNames'
 import cls from './Row.module.scss'
@@ -7,7 +7,9 @@ type FlexJustify = 'left' | 'center' | 'right' | 'between' | 'around'
 type FlexAlign = 'start' | 'center' | 'end' | 'stretch'
 type FlexGap = 4| 8 | 16 | 24 | 32
 
-interface RowProps extends HTMLAttributes<HTMLDivElement> {
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
+
+interface RowProps extends DivProps {
   className?: string,
   children: ReactNode
   align?: FlexJustify
