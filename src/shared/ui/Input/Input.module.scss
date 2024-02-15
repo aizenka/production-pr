@@ -4,10 +4,10 @@
   text-shadow: 0 0 0 var(--primary-color);
   color: transparent;
   border: none;
-  outline: none;
+  outline-color: transparent;
 
   &:focus {
-    outline: none;
+    outline-color: transparent;
   }
 }
 

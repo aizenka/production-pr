@@ -1,6 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Theme } from 'app/providers/ThemeProvider'
-import { ThemeDecorator } from 'shared/config/storybook'
 
 import { ListBox } from './ListBox'
 
@@ -16,11 +14,23 @@ type Story = StoryObj<typeof ListBox>;
 
 
 export const Light: Story = {
-  args: {},
-  decorators: []
-}
-
-export const Dark: Story = {
-  args: {},
-  decorators: [ThemeDecorator(Theme.DARK)]
+  args: {
+    label: 'label',
+    defaultValue: 'select value',
+    items: [
+      {
+        value: 'val1',
+        content: 'value 1'
+      },
+      {
+        value: 'val2',
+        content: 'value 2'
+      },
+      {
+        value: 'disabledV',
+        content: 'disabled',
+        disabled: true
+      }
+    ]
+  }
 }

@@ -32,6 +32,8 @@
   padding: 8px 16px;
   cursor: pointer;
 
+  // TODO: add new active/selected colors
+
   &.active {
     background-color: var(--inverted-primary-color);
   }
