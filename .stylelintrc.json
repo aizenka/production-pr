@@ -4,6 +4,7 @@
     "selector-class-pattern": null,
     "scss/comment-no-empty": null,
     "length-zero-no-unit": null,
-    "keyframes-name-pattern": null
+    "keyframes-name-pattern": null,
+    "scss/double-slash-comment-empty-line-before": null
   }
 }

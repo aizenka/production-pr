@@ -1,6 +1,7 @@
 import { Fragment, memo, ReactNode } from 'react'
 import { Listbox as HListbox } from '@headlessui/react'
 import { classNames } from 'shared/lib/common'
+import { DropdownDirection } from 'shared/types/ui'
 import { Button, ButtonVariant } from '../Button/Button'
 import { Row } from '../Flex'
 import cls from './ListBox.module.scss'
@@ -10,9 +11,6 @@ export interface ListBoxItem<T extends string> {
   content: ReactNode,
   disabled?: boolean
 }
-
-type DropdownDirection = 'top' | 'botton'
-
 
 interface ListBoxProps<T extends string> {
   className?: string,
@@ -43,7 +41,7 @@ export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
     defaultValue,
     label,
     onChange,
-    direction = 'bottom', // TODO: check floating-ui
+    direction = 'bottom-left', // TODO: check floating-ui
     readonly = false
   } = props
 
