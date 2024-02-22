@@ -23,7 +23,8 @@
     "test:ui:approve": "npx loki approve",
     "test:ui:report": "yarn test:ui:json && yarn test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
-    "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html"
+    "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
+    "generate:fsd:slice": "node ./scripts/createFSDSlice/index.js"
   },
   "repository": "git@github.com:aizenka/production-pr.git",
   "author": "aizenka",
