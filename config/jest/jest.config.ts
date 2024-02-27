@@ -36,5 +36,18 @@ export default {
     axios: 'axios/dist/node/axios.cjs',
     '\\.s?css$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'JestMockSvgComponent.tsx')
-  }
+  },
+  reporters: [
+    'default',
+    [
+      'jest-html-reporters', {
+        publicPath: '<rootDir>/reports/unit',
+        filename: 'unitReport.html',
+        pageTitle: 'Unit tests report',
+        openReport: true,
+        darkTheme: true,
+        inlineSource: true
+      }
+    ]
+  ]
 }

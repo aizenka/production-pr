@@ -16,6 +16,9 @@ yarn-error.log
 # storybook
 /storybook-static
 
+# tests
+/reports
+
 #file temlpates
 /.fttemplates
 
