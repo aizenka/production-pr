@@ -5,7 +5,8 @@ import {
   ReducersMapObject
 } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
-import $api from 'shared/api'
+import $axiosAPI from 'shared/api/axios'
+import $rtkApi from 'shared/api/rtk'
 import { uiReducer } from 'widgets/PageWrapper'
 import { createReducerManager } from './reducerManager'
 import { StateSchema } from './StateSchema'
@@ -19,7 +20,8 @@ export function createReduxStore (
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
     user: userReducer,
-    ui: uiReducer
+    ui: uiReducer,
+    [$rtkApi.reducerPath]: $rtkApi.reducer
   }
 
   const reducerManager = createReducerManager(rootReducer)
@@ -30,10 +32,10 @@ export function createReduxStore (
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: {
         extraArgument: {
-          api: $api
+          api: $axiosAPI
         }
       }
-    }),
+    }).concat($rtkApi.middleware),
     devTools: __IS_DEV__
   })
 

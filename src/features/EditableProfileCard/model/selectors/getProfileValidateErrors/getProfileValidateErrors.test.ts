@@ -1,5 +1,5 @@
 import { StateSchema } from 'shared/config/store'
-import { ValidateProfileError } from '../../types/Profile'
+import { ValidateProfileError } from '../../types/EditableProfileCardSchema'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
 
 describe('getProfileValidateErrorsTest', () => {

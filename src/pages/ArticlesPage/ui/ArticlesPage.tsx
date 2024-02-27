@@ -1,9 +1,7 @@
 import { memo, useCallback } from 'react'
-import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { PageWrapper } from 'widgets/PageWrapper'
 import { classNames } from 'shared/lib/common'
-import { ArticleList } from 'entities/Article'
 import { Column } from 'shared/ui'
 import {
   useAppDispatch,
@@ -11,16 +9,10 @@ import {
   useInitialEffect
 } from 'shared/lib/hooks'
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
-import {
-  getArticlesPageListView,
-  getArticlesPageLoading
-} from '../model/selectors/articlesPageSelectors'
 import { fetchArticleListNextPage, initArticlesPage } from '../model/services'
-import {
-  articlesPageReducer,
-  getArticles
-} from '../model/slice/articlesPageSlice'
+import { articlesPageReducer } from '../model/slice/articlesPageSlice'
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters'
+import { ArticleInfiniteList } from './ArticleInfiniteList/ArticleInfiniteList'
 import cls from './ArticlesPage.module.scss'
 
 interface ArticlesPageProps {
@@ -34,9 +26,6 @@ const reducers: ReducersList = {
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
   useDynamicModuleLoader(reducers, { removeAfterUnmount: false })
   const dispatch = useAppDispatch()
-  const articles = useSelector(getArticles.selectAll)
-  const isLoading = useSelector(getArticlesPageLoading)
-  const view = useSelector(getArticlesPageListView)
   const [searchParams] = useSearchParams()
 
   useInitialEffect(() => {
@@ -54,16 +43,9 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
       className={classNames(cls.articlesPage, {}, [className])}
       onScrollEnd={onLoadArticles}
     >
-      <Column
-        gap={24}
-        style={{ width: '100%' }}
-      >
+      <Column gap={24}>
         <ArticlesPageFilters />
-        <ArticleList
-          articles={articles}
-          view={view}
-          isLoading={isLoading}
-        />
+        <ArticleInfiniteList />
       </Column>
     </PageWrapper>
   )

@@ -1,12 +1,12 @@
-import { action } from '@storybook/addon-actions'
 import type { Meta, StoryObj } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import { Theme } from 'app/providers/ThemeProvider'
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 
 import AddCommentForm from './AddCommentForm'
 
 const meta: Meta<typeof AddCommentForm> = {
-  title: 'features/AddCommentForm',
+  title: 'entities/AddCommentForm',
   component:  AddCommentForm,
   parameters: {},
   argTypes: {},

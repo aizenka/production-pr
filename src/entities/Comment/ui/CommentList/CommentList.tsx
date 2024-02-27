@@ -19,8 +19,8 @@ export const CommentList = memo((props: CommentListProps) => {
   const {
     className,
     comments,
-    isLoading,
-    error
+    isLoading
+    // error
   } = props
   const { t } = useTranslation(COMMENTS_NAMESPACE)
 
@@ -55,26 +55,23 @@ export const CommentList = memo((props: CommentListProps) => {
   return (
     <Column
       className={classNames('', {}, [className])}
-      gap={24}
+      gap={16}
     >
-      <Text title={t('comments')} />
-      <Column gap={16}>
-        {
-          comments?.length
-            ? comments.map(comment => (
-              <CommentCard
-                key={comment.id}
-                comment={comment}
-              />
-            ))
-            : error && (
-              <Text
-                text={t('commentsNotFound')}
-                align={TextAlign.CENTER}
-              />
-            )
-        }
-      </Column>
+      {
+        comments?.length
+          ? comments.map(comment => (
+            <CommentCard
+              key={comment.id}
+              comment={comment}
+            />
+          ))
+          : (
+            <Text
+              text={t('commentsNotFound')}
+              align={TextAlign.CENTER}
+            />
+          )
+      }
     </Column>
   )
 })

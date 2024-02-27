@@ -18,8 +18,8 @@ const preview: Preview = {
     }
   },
   decorators: [
-    TranslationDecorator,
     RouterDecorator,
+    TranslationDecorator,
     StyleDecorator,
     ThemeDecorator(Theme.LIGHT)
   ]
