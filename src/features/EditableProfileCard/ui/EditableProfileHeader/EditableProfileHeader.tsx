@@ -52,6 +52,7 @@ export const EditableProfileHeader = memo(({ className }: EditableProfileHeaderP
                 <Button
                   variant={ButtonVariant.OUTLINED}
                   onClick={onEdit}
+                  data-testid='EditableProfileHeader.EditBtn'
                 >
                   {t('edit')}
                 </Button>
@@ -61,12 +62,14 @@ export const EditableProfileHeader = memo(({ className }: EditableProfileHeaderP
                     <Button
                       variant={ButtonVariant.OUTLINED_DANGER}
                       onClick={onEditCancel}
+                      data-testid='EditableProfileHeader.CancelBtn'
                     >
                       {t('cancelEdit')}
                     </Button>
                     <Button
                       variant={ButtonVariant.OUTLINED}
                       onClick={onSave}
+                      data-testid='EditableProfileHeader.SaveBtn'
                     >
                       {t('save')}
                     </Button>

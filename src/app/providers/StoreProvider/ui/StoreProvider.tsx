@@ -6,7 +6,7 @@ import { createReduxStore, StateSchema } from 'shared/config/store'
 interface StoreProviderProps {
   children?: ReactNode,
   initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
 }
 
 export const StoreProvider = (props: StoreProviderProps) => {
@@ -17,7 +17,10 @@ export const StoreProvider = (props: StoreProviderProps) => {
   } = props
 
   return (
-    <Provider store={createReduxStore(initialState, asyncReducers)}>
+    <Provider store={createReduxStore(
+      initialState,
+      asyncReducers as ReducersMapObject<StateSchema>
+    )}>
       {children}
     </Provider>
   )

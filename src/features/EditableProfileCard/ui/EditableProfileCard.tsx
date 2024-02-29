@@ -110,6 +110,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 key={err}
                 type={TextType.ERROR}
                 text={VALIDATE_ERROR_TRASLATES_MAP[err]}
+                data-testid='EditableProfileCard.TextError'
               />
             )
           })
