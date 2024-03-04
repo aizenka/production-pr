@@ -13,4 +13,7 @@ export const ArticleDetailsPage = lazy(() => import('./ArticleDetailsPage/ui/Art
 
 export const ArticleEditPage = lazy(() => import('./ArticleEditPage/ui/ArticleEditPage'))
 
+export const AdminPanelPage = lazy(() => import('./AdminPanelPage/ui/AdminPanelPage'))
+
+export { default as ForbiddenPage } from './ForbiddenPage/ui/ForbiddenPage'
 export { default as NotFoundPage } from './NotFoundPage/ui/NotFoundPage'

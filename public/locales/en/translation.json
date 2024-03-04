@@ -13,5 +13,6 @@
   "EnterUsername": "Enter username",
   "EnterPassword": "Enter password",
   "authForm": "Auth Form",
-  "incorrectAuthData": "You entered an incorrect username or password"
+  "incorrectAuthData": "You entered an incorrect username or password",
+  "adminPage": "Admin panel"
 }

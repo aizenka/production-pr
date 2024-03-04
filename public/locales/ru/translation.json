@@ -13,5 +13,6 @@
   "EnterUsername": "Введите username",
   "EnterPassword": "Введите пароль",
   "authForm": "Форма авторизации",
-  "incorrectAuthData": "Вы ввели неверный логин или пароль"
+  "incorrectAuthData": "Вы ввели неверный логин или пароль",
+  "adminPage": "Админ панель"
 }

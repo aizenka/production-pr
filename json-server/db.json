@@ -560,14 +560,21 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "admin",
+      "roles": "[admin]",
       "avatarUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dc/UserTest.io_Logo.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "user",
+      "roles": "[user]",
+      "avatarUrl": "https://ideastest.org.uk/wp-content/uploads/2019/04/default-avatar-1.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": "[manager]",
       "avatarUrl": "https://ideastest.org.uk/wp-content/uploads/2019/04/default-avatar-1.jpg"
     }
   ],

@@ -19,6 +19,7 @@
   z-index: var(--listbox-z-index);
   border-radius: 4px;
   border: 1px solid var(--primary-color);
+  // width: fit-content;
 
   &.top-left {
     bottom: 100%;
@@ -49,7 +50,7 @@
   outline-color: transparent;
   color: var(--primary-color);
   cursor: pointer;
-  // text-align: left;
+  text-align: left;
 }
 
 .active {
