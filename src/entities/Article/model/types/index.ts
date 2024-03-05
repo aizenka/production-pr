@@ -1,7 +1,5 @@
-export {
+export type {
   Article,
-  ArticleListView,
-  ArticleSortField,
-  ArticleType
+  ArticleBlock
 } from './Article'
-export { ArticleDetailsSchema } from './ArticleDetailsSchema'
+export type { ArticleDetailsSchema } from './ArticleDetailsSchema'

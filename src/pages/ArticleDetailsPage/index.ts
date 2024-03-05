@@ -1,3 +1,5 @@
-export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema'
+export type {
+  ArticleDetailsCommentsSchema
+} from './model/types/ArticleDetailsCommentsSchema'
 export { articleDetailCommentsReducer } from './model/slice/articleDetailsCommentsSlice'
-export { ArticleDetailsPageSchema } from './model/types'
+export type { ArticleDetailsPageSchema } from './model/types'

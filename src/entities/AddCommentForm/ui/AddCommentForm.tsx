@@ -6,7 +6,7 @@ import { classNames } from 'shared/lib/common'
 import { Button, Input, Row } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { useAppDispatch, useDynamicModuleLoader } from 'shared/lib/hooks'
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { getCommentFormText } from '../model/selectors/addCommentFormSelectors'
 import {
   addCommentFormActions,

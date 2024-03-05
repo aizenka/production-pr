@@ -13,7 +13,8 @@
     "allowJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true
   },
   "ts-node": {
     "compilerOptions": {
@@ -21,9 +22,10 @@
     }
   },
   "include": [
-    "./config/jest/jestSetup.ts",
+    "config",
     "./src/**/*.ts",
     "./src/**/*.tsx",
+    "./webpack.config.ts"
   ],
   "exclude": [
     "**/.fttemplates/**"

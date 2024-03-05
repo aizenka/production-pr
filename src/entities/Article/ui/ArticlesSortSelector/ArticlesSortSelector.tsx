@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
 import { ListBox, Row } from 'shared/ui'
-import { SortOrder } from 'shared/types'
-import { ListBoxItem } from 'shared/ui/ListBox/ListBox'
-import { ArticleSortField } from '../../model/types/Article'
+import type { SortOrder } from 'shared/types'
+import type { ListBoxItem } from 'shared/ui/ListBox/ListBox'
+import { ArticleSortField } from '../../model/consts'
 import cls from './ArticlesSortSelector.module.scss'
 
 interface ArticlesSortSelectorProps {

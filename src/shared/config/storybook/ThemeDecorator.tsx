@@ -1,5 +1,6 @@
-import { Decorator } from '@storybook/react'
-import { Theme, ThemeProvider } from 'app/providers/ThemeProvider'
+import type { Decorator } from '@storybook/react'
+import type { Theme } from 'app/providers/ThemeProvider'
+import { ThemeProvider } from 'app/providers/ThemeProvider'
 
 const ThemeDecorator = (theme: Theme):Decorator => (Story) => {
   return (

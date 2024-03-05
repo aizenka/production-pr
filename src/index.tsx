@@ -9,6 +9,7 @@ import 'shared/config/i18n/init'
 /* TODO (global)
   add test coverage map
   move types to a separate folder and add public api (all components)
+  fix consistent-type eslint (webpack, config)
 */
 
 const container = document.getElementById('root')

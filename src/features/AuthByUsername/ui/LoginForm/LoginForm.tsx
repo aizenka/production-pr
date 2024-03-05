@@ -7,7 +7,7 @@ import { TextType } from 'shared/ui/Text/Text'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { useAppDispatch } from 'shared/lib/hooks'
 import { useDynamicModuleLoader } from 'shared/lib/hooks'
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import {
   getLoginError,

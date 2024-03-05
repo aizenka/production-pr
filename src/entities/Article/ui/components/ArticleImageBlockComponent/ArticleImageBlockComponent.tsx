@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { classNames } from 'shared/lib/common'
 import { Text } from 'shared/ui'
 import { TextAlign } from 'shared/ui/Text/Text'
-import { ArticleImageBlock } from '../../../model/types/Article'
+import type { ArticleImageBlock } from '../../../model/types/Article'
 import cls from './ArticleImageBlockComponent.module.scss'
 
 interface ArticleImageBlockComponentProps {

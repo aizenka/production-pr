@@ -1,4 +1,4 @@
-import { StateSchema } from 'shared/config/store'
+import type { StateSchema } from 'shared/config/store'
 import { getLoginPassword } from './getLoginPassword'
 
 describe('getLoginErrorTest', () => {

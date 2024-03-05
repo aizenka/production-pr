@@ -1,12 +1,14 @@
-import {
-  createEntityAdapter,
-  createSlice,
+import type {
   PayloadAction
 } from '@reduxjs/toolkit'
-import { Article } from 'entities/Article'
-import { StateSchema } from 'shared/config/store'
-import { fetchArticleRecommendations } from '../services'
 import {
+  createEntityAdapter,
+  createSlice
+} from '@reduxjs/toolkit'
+import type { Article } from 'entities/Article'
+import type { StateSchema } from 'shared/config/store'
+import { fetchArticleRecommendations } from '../services'
+import type {
   ArticleDetailsRecommendationsSchema
 } from '../types/ArticleDetailsRecommendationsSchema'
 

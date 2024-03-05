@@ -8,7 +8,7 @@ import { PageWrapper } from 'widgets/PageWrapper'
 import { Column } from 'shared/ui'
 import { ArticleRecommendationList } from 'features/ArticleRecommendationList'
 import { useDynamicModuleLoader } from 'shared/lib/hooks'
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { articleDetailsPageReducer } from '../model/slice'
 import {
   ArticleDetailsPageHeader

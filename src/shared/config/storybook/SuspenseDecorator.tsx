@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Decorator } from '@storybook/react'
+import type { Decorator } from '@storybook/react'
 
 const SuspenseDecorator: Decorator = (Story) => {
   return (

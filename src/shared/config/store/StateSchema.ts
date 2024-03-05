@@ -1,21 +1,21 @@
-import {
+import type {
   AnyAction,
   CombinedState,
   EnhancedStore,
   Reducer,
   ReducersMapObject
 } from '@reduxjs/toolkit'
-import { AxiosInstance } from 'axios'
-import { ArticleDetailsSchema } from 'entities/Article'
+import type { AxiosInstance } from 'axios'
+import type { ArticleDetailsSchema } from 'entities/Article'
 import type { UserSchema } from 'entities/User'
-import { AddCommentFormSchema } from 'entities/AddCommentForm'
+import type { AddCommentFormSchema } from 'entities/AddCommentForm'
 import type { LoginSchema } from 'features/AuthByUsername'
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage'
-import { ArticlesPageSchema } from 'pages/ArticlesPage'
-import $rtkApi from 'shared/api/rtk'
-import { UISchema } from 'widgets/PageWrapper'
-import { ProfileSchema } from 'features/EditableProfileCard'
-import { AppDispatch } from './store'
+import type { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage'
+import type { ArticlesPageSchema } from 'pages/ArticlesPage'
+import type $rtkApi from 'shared/api/rtk'
+import type { UISchema } from 'widgets/PageWrapper'
+import type { ProfileSchema } from 'features/EditableProfileCard'
+import type { AppDispatch } from './store'
 
 export interface StateSchema {
   user: UserSchema

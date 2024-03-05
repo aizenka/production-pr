@@ -1,5 +1,5 @@
-import { ArticleDetailsCommentsSchema } from './ArticleDetailsCommentsSchema'
-import {
+import type { ArticleDetailsCommentsSchema } from './ArticleDetailsCommentsSchema'
+import type {
   ArticleDetailsRecommendationsSchema
 } from './ArticleDetailsRecommendationsSchema'
 

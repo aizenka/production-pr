@@ -1,4 +1,5 @@
-import { ChangeEvent, memo, useMemo } from 'react'
+import type { ChangeEvent } from 'react'
+import { memo, useMemo } from 'react'
 import { classNames } from 'shared/lib/common'
 import { Row } from '../Flex'
 import cls from './Select.module.scss'

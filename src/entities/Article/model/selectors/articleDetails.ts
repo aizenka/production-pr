@@ -1,4 +1,4 @@
-import { StateSchema } from 'shared/config/store'
+import type { StateSchema } from 'shared/config/store'
 
 export const getArticleDetailsData = (state: StateSchema) => state.articleDetails?.data
 export const getArticleDetailsId = (state: StateSchema) => state.articleDetails?.data?.id

@@ -1,4 +1,5 @@
-import { useMemo, useEffect, useState, ReactNode } from 'react'
+import type { ReactNode } from 'react'
+import { useMemo, useEffect, useState } from 'react'
 import { LOCAL_STORAGE_THEME_KEY } from 'shared/constants/localStorage'
 import { ThemeContext, Theme } from '../lib/ThemeContext'
 

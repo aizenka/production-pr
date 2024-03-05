@@ -1,4 +1,5 @@
-import { memo, ReactNode, useCallback } from 'react'
+import type { ReactNode } from 'react'
+import { memo, useCallback } from 'react'
 import { classNames } from 'shared/lib/common'
 import { Card, CardVariant } from '../Card/Card'
 import { Row } from '../Flex'

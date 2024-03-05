@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useStore } from 'react-redux'
-import { Reducer } from '@reduxjs/toolkit'
-import { ReduxStoreWithManager } from 'shared/config/store'
-import { StateSchema, StateSchemaKey } from 'shared/config/store/StateSchema'
+import type { Reducer } from '@reduxjs/toolkit'
+import type { ReduxStoreWithManager } from 'shared/config/store'
+import type { StateSchema, StateSchemaKey } from 'shared/config/store/StateSchema'
 import useAppDispatch from '../useAppDispatch'
 
 export interface DynamicModuleLoaderOptions {

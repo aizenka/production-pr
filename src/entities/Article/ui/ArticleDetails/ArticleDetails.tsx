@@ -17,10 +17,11 @@ import {
   useDynamicModuleLoader,
   useInitialEffect
 } from 'shared/lib/hooks'
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { fetchArticleById } from '../../model/services'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import { ArticleBlock, ArticleBlockType } from '../../model/types/Article'
+import type { ArticleBlock } from '../../model/types'
+import { ArticleBlockType } from '../../model/consts'
 import {
   getArticleDetailsData,
   getArticleDetailsLoading,

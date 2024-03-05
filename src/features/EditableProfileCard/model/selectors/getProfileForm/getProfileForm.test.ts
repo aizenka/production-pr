@@ -1,6 +1,6 @@
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
-import { StateSchema } from 'shared/config/store'
+import type { StateSchema } from 'shared/config/store'
 import { getProfileForm } from './getProfileForm'
 
 describe('getProfileFormTest', () => {

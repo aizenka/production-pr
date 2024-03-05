@@ -1,6 +1,6 @@
-import { CSSProperties, DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
+import type { CSSProperties, DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { classNames } from 'shared/lib/common'
-import { ClsMods } from 'shared/lib/common/classNames/classNames'
+import type { ClsMods } from 'shared/lib/common/classNames/classNames'
 import cls from './Column.module.scss'
 
 type FlexJustify = 'left' | 'center' | 'right' | 'between' | 'around'

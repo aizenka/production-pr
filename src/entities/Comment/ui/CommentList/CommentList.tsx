@@ -5,7 +5,7 @@ import { COMMENTS_NAMESPACE } from 'shared/constants/i18n'
 import { Column, Row, Skeleton, Text } from 'shared/ui'
 import { TextAlign } from 'shared/ui/Text/Text'
 import { CommentCard } from '../CommentCard/CommentCard'
-import { Comment } from '../../model/types/Comment'
+import type { Comment } from '../../model/types/Comment'
 import cls from './CommentList.module.scss'
 
 interface CommentListProps {

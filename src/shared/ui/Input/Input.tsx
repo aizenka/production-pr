@@ -1,14 +1,16 @@
-import {
+import type {
   InputHTMLAttributes,
+  MutableRefObject
+} from 'react'
+import {
   memo,
-  MutableRefObject,
   useEffect,
   useMemo,
   useRef,
   useState
 } from 'react'
 import { classNames } from 'shared/lib/common'
-import { ClsMods } from 'shared/lib/common/classNames/classNames'
+import type { ClsMods } from 'shared/lib/common/classNames/classNames'
 import { Row } from '../Flex'
 import cls from './Input.module.scss'
 

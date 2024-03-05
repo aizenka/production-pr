@@ -1,4 +1,5 @@
-import { HTMLAttributeAnchorTarget, memo } from 'react'
+import type { HTMLAttributeAnchorTarget } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
@@ -6,12 +7,14 @@ import { AppLink, Avatar, Button, Card, Column, Icon, Row, Text } from 'shared/u
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
 import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
-import {
+import type {
   Article,
-  ArticleBlockType,
-  ArticleListView,
   ArticleTextBlock
 } from '../../../model/types/Article'
+import {
+  ArticleBlockType,
+  ArticleListView
+} from '../../../model/consts'
 import {
   ArticleTextBlockComponent
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'

@@ -1,5 +1,5 @@
-import { Decorator } from '@storybook/react'
-import { ReducersMapObject } from '@reduxjs/toolkit'
+import type { Decorator } from '@storybook/react'
+import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { StoreProvider } from 'app/providers/StoreProvider'
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { profileReducer } from 'features/EditableProfileCard'
@@ -7,8 +7,8 @@ import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slice'
 import { articlesPageReducer } from 'pages/ArticlesPage'
 
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
-import { StateSchema } from '../store'
+import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+import type { StateSchema } from '../store'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,

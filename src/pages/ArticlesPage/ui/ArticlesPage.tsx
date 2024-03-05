@@ -8,7 +8,7 @@ import {
   useDynamicModuleLoader,
   useInitialEffect
 } from 'shared/lib/hooks'
-import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
 import { fetchArticleListNextPage, initArticlesPage } from '../model/services'
 import { articlesPageReducer } from '../model/slice/articlesPageSlice'
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters'

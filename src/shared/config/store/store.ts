@@ -1,15 +1,17 @@
-import {
+import type {
   CombinedState,
-  configureStore,
   Reducer,
   ReducersMapObject
+} from '@reduxjs/toolkit'
+import {
+  configureStore
 } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User'
 import $axiosAPI from 'shared/api/axios'
 import $rtkApi from 'shared/api/rtk'
 import { uiReducer } from 'widgets/PageWrapper'
 import { createReducerManager } from './reducerManager'
-import { StateSchema } from './StateSchema'
+import type { StateSchema } from './StateSchema'
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
 

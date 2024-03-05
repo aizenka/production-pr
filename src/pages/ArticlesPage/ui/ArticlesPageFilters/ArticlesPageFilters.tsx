@@ -1,19 +1,21 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import {
+import type {
   ArticleListView,
   ArticleSortField,
+  ArticleType
+} from 'entities/Article'
+import {
   ArticlesSortSelector,
   ArticlesTypeTabs,
-  ArticlesViewSelector,
-  ArticleType
+  ArticlesViewSelector
 } from 'entities/Article'
 import { classNames } from 'shared/lib/common'
 import { Card, Column, Input, Row } from 'shared/ui'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
-import { SortOrder } from 'shared/types'
-import { TabItem } from 'shared/ui/Tabs/Tabs'
+import type { SortOrder } from 'shared/types'
+import type { TabItem } from 'shared/ui/Tabs/Tabs'
 import { useAppDispatch, useDebounce } from 'shared/lib/hooks'
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList'
 import {

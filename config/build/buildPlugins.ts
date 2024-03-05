@@ -2,7 +2,7 @@ import webpack from 'webpack'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
-import { BuildOptions } from './types/config'
+import type { BuildOptions } from './types/config'
 
 // TODO: Could not find a declaration file for module 'webpack-bundle-analyze
 // eslint-disable-next-line @typescript-eslint/no-var-requires

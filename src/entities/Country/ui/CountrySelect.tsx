@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
 import { ListBox } from 'shared/ui'
-import { Country } from '../model/types/Country'
+import { Country } from '../model/consts'
 
 interface CountrySelectProps {
   className?: string
