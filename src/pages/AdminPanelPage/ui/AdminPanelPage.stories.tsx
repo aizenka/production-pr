@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
-import { ThemeDecorator } from 'shared/config/storybook'
+import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 
 import AdminPanelPage from './AdminPanelPage'
 
 const meta: Meta<typeof AdminPanelPage> = {
-  title: '/AdminPanelPage',
+  title: 'pages/AdminPanelPage',
   component:  AdminPanelPage,
   parameters: {},
-  argTypes: {}
+  argTypes: {},
+  decorators: [StoreDecorator({})]
 }
 
 export default meta

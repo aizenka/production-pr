@@ -1,10 +1,10 @@
-import { memo } from 'react'
+import { FunctionComponent, SVGProps, memo } from 'react'
 import { classNames } from 'shared/lib/common'
 import cls from './Icon.module.scss'
 
 interface IconProps {
   className?: string,
-  Svg: React.VFC<React.SVGProps<SVGSVGElement>>
+  Svg: FunctionComponent<SVGProps<SVGSVGElement>>
 }
 
 export const Icon = memo(({ className, Svg }: IconProps) => {

@@ -3,7 +3,8 @@ import {
   StyleDecorator,
   ThemeDecorator,
   RouterDecorator,
-  TranslationDecorator
+  TranslationDecorator,
+  SuspenseDecorator
 } from '../../src/shared/config/storybook'
 import { Theme } from '../../src/app/providers/ThemeProvider'
 
@@ -19,6 +20,7 @@ const preview: Preview = {
   },
   decorators: [
     RouterDecorator,
+    SuspenseDecorator,
     TranslationDecorator,
     StyleDecorator,
     ThemeDecorator(Theme.LIGHT)

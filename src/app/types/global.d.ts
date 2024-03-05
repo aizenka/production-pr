@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-
 declare const __IS_DEV__: boolean
 declare const __API_URL__: string
 declare const __PROJECT__: 'frontend' | 'storybook' | 'jest'
@@ -22,8 +21,9 @@ declare module '*.scss' {
 }
 
 declare module '*.svg' {
-  import React from 'react'
-  const SVG: React.VFC<React.SVGProps<SVGSVGElement>>
+  import { FunctionComponent, SVGProps } from 'react'
+
+  const SVG: FunctionComponent<SVGProps<SVGSVGElement>>
   export default SVG
 }
 

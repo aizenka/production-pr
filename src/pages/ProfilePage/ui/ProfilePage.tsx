@@ -11,11 +11,9 @@ interface ProfilePageProps {
 export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   const { id: profileId } = useParams<{id: string}>()
 
-  if (!profileId) return null
-
   return (
     <PageWrapper className={classNames('', {}, [className])}>
-      <EditableProfileCard id={profileId} />
+      <EditableProfileCard id={profileId!} />
     </PageWrapper>
   )
 })

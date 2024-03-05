@@ -6,7 +6,7 @@ interface PortalProps {
   element?: HTMLElement
 }
 
-// TODO fix global styles
 export const Portal = ({ children, element = document.body }: PortalProps) => {
-  return createPortal(children, element)
+  // TODO: remove casting after fix react definitely-typed
+  return createPortal(children, element) as JSX.Element
 }

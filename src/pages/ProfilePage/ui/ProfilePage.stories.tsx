@@ -7,7 +7,6 @@ import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook'
 import ProfilePage from './ProfilePage'
 
 
-// TODO: use storybook-addon-react-router
 const meta: Meta<typeof ProfilePage> = {
   title: 'pages/ProfilePage',
   component: ProfilePage,

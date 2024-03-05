@@ -23,7 +23,6 @@ const reducers: ReducersList = {
   addCommentForm: addCommentFormReducer
 }
 
-// TODO: move in entities/comment, create ArticleDetailsComments feature
 const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
   useDynamicModuleLoader(reducers)
   const { t } = useTranslation(COMMENTS_NAMESPACE)

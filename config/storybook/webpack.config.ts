@@ -3,12 +3,13 @@ import webpack, { DefinePlugin, RuleSetRule } from 'webpack'
 import buildCssLoader from '../build/loaders/buildCssLoader'
 import { BuildPaths, ProjectType } from '../build/types/config'
 
-// TODO: fix ts
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
     build: '',
     html: '',
     entry: '',
+    locales: '',
+    buildLocales: '',
     src: path.resolve(__dirname, '..', '..', 'src')
   }
 
@@ -33,7 +34,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config!.plugins!.push(
     new DefinePlugin({
       __IS_DEV__: true,
-      __API_URL__: true,
+      __API_URL__: 'http://testapi.com',
       __PROJECT__: JSON.stringify(ProjectType.STORYBOOK)
     })
   )
