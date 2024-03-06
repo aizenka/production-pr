@@ -8,6 +8,10 @@ import type { BuildOptions } from './types/config'
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
+// TODO: fix circular-dependency-plugin declaration
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const CircularDependencyPlugin = require('circular-dependency-plugin')
+
 export function buildPlugins (
   {
     paths,
@@ -42,6 +46,10 @@ export function buildPlugins (
     plugins.push(
       new BundleAnalyzerPlugin({
         openAnalyzer: analyze
+      }),
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true
       })
     )
   }
