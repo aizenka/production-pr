@@ -44,6 +44,8 @@
   },
   "devDependencies": {
     "@babel/core": "7.15.5",
+    "@babel/plugin-transform-runtime": "^7.24.0",
+    "@babel/plugin-transform-typescript": "^7.23.6",
     "@babel/preset-env": "7.16.11",
     "@babel/preset-react": "7.16.7",
     "@babel/preset-typescript": "7.16.7",
@@ -80,6 +82,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.15",
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
     "gh-pages": "^6.1.1",
     "html-webpack-plugin": "5.5.0",
     "husky": "^8.0.0",

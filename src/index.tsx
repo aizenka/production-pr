@@ -10,6 +10,7 @@ import 'shared/config/i18n/init'
   add test coverage map
   move types to a separate folder and add public api (all components)
   fix consistent-type eslint (webpack, config)
+  remove ts-loader from packages
 */
 
 const container = document.getElementById('root')

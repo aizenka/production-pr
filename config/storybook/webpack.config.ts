@@ -2,7 +2,7 @@ import path from 'path'
 import type { RuleSetRule } from 'webpack'
 import type webpack from 'webpack'
 import { DefinePlugin } from 'webpack'
-import buildCssLoader from '../build/loaders/buildCssLoader'
+import { cssLoader } from '../build/loaders'
 import type { BuildPaths } from '../build/types/config'
 import { ProjectType } from '../build/types/config'
 
@@ -32,7 +32,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     use: ['@svgr/webpack']
   })
 
-  config!.module!.rules.push(buildCssLoader(true))
+  config!.module!.rules.push(cssLoader(true))
 
   config!.plugins!.push(
     new DefinePlugin({

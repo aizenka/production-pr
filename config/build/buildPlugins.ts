@@ -2,6 +2,7 @@ import webpack from 'webpack'
 import HTMLWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import type { BuildOptions } from './types/config'
 
 // TODO: Could not find a declaration file for module 'webpack-bundle-analyze
@@ -39,6 +40,15 @@ export function buildPlugins (
       patterns: [
         { from: paths.locales, to: paths.buildLocales }
       ]
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true
+        },
+        mode: 'write-references'
+      }
     })
   ]
 

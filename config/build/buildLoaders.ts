@@ -1,26 +1,18 @@
 import type webpack from 'webpack'
-import buildCssLoader from './loaders/buildCssLoader'
+import { cssLoader, babelLoader } from './loaders'
 import type { BuildOptions } from './types/config'
 
-export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/
-  }
+export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
+  const { isDev } = options
+  // const typescriptLoader = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/
+  // }
 
-  const cssLoaders = buildCssLoader(isDev)
-
-  const babelLoader =  {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env']
-      }
-    }
-  }
+  const cssLoaders = cssLoader(isDev)
+  const codeBabelLoader = babelLoader({ ...options, isTsx: false })
+  const tsxCodeBabelLoader = babelLoader({ ...options, isTsx: true })
 
   const svgLoader = {
     test: /\.svg$/,
@@ -38,5 +30,12 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   }
 
   // webpack expects js to be returned by the last loader in the chain
-  return [fontsLoader, imageLoader, svgLoader, cssLoaders, babelLoader, typescriptLoader]
+  return [
+    fontsLoader,
+    imageLoader,
+    svgLoader,
+    cssLoaders,
+    codeBabelLoader,
+    tsxCodeBabelLoader
+  ]
 }
