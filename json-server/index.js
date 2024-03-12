@@ -6,7 +6,7 @@ const server = jsonServer.create()
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
 
-server.use(jsonServer.defaults({}))
+server.use(jsonServer.defaults({ logger: false }))
 server.use(jsonServer.bodyParser)
 
 server.use(async (req, res, next) => {

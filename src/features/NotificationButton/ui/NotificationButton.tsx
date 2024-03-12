@@ -1,9 +1,10 @@
-import { memo } from 'react'
-import { Popover } from 'shared/ui'
+import { memo, useCallback, useState } from 'react'
+import { Drawer, Popover } from 'shared/ui'
 import { classNames } from 'shared/lib/common'
 import { NotificationList } from 'entities/Notification'
 import { Button, Icon } from 'shared/ui'
 import NotificationsIcon from 'shared/assets/icons/icon-notifications.svg'
+import { useDetectMobileScreen } from 'shared/lib/hooks'
 import cls from './NotificationButton.module.scss'
 
 interface NotificationButtonProps {
@@ -12,22 +13,47 @@ interface NotificationButtonProps {
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
   const { className } = props
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const isMobile = useDetectMobileScreen()
+
+  const onOpenDrawer = useCallback(() => {
+    setIsDrawerOpen(true)
+  }, [])
+
+  const onCloseDrawer = useCallback(() => {
+    setIsDrawerOpen(false)
+  }, [])
+
+  const trigger = (
+    <Button onClick={isMobile ? onOpenDrawer : undefined}>
+      <Icon
+        Svg={NotificationsIcon}
+        inverted
+      />
+    </Button>
+  )
 
   return (
-    <Popover
-      className={classNames('', {}, [className])}
-      trigger={(
-        <Button>
-          <Icon
-            Svg={NotificationsIcon}
-            inverted
-          />
-        </Button>
-      )}
-      unmount={false}
-      direction='bottom-right'
-    >
-      <NotificationList className={cls.notificationList} />
-    </Popover>
+    <>
+      {
+        isMobile ? (
+          <>
+            {trigger}
+            <Drawer isOpen={isDrawerOpen} onClose={onCloseDrawer}>
+              <NotificationList />
+            </Drawer>
+          </>
+        ) : (
+          <Popover
+            className={classNames('', {}, [className])}
+            trigger={trigger}
+            unmount={false}
+            direction='bottom-right'
+          >
+            <NotificationList className={cls.notificationList} />
+          </Popover>
+        )
+      }
+    </>
   )
 })

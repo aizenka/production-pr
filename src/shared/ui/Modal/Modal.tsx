@@ -1,5 +1,4 @@
 import type {
-  MouseEvent,
   MutableRefObject,
   ReactNode
 } from 'react'
@@ -12,6 +11,7 @@ import {
 import { classNames } from 'shared/lib/common'
 import type { ClsMods } from 'shared/lib/common/classNames/classNames'
 import { Portal } from '../Portal/Portal'
+import { Overlay } from '../Overlay/Overlay'
 import cls from './Modal.module.scss'
 
 interface ModalProps {
@@ -76,26 +76,14 @@ export const Modal = (props: ModalProps) => {
     [cls.closing]: isClosing
   }
 
-
-  const handleContentClick = (e: MouseEvent) => {
-    e.stopPropagation()
-  }
-
   if (lazy && !isMounted) return null
 
   return (
     <Portal>
       <div className={classNames(cls.modal, mods, [className])}>
-        <div
-          className={cls.overlay}
-          onClick={handleClose}
-        >
-          <div
-            className={cls.content}
-            onClick={handleContentClick}
-          >
-            {children}
-          </div>
+        <Overlay onClick={handleClose} />
+        <div className={cls.content}>
+          {children}
         </div>
       </div>
     </Portal>
