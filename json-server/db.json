@@ -1,14 +1,41 @@
 {
-  "posts": [
+  "notifications": [
     {
-      "id": 1,
-      "title": "json-server",
-      "userId": 1
+      "id": "1",
+      "title": "notification 1",
+      "description": "notification event 1",
+      "userId": "1"
     },
     {
-      "id": 2,
-      "title": "json-server",
-      "userId": 2
+      "id": "2",
+      "title": "notification link 2",
+      "description": "notification link event 2",
+      "href": "/admin",
+      "userId": "1"
+    },
+    {
+      "id": "3",
+      "title": "notification 3",
+      "description": "notification event 3",
+      "userId": "1"
+    },
+    {
+      "id": "4",
+      "title": "notification 4",
+      "description": "notification event 4",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "notification 5",
+      "description": "notification event 5",
+      "userId": "1"
+    },
+    {
+      "id": "6",
+      "title": "notification 6",
+      "description": "notification event 6",
+      "userId": "1"
     }
   ],
   "articles": [
@@ -590,7 +617,7 @@
       "firstName": "asddsd",
       "lastName": "dsadsadsa",
       "age": 33,
-      "currency": "USD",
+      "currency": "RUB",
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin",

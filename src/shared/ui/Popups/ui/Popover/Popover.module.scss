@@ -1,0 +1,12 @@
+.popover {
+  position: relative;
+}
+
+.popoverItems {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--popup-bg);
+  z-index: var(--select-z-index);
+  border-radius: 4px;
+}

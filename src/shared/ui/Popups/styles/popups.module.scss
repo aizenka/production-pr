@@ -1,0 +1,33 @@
+.top-left {
+  bottom: 100%;
+  left: 0;
+}
+
+.top-right {
+  bottom: 100%;
+  right: 0;
+}
+
+.bottom-left {
+  top: 100%;
+  left: 0;
+}
+
+.bottom-right {
+  top: 100%;
+  right: 0;
+}
+
+.triggerBtn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+// TODO: add new active/selected colors
+.active {
+  background-color: var(--inverted-primary-color);
+}

@@ -1,22 +1,23 @@
 import type { ReactNode } from 'react'
 import { Fragment, memo } from 'react'
-import { Listbox as HListbox } from '@headlessui/react'
+import { Listbox } from '@headlessui/react'
 import { classNames } from 'shared/lib/common'
 import type { DropdownDirection } from 'shared/types/ui'
-import { Button, ButtonVariant } from '../Button/Button'
-import { Row } from '../Flex'
-import cls from './ListBox.module.scss'
+import { Button, ButtonVariant } from '../../../Button/Button'
+import { Row } from '../../../Flex'
+import cls from './Select.module.scss'
+import popupCls from '../../styles/popups.module.scss'
 
-export interface ListBoxItem<T extends string> {
+export interface SelectItem<T extends string> {
   value: T,
   content: ReactNode,
   disabled?: boolean
 }
 
-interface ListBoxProps<T extends string> {
+interface SelectProps<T extends string> {
   className?: string,
   triggerButtonClassName?: string
-  items?: ListBoxItem<T>[]
+  items?: SelectItem<T>[]
   value?: T,
   defaultValue?: string
   label?: string
@@ -33,7 +34,7 @@ const typedMemo: <Component extends React.FC<any>>(component: Component,
   ) => boolean
 ) => Component = memo
 
-export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
+export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
   const {
     className,
     triggerButtonClassName,
@@ -58,16 +59,16 @@ export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
           </span>
         )
       }
-      <HListbox
-        className={classNames(cls.listBox, { [cls.readonly]: !!readonly }, [className])}
+      <Listbox
+        className={classNames(cls.select, { [cls.readonly]: !!readonly }, [className])}
         as='div'
         value={value}
         onChange={onChange}
         disabled={readonly}
       >
         {/* TODO: fix button 'as fragment' behavior */}
-        <HListbox.Button
-          className={cls.trigger}
+        <Listbox.Button
+          className={popupCls.triggerBtn}
         >
           <Button
             className={triggerButtonClassName}
@@ -76,13 +77,13 @@ export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
           >
             {value ?? defaultValue}
           </Button>
-        </HListbox.Button>
-        <HListbox.Options
-          className={classNames(cls.options, {}, [cls[direction]])}
+        </Listbox.Button>
+        <Listbox.Options
+          className={classNames(cls.options, {}, [popupCls[direction]])}
         >
           {
             items?.map((item) => (
-              <HListbox.Option
+              <Listbox.Option
                 as={Fragment}
                 key={item.value}
                 value={item.value}
@@ -91,7 +92,7 @@ export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
                 {({ active, selected }) => (
                   <li
                     className={classNames(cls.item, {
-                      [cls.active]: active,
+                      [popupCls.active]: active,
                       [cls.selected]: selected,
                       [cls.disabled]: item?.disabled
                     },
@@ -100,11 +101,11 @@ export const ListBox = typedMemo(<T extends string>(props: ListBoxProps<T>) => {
                     {item.content}
                   </li>
                 )}
-              </HListbox.Option>
+              </Listbox.Option>
             ))
           }
-        </HListbox.Options>
-      </HListbox>
+        </Listbox.Options>
+      </Listbox>
     </Row>
   )
 })

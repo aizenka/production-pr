@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { ListBox } from './ListBox'
+import { Select } from './Select'
 
-const meta: Meta<typeof ListBox> = {
-  title: 'shared/ListBox',
-  component:  ListBox,
+const meta: Meta<typeof Select> = {
+  title: 'shared/Select',
+  component:  Select,
   parameters: {},
   argTypes: {}
 }
 
 export default meta
-type Story = StoryObj<typeof ListBox>;
+type Story = StoryObj<typeof Select>;
 
 
 export const Light: Story = {

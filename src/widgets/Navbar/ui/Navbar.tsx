@@ -1,13 +1,13 @@
 import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { Avatar, Button, Dropdown } from 'shared/ui'
+import { Button, Row } from 'shared/ui'
 import { ButtonVariant } from 'shared/ui/Button/Button'
 import { classNames } from 'shared/lib/common'
 import { LoginModal } from 'features/AuthByUsername'
-import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { useAppDispatch } from 'shared/lib/hooks'
+import { getUserAuthData } from 'entities/User'
+import { NotificationButton } from 'features/NotificationButton'
+import { AvatarDropdown } from 'features/AvatarDropdown'
 import cls from './Navbar.module.scss'
 
 interface NavbarProps {
@@ -16,10 +16,7 @@ interface NavbarProps {
 
 export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation()
-  const dispatch = useAppDispatch()
   const authData = useSelector(getUserAuthData)
-  const isAdmin = useSelector(isUserAdmin)
-  const isManager = useSelector(isUserManager)
   const [openAuthModal, setOpenAuthModal] = useState(false)
 
   const onCloseAuthModal = useCallback(() => {
@@ -30,44 +27,17 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     setOpenAuthModal(true)
   }, [])
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout())
-  }, [dispatch])
-
-  const isAdminPanelAvailable = isAdmin || isManager
-
   const renderNavbarContent = () => {
     if (authData) {
       return (
-        <Dropdown
-          className={cls.dropdown}
-          trigger={
-            <Avatar
-              size={40}
-              src={authData?.avatarUrl}
-              alt='user avatar'
-            />
-          }
-          items={[
-            ...(
-              isAdminPanelAvailable ? [
-                {
-                  content: t('adminPage'),
-                  href: `${RoutePath.adminPanel}`
-                }
-              ]: []
-            ),
-            {
-              content: t('profilePage'),
-              href: `${RoutePath.profile}${authData.id}`
-            },
-            {
-              content: t('logout'),
-              onClick: onLogout
-            }
-          ]}
-          direction='bottom-right'
-        />
+        <Row
+          className={cls.actions}
+          gap={16}
+          vAlign='center'
+        >
+          <NotificationButton />
+          <AvatarDropdown />
+        </Row>
       )
     } else {
       return (

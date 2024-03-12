@@ -2,9 +2,9 @@ import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ARTICLES_NAMESPACE } from 'shared/constants/i18n'
 import { classNames } from 'shared/lib/common'
-import { ListBox, Row } from 'shared/ui'
+import { Select, Row } from 'shared/ui'
 import type { SortOrder } from 'shared/types'
-import type { ListBoxItem } from 'shared/ui/ListBox/ListBox'
+import type { SelectItem } from 'shared/ui/Popups'
 import { ArticleSortField } from '../../model/consts'
 import cls from './ArticlesSortSelector.module.scss'
 
@@ -26,7 +26,7 @@ export const ArticlesSortSelector = memo((props: ArticlesSortSelectorProps) => {
   } = props
   const { t } = useTranslation(ARTICLES_NAMESPACE)
 
-  const sortFieldOptions = useMemo<ListBoxItem<ArticleSortField>[]>(() => [
+  const sortFieldOptions = useMemo<SelectItem<ArticleSortField>[]>(() => [
     {
       value: ArticleSortField.CREATED_AT,
       content: t('creationDate')
@@ -41,7 +41,7 @@ export const ArticlesSortSelector = memo((props: ArticlesSortSelectorProps) => {
     }
   ], [t])
 
-  const sortOrderOptions = useMemo<ListBoxItem<SortOrder>[]>(() => [
+  const sortOrderOptions = useMemo<SelectItem<SortOrder>[]>(() => [
     {
       value: 'asc',
       content: t('ascending')
@@ -58,16 +58,16 @@ export const ArticlesSortSelector = memo((props: ArticlesSortSelectorProps) => {
       className={classNames('', {}, [className])}
       gap={16}
     >
-      <ListBox
+      <Select
         items={sortFieldOptions}
-        triggerButtonClassName={cls.listBoxTriggerBtn}
+        triggerButtonClassName={cls.selectTriggerBtn}
         label={t('sortBy')}
         value={sort}
         onChange={onChangeSort}
       />
-      <ListBox
+      <Select
         items={sortOrderOptions}
-        triggerButtonClassName={cls.listBoxTriggerBtn}
+        triggerButtonClassName={cls.selectTriggerBtn}
         label={t('by')}
         value={order}
         onChange={onChangeOrder}
