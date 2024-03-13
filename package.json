@@ -31,7 +31,9 @@
   "license": "MIT",
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "@react-spring/web": "^9.7.3",
     "@reduxjs/toolkit": "1.8.0",
+    "@use-gesture/react": "^10.3.0",
     "axios": "^1.6.2",
     "i18next": "^23.10.0",
     "i18next-browser-languagedetector": "6.1.3",
