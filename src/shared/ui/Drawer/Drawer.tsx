@@ -2,6 +2,7 @@ import { useCallback, type ReactNode, useEffect } from 'react'
 import { classNames } from '@/shared/lib/common'
 import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 import { useAnimationLibs } from '@/shared/lib/components'
+import { AnimationProvider } from '@/shared/lib/components'
 import { Portal } from '../Portal/Portal'
 import { Overlay } from '../Overlay/Overlay'
 import { RippleLoader } from '../RippleLoader/RippleLoader'
@@ -16,6 +17,14 @@ interface DrawerProps {
 }
 
 export const Drawer = (props: DrawerProps) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  )
+}
+
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs()
 
   if (!isLoaded) {

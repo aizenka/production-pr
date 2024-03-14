@@ -4,7 +4,6 @@ import { classNames } from '@/shared/lib/common'
 import { NotificationList } from '@/entities/Notification'
 import { Button, Icon } from '@/shared/ui'
 import NotificationsIcon from '@/shared/assets/icons/icon-notifications.svg'
-import { AnimationProvider } from '@/shared/lib/components'
 import { useDetectMobileScreen } from '@/shared/lib/hooks'
 import cls from './NotificationButton.module.scss'
 
@@ -40,11 +39,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
         isMobile ? (
           <>
             {trigger}
-            <AnimationProvider>
-              <Drawer isOpen={isDrawerOpen} onClose={onCloseDrawer}>
-                <NotificationList />
-              </Drawer>
-            </AnimationProvider>
+            <Drawer isOpen={isDrawerOpen} onClose={onCloseDrawer}>
+              <NotificationList />
+            </Drawer>
           </>
         ) : (
           <Popover
