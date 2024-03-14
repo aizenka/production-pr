@@ -1,5 +1,5 @@
 import { Suspense } from 'react'
-import { Modal, RippleLoader } from 'shared/ui'
+import { Modal, RippleLoader } from '@/shared/ui'
 import { LoginForm } from '../LoginForm/LoginForm.async'
 
 

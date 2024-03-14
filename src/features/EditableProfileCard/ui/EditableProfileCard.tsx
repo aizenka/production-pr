@@ -1,19 +1,19 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import type { Country } from 'entities/Country'
-import type { Currency } from 'entities/Currency'
-import { ProfileCard } from 'entities/Profile'
-import { PROFILE_PAGE_NAMESPACE } from 'shared/constants/i18n'
-import { Column, Text } from 'shared/ui'
-import { TextType } from 'shared/ui/Text/Text'
-import { classNames } from 'shared/lib/common'
+import type { Country } from '@/entities/Country'
+import type { Currency } from '@/entities/Currency'
+import { ProfileCard } from '@/entities/Profile'
+import { PROFILE_PAGE_NAMESPACE } from '@/shared/constants/i18n'
+import { Column, Text } from '@/shared/ui'
+import { TextType } from '@/shared/ui/Text/Text'
+import { classNames } from '@/shared/lib/common'
 import {
   useAppDispatch,
   useDynamicModuleLoader,
   useInitialEffect
-} from 'shared/lib/hooks'
-import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+} from '@/shared/lib/hooks'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import {
   getProfileForm,
   getProfileLoading,

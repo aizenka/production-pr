@@ -1,4 +1,4 @@
-import type { StateSchema } from 'shared/config/store'
+import type { StateSchema } from '@/shared/config/store'
 import { getLoginError } from '../getLoginError/getLoginError'
 import { getLoginLoading } from '../getLoginLoading/getLoginLoading'
 import { getLoginPassword } from '../getLoginPassword/getLoginPassword'

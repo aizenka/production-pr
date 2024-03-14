@@ -9,8 +9,8 @@ import {
   useRef,
   useState
 } from 'react'
-import { classNames } from 'shared/lib/common'
-import type { ClsMods } from 'shared/lib/common/classNames/classNames'
+import { classNames } from '@/shared/lib/common'
+import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 import { Row } from '../Flex'
 import cls from './Input.module.scss'
 

@@ -1,8 +1,8 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/common'
-import GridViewIcon from 'shared/assets/icons/icon-articles-grid-view.svg'
-import ListViewIcon from 'shared/assets/icons/icon-articles-list-view.svg'
-import { Button, Icon } from 'shared/ui'
+import { classNames } from '@/shared/lib/common'
+import GridViewIcon from '@/shared/assets/icons/icon-articles-grid-view.svg'
+import ListViewIcon from '@/shared/assets/icons/icon-articles-list-view.svg'
+import { Button, Icon } from '@/shared/ui'
 import { ArticleListView } from '../../model/consts'
 import cls from './ArticlesViewSelector.module.scss'
 

@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/common'
-import { Column, Skeleton } from 'shared/ui'
+import { classNames } from '@/shared/lib/common'
+import { Column, Skeleton } from '@/shared/ui'
 import { useNotifications } from '../../api/notificationApi'
 import { NotificationItem } from '../NotificationItem/NotificationItem'
 

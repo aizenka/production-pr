@@ -1,5 +1,5 @@
-import { Country } from 'entities/Country'
-import { Currency } from 'entities/Currency'
+import { Country } from '@/entities/Country'
+import { Currency } from '@/entities/Currency'
 import { updateProfileData } from '../services'
 import type { ProfileSchema } from '../types/EditableProfileCardSchema'
 import { profileActions, profileReducer } from './profileSlice'

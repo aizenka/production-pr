@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
-import { ArticleList } from 'entities/Article'
-import { classNames } from 'shared/lib/common'
+import { ArticleList } from '@/entities/Article'
+import { classNames } from '@/shared/lib/common'
 import {
   getArticlesPageLoading,
   getArticlesPageListView

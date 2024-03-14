@@ -5,8 +5,8 @@ import {
   createEntityAdapter,
   createSlice
 } from '@reduxjs/toolkit'
-import type { Comment } from 'entities/Comment'
-import type { StateSchema } from 'shared/config/store'
+import type { Comment } from '@/entities/Comment'
+import type { StateSchema } from '@/shared/config/store'
 import { fetchCommentsByArticleId } from '../services'
 import type { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 

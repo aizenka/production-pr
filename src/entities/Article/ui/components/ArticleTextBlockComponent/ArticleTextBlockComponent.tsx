@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/common'
-import { Column, Text } from 'shared/ui'
+import { classNames } from '@/shared/lib/common'
+import { Column, Text } from '@/shared/ui'
 import type { ArticleTextBlock } from '../../../model/types/Article'
 
 interface ArticleTextBlockComponentProps {

@@ -1,7 +1,7 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import { memo } from 'react'
-import { classNames } from 'shared/lib/common'
-import type { ClsAdditional } from 'shared/lib/common/classNames/classNames'
+import { classNames } from '@/shared/lib/common'
+import type { ClsAdditional } from '@/shared/lib/common/classNames/classNames'
 import cls from './Button.module.scss'
 
 

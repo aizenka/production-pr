@@ -1,4 +1,4 @@
-import type { StateSchema } from 'shared/config/store'
+import type { StateSchema } from '@/shared/config/store'
 
 export const getLoginLoading = (state: StateSchema) => {
   return state?.loginForm?.isLoading || false

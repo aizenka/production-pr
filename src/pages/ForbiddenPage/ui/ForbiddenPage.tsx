@@ -1,8 +1,8 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { FORBIDDEN_PAGE_NAMESPACE } from 'shared/constants/i18n'
-import { classNames } from 'shared/lib/common'
-import { PageWrapper } from 'widgets/PageWrapper'
+import { FORBIDDEN_PAGE_NAMESPACE } from '@/shared/constants/i18n'
+import { classNames } from '@/shared/lib/common'
+import { PageWrapper } from '@/widgets/PageWrapper'
 
 interface ForbiddenPageProps {
   className?: string

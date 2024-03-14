@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import { memo } from 'react'
 import type { LinkProps } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { classNames } from 'shared/lib/common'
+import { classNames } from '@/shared/lib/common'
 import cls from './AppLink.module.scss'
 
 export enum AppLinkVariant {

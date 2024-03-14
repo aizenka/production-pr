@@ -1,12 +1,12 @@
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/common'
-import { Avatar, Column, Icon, Row, Skeleton, Text } from 'shared/ui'
-import { TextAlign, TextSize } from 'shared/ui/Text/Text'
-import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
-import EyeIcon from 'shared/assets/icons/icon-eye-outlined.svg'
-import CalendarIcon from 'shared/assets/icons/icon-calendar.svg'
+import { classNames } from '@/shared/lib/common'
+import { Avatar, Column, Icon, Row, Skeleton, Text } from '@/shared/ui'
+import { TextAlign, TextSize } from '@/shared/ui/Text/Text'
+import { ARTICLE_DETAILS_NAMESPACE } from '@/shared/constants/i18n'
+import EyeIcon from '@/shared/assets/icons/icon-eye-outlined.svg'
+import CalendarIcon from '@/shared/assets/icons/icon-calendar.svg'
 import {
   ArticleCodeBlockComponent,
   ArticleImageBlockComponent,
@@ -16,8 +16,8 @@ import {
   useAppDispatch,
   useDynamicModuleLoader,
   useInitialEffect
-} from 'shared/lib/hooks'
-import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+} from '@/shared/lib/hooks'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import { fetchArticleById } from '../../model/services'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import type { ArticleBlock } from '../../model/types'

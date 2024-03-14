@@ -2,14 +2,14 @@ import type { MutableRefObject, ReactNode, UIEvent } from 'react'
 import { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-import type { StateSchema } from 'shared/config/store'
-import { classNames } from 'shared/lib/common'
+import type { StateSchema } from '@/shared/config/store'
+import { classNames } from '@/shared/lib/common'
 import {
   useAppDispatch,
   useInfiniteScroll,
   useInitialEffect,
   useThrottle
-} from 'shared/lib/hooks'
+} from '@/shared/lib/hooks'
 import { getScrollByPath } from '../model/selectors/scrollSelectors'
 import { uiActions } from '../model/slice/UISlice'
 import cls from './PageWrapper.module.scss'

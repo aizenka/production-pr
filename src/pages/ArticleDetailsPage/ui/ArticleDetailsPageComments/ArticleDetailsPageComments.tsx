@@ -1,12 +1,12 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { AddCommentForm } from 'entities/AddCommentForm'
-import { CommentList } from 'entities/Comment'
-import { classNames } from 'shared/lib/common'
-import { Column, Text } from 'shared/ui'
-import { COMMENTS_NAMESPACE } from 'shared/constants/i18n'
-import { useAppDispatch, useInitialEffect } from 'shared/lib/hooks'
+import { AddCommentForm } from '@/entities/AddCommentForm'
+import { CommentList } from '@/entities/Comment'
+import { classNames } from '@/shared/lib/common'
+import { Column, Text } from '@/shared/ui'
+import { COMMENTS_NAMESPACE } from '@/shared/constants/i18n'
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import {
   getArticleCommentsLoading,
   getArticleCommentsError

@@ -1,14 +1,14 @@
 import { memo, useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { PageWrapper } from 'widgets/PageWrapper'
-import { classNames } from 'shared/lib/common'
-import { Column } from 'shared/ui'
+import { PageWrapper } from '@/widgets/PageWrapper'
+import { classNames } from '@/shared/lib/common'
+import { Column } from '@/shared/ui'
 import {
   useAppDispatch,
   useDynamicModuleLoader,
   useInitialEffect
-} from 'shared/lib/hooks'
-import type { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoader'
+} from '@/shared/lib/hooks'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import { fetchArticleListNextPage, initArticlesPage } from '../model/services'
 import { articlesPageReducer } from '../model/slice/articlesPageSlice'
 import { ArticlesPageFilters } from './ArticlesPageFilters/ArticlesPageFilters'

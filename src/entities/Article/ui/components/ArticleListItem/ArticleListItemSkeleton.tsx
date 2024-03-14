@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/common'
-import { Card, Column, Row, Skeleton } from 'shared/ui'
+import { classNames } from '@/shared/lib/common'
+import { Card, Column, Row, Skeleton } from '@/shared/ui'
 import { ArticleListView } from '../../../model/consts'
 import cls from './ArticleListItem.module.scss'
 

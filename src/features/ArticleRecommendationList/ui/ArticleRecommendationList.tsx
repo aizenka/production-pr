@@ -1,9 +1,9 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ArticleList, ArticleListView } from 'entities/Article'
-import { ARTICLE_DETAILS_NAMESPACE } from 'shared/constants/i18n'
-import { classNames } from 'shared/lib/common'
-import { Column, Text } from 'shared/ui'
+import { ArticleList, ArticleListView } from '@/entities/Article'
+import { ARTICLE_DETAILS_NAMESPACE } from '@/shared/constants/i18n'
+import { classNames } from '@/shared/lib/common'
+import { Column, Text } from '@/shared/ui'
 import { useArticleRecommendationList } from '../api/articleRecommendationsApi'
 import cls from './ArticleRecommendationList.module.scss'
 

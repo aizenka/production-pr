@@ -1,6 +1,6 @@
 import { memo } from 'react'
-import { classNames } from 'shared/lib/common'
-import { Code } from 'shared/ui'
+import { classNames } from '@/shared/lib/common'
+import { Code } from '@/shared/ui'
 import type { ArticleCodeBlock } from '../../../model/types/Article'
 import cls from './ArticleCodeBlockComponent.module.scss'
 

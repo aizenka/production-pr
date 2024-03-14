@@ -1,4 +1,4 @@
-import type { StateSchema } from 'shared/config/store'
+import type { StateSchema } from '@/shared/config/store'
 import { getProfileError } from './getProfileError'
 
 describe('getProfileErrorTest', () => {
