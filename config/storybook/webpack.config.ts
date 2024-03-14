@@ -17,6 +17,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   }
 
   config!.resolve!.modules = [ paths.src, 'node_modules' ]
+  config.resolve!.alias = { '@': paths.src }
 
   config!.module!.rules = config!.module!.rules!.map(
     (rule: RuleSetRule | '...') => {
@@ -37,7 +38,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
   config!.plugins!.push(
     new DefinePlugin({
       __IS_DEV__: true,
-      __API_URL__: 'http://testapi.com',
+      __API_URL__: JSON.stringify('http://testapi.com'),
       __PROJECT__: JSON.stringify(ProjectType.STORYBOOK)
     })
   )

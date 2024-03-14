@@ -3,10 +3,13 @@ import { userEvent } from '@testing-library/user-event'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
 import type { Profile } from '@/entities/Profile'
-import $api from '@/shared/api/axios'
 import { renderComponent } from '@/shared/lib/tests'
+import axios from 'axios'
 import { profileReducer } from '../model/slice/profileSlice'
 import { EditableProfileCard } from './EditableProfileCard'
+
+jest.mock('axios')
+const mAxios = axios as jest.MockedFunction<typeof axios>
 
 const mockProfileData:Profile = {
   id: '1',
@@ -86,7 +89,8 @@ describe('editableProfileCardTest', () => {
   })
 
   test('if there are no validation errors, then a PUT request should be sent to server', async () => {
-    const jestMockRequest = jest.spyOn($api, 'put')
+    const jestMockRequest = jest.spyOn(mAxios, 'put')
+
     await userEvent.click(screen.getByTestId('EditableProfileHeader.EditBtn'))
 
     await userEvent.type(screen.getByTestId('ProfileCard.firstName'), 'user')
