@@ -22,9 +22,10 @@
     "test:ui": "yarn build:storybook && loki --requireReference --reactUri file:./storybook-static",
     "test:ui:approve": "npx loki approve",
     "test:ui:report": "yarn test:ui:json && yarn test:ui:html",
-    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:json": "ts-node scripts/generateVisualJsonReport.js",
     "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
-    "generate:fsd:slice": "node ./scripts/createFSDSlice/index.js"
+    "generate:fsd:slice": "ts-node ./scripts/createFSDSlice/index.js",
+    "refactor:update:imports": "ts-node ./scripts/updateImports.ts"
   },
   "repository": "git@github.com:aizenka/production-pr.git",
   "author": "aizenka",
@@ -102,6 +103,7 @@
     "stylelint": "^15.11.0",
     "stylelint-config-standard-scss": "^11.1.0",
     "ts-loader": "9.2.6",
+    "ts-morph": "^22.0.0",
     "ts-node": "10.5.0",
     "typescript": "^5.3.3",
     "webpack": "5.69.1",

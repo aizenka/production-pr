@@ -1,12 +1,12 @@
-const fs = require('fs/promises')
-const resolveRoot = require('../../helpers/resolveRoot')
-const firstCharUpperCase = require('../../helpers/firstCharUpperCase')
-const camalize = require('../../helpers/camalize')
-const componentTemplate = require('./componentTemplate')
-const storyTemplate = require('./storyTemplate')
-const stylesTemplate = require('./stylesTemplate')
+import fs from 'fs/promises'
+import { resolveRoot }  from '../../helpers/resolveRoot'
+import { firstCharUpperCase } from '../../helpers/firstCharUpperCase'
+import { camalize } from '../../helpers/camalize'
+import { componentTemplate } from './componentTemplate'
+import { storyTemplate } from './storyTemplate'
+import { stylesTemplate } from './stylesTemplate'
 
-module.exports = async (layer, sliceName) => {
+export const createUI = async (layer, sliceName) => {
   const resolveUIPath = (...segments) => {
     return resolveRoot(
       'src',

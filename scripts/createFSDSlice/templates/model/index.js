@@ -1,10 +1,10 @@
-const fs = require('fs/promises')
-const resolveRoot = require('../../helpers/resolveRoot')
-const reduxSliceTemplate = require('./reduxSliceTemplate')
-const schemaTypeTemplate = require('./schemaTypeTemplate')
-const firstCharUpperCase = require('../../helpers/firstCharUpperCase')
+import fs from 'fs/promises'
+import { resolveRoot } from '../../helpers/resolveRoot'
+import { firstCharUpperCase } from '../../helpers/firstCharUpperCase'
+import { reduxSliceTemplate } from './reduxSliceTemplate'
+import { schemaTypeTemplate } from './schemaTypeTemplate'
 
-module.exports = async (layer, sliceName) => {
+export const createModel = async (layer, sliceName) => {
   const resolveModulePath = (...segments) => {
     return resolveRoot(
       'src',

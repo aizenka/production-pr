@@ -1,4 +1,4 @@
-module.exports = (componentName, camalizedComponentName) => {
+export const componentTemplate = (componentName, camalizedComponentName) => {
   return `import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/common'

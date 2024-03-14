@@ -1,9 +1,9 @@
-const fs = require('fs/promises')
-const resolveRoot = require('../../helpers/resolveRoot')
-const firstCharUpperCase = require('../../helpers/firstCharUpperCase')
-const publicApiTemplate = require('./publicApiTemplate')
+import fs from 'fs/promises'
+import { resolveRoot } from '../../helpers/resolveRoot'
+import { firstCharUpperCase } from '../../helpers/firstCharUpperCase'
+import { publicApiTemplate } from './publicApiTemplate'
 
-module.exports = async (layer, sliceName) => {
+export const createPublicAPI = async (layer, sliceName) => {
   const componentName = firstCharUpperCase(sliceName)
   const schemaName = `${firstCharUpperCase(sliceName)}Schema`
 

@@ -10,6 +10,8 @@ export function buildResolvers (paths: BuildPaths): webpack.ResolveOptions {
       'node_modules'
     ],
     mainFiles: ['index'],
-    alias: {}
+    alias: {
+      '@': paths.src
+    }
   }
 }

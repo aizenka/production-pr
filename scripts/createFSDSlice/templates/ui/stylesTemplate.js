@@ -1,3 +1,3 @@
-module.exports = (componentName) => {
+export const stylesTemplate = (componentName) => {
   return `.${componentName} {}`
 }

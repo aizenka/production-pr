@@ -1,4 +1,4 @@
-const createTemplate = require('./templates')
+import { createTemplate } from './templates'
 
 const resolvedLayers = ['features', 'entities', 'pages']
 

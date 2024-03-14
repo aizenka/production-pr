@@ -1,5 +1,5 @@
-const path = require('path')
+import path from 'path'
 
-module.exports = (...segments) => {
+export const resolveRoot = (...segments) => {
   return path.resolve(__dirname, '..', '..', '..', ...segments)
 }

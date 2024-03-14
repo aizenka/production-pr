@@ -1,10 +1,10 @@
-const fs = require('fs/promises')
-const resolveRoot = require('../helpers/resolveRoot')
-const createModel = require('./model')
-const createUI = require('./ui')
-const createPublicAPI = require('./publicApi')
+import fs from 'fs/promises'
+import { resolveRoot } from '../helpers/resolveRoot'
+import { createModel } from './model'
+import { createUI } from './ui'
+import { createPublicAPI } from'./publicApi'
 
-module.exports = async (layer, sliceName) => {
+export const createTemplate = async (layer, sliceName) => {
   try {
     await fs.mkdir(resolveRoot('src', layer, sliceName))
   } catch (e) {
