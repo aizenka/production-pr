@@ -1,4 +1,3 @@
-// const { Project } = require('ts-morph')
 import { Project } from 'ts-morph'
 
 const project = new Project()
