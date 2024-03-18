@@ -25,7 +25,10 @@ export const Popover = memo((props: PopoverProps) => {
 
   return (
     <HPopover className={classNames(cls.popover, {}, [className])}>
-      <HPopover.Button className={popupCls.triggerBtn}>
+      <HPopover.Button
+        as='div'
+        className={popupCls.triggerBtn}
+      >
         {trigger}
       </HPopover.Button>
 

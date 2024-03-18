@@ -17,4 +17,5 @@ export { Code } from './Code/Code'
 export { Card } from './Card/Card'
 export { Tabs } from './Tabs/Tabs'
 export { Row, Column } from './Flex'
+export { StarRaiting } from './StarRaiting/StarRaiting'
 

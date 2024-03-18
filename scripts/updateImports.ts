@@ -5,10 +5,10 @@ const project = new Project()
 project.addSourceFilesAtPaths('src/**/*.ts')
 project.addSourceFilesAtPaths('src/**/*.tsx')
 
-const isAbsoulute = (value: string) => {
-  const layers = ['app', 'entities', 'features', 'pages', 'shared', 'widgets']
+const LAYERS = ['app', 'entities', 'features', 'pages', 'shared', 'widgets']
 
-  return layers.some(layer => value.startsWith(layer))
+const isAbsoulute = (value: string) => {
+  return LAYERS.some(layer => value.startsWith(layer))
 }
 
 const files = project.getSourceFiles()

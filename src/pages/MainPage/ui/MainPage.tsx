@@ -9,7 +9,6 @@ const MainPage = memo(() => {
 
   return (
     <PageWrapper>
-      {/* <BugButton />&nbsp; */}
       {t('mainPage')}
     </PageWrapper>
   )

@@ -12,4 +12,5 @@ export const FORBIDDEN_PAGE_NAMESPACE = 'forbiddenPage'
 export const ARTICLE_DETAILS_NAMESPACE = 'articleDetails'
 export const ARTICLES_NAMESPACE = 'articles'
 export const COMMENTS_NAMESPACE = 'comments'
+export const RATING_NAMESPACE = 'rating'
 //
