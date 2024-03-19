@@ -158,6 +158,6 @@
         ]
       }
     ],
-    "feature-sliced-design-path-checker/path-checker": "error"
+    "feature-sliced-design-path-checker/path-checker": ["error", { "alias": "@" }]
   }
 }
