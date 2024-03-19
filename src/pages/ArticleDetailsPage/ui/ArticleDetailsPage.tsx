@@ -7,6 +7,7 @@ import { ARTICLE_DETAILS_NAMESPACE } from '@/shared/constants/i18n'
 import { PageWrapper } from '@/widgets/PageWrapper'
 import { Column } from '@/shared/ui'
 import { ArticleRecommendationList } from '@/features/ArticleRecommendationList'
+import { ArticleRating } from '@/features/ArticleRating'
 import { useDynamicModuleLoader } from '@/shared/lib/hooks'
 import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import { articleDetailsPageReducer } from '../model/slice'
@@ -39,6 +40,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
       <Column gap={24}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
+        <ArticleRating articleId={id}/>
         <ArticleRecommendationList />
         <ArticleDetailsPageComments id={id} />
       </Column>

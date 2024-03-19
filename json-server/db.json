@@ -634,5 +634,44 @@
       "username": "admin 123",
       "avatarUrl": "https://ideastest.org.uk/wp-content/uploads/2019/04/default-avatar-1.jpg"
     }
+  ],
+  "articleRatings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "feedback 1",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 2,
+      "feedback": "feedback 2",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "articleId": "12",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "4444",
+      "id": "34_VBk-"
+    }
+  ],
+  "profileRatings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "feedback 1",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 2,
+      "feedback": "feedback 2",
+      "userId": "1",
+      "profileId": "2"
+    }
   ]
 }

@@ -53,8 +53,8 @@ export const StarRaiting = memo((props: StarRaitingProps) => {
             <Icon
               key={starNumber}
               className={classNames(cls.starIcon, {
-                [cls.hovered]: currentStarsCount >= starNumber,
-                [cls.selected]: isSelected
+                [cls.hovered]: currentStarsCount >= starNumber
+                // [cls.selected]: isSelected
               })}
               Svg={RatingIcon}
               width={size}

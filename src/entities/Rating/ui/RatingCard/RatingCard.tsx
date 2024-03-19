@@ -20,6 +20,8 @@ interface RatingCardProps {
   className?: string
   title?: string
   feedbackTitle?: string
+  rate?: number
+  feedbackText?: string
   onCancel?: (starsCount: number) => void
   onSubmit?: (starsCount: number, feedbackText?: string) => void
 }
@@ -29,13 +31,15 @@ export const RatingCard = memo((props: RatingCardProps) => {
     className,
     title,
     feedbackTitle,
+    feedbackText = '',
     onCancel,
-    onSubmit
+    onSubmit,
+    rate = 0
   } = props
   const { t } = useTranslation(RATING_NAMESPACE)
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [starsCount, setStarsCount] = useState(0)
-  const [feedback, setFeedback] = useState('')
+  const [starsCount, setStarsCount] = useState(rate)
+  const [feedback, setFeedback] = useState(feedbackText)
   const isMobile = useDetectMobileScreen()
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -72,8 +76,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
   return (
     <Card className={classNames('', {}, [className])}>
       <Column align='center' gap={16}>
-        <Text title={title} />
-        <StarRaiting onSelect={onSelectStars} />
+        <Text title={starsCount ? t('thanksForReview') : title} />
+        <StarRaiting
+          onSelect={onSelectStars}
+          selectedStars={rate}
+        />
         {
           isMobile ? (
             <Drawer
