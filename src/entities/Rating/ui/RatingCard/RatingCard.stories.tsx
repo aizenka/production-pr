@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook'
 import { RatingCard } from './RatingCard'
 
 const meta: Meta<typeof RatingCard> = {
-  title: '/RatingCard',
+  title: 'entities/Rating/RatingCard',
   component:  RatingCard,
   parameters: {},
   argTypes: {},

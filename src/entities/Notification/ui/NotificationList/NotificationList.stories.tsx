@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook'
 import { NotificationList } from './NotificationList'
 
 const meta: Meta<typeof NotificationList> = {
-  title: 'entities/NotificationList',
+  title: 'entities/Notifications/NotificationList',
   component:  NotificationList,
   parameters: {},
   argTypes: {}
