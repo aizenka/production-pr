@@ -6789,10 +6789,10 @@ escodegen@^2.0.0, escodegen@^2.1.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-plugin-feature-sliced-design-path-checker@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-feature-sliced-design-path-checker/-/eslint-plugin-feature-sliced-design-path-checker-1.1.1.tgz#e656ee38e854e74688d52cff37a66e3ac2cde008"
-  integrity sha512-oXuTdjbpoSDx/xXMRzdhM4tB/wcVdN/rZsYt6gEKlE9YJ1B0MoZPQTjum2heEt0q/UfcByXYxM6Kn05KRj5Osw==
+eslint-plugin-feature-sliced-design-path-checker@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-feature-sliced-design-path-checker/-/eslint-plugin-feature-sliced-design-path-checker-1.1.2.tgz#2cc93cca4b026ff1a9bb1b10ec8a7a59be3fccff"
+  integrity sha512-CNkDLhCs1Hxt/vsrwfoScMI6vf6K4yzRXtQklmkLbLQsC+8kTpvPdOi05tu9DsSDgvBcYF0DGxrB4Gby1jZSXA==
   dependencies:
     requireindex "^1.2.0"
 

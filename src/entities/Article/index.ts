@@ -8,5 +8,6 @@ export type { Article, ArticleDetailsSchema } from './model/types'
 export {
   ArticleListView,
   ArticleSortField,
-  ArticleType
+  ArticleType,
+  ArticleBlockType
 } from './model/consts'

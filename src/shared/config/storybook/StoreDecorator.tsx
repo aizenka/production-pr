@@ -1,9 +1,12 @@
 import type { Decorator } from '@storybook/react'
 import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { StoreProvider } from '@/app/providers/StoreProvider'
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
 import { profileReducer } from '@/features/EditableProfileCard'
+// eslint-disable-next-line feature-sliced-design-path-checker/public-api-imports
+import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice'
+// eslint-disable-next-line feature-sliced-design-path-checker/public-api-imports
 import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
+// eslint-disable-next-line feature-sliced-design-path-checker/public-api-imports
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slice'
 import { articlesPageReducer } from '@/pages/ArticlesPage'
 
