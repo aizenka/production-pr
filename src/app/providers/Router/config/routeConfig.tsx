@@ -1,4 +1,4 @@
-import type { RouteProps } from 'react-router-dom'
+import { UserRole } from '@/entities/User'
 import {
   MainPage,
   AboutPage,
@@ -10,39 +10,8 @@ import {
   AdminPanelPage,
   ForbiddenPage
 } from '@/pages'
-import { UserRole } from '@/entities/User'
-
-export type AppRoutesProps = RouteProps & {
-  authOnly?: boolean,
-  roles?: UserRole[]
-}
-
-export enum AppRoutes {
-  MAIN = 'main',
-  ABOUT = 'about',
-  PROFILE = 'profile',
-  ARTICLES = 'articles',
-  ADMIN_PANEL = 'adminPanel',
-  ARTICLE_DETAILS = 'articleDetails',
-  ARTICLE_CREATE = 'articleCreate',
-  ARTICLE_EDIT = 'articleEdit',
-  FORBIDDEN = 'forbidden',
-  NOT_FOUND = 'notFound'
-}
-
-export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile/', // :id
-  [AppRoutes.ARTICLES]: '/articles',
-  [AppRoutes.ADMIN_PANEL]: '/admin',
-  [AppRoutes.ARTICLE_DETAILS]: '/articles/', // :id,
-  [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-  [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-
-  [AppRoutes.FORBIDDEN]: '/forbidden',
-  [AppRoutes.NOT_FOUND]: '*'
-}
+import { AppRoutes, RoutePath } from '@/shared/constants/router'
+import type { AppRoutesProps } from '@/shared/types/router'
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.MAIN]: {
