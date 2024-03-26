@@ -159,6 +159,12 @@
       }
     ],
     "feature-sliced-design-path-checker/path-checker": ["error", { "alias": "@" }],
-    "feature-sliced-design-path-checker/public-api-imports": ["error", { "alias": "@" }]
+    "feature-sliced-design-path-checker/public-api-imports": [
+      "error",
+      {
+        "alias": "@",
+        "testFilesPatterns": ["**/*.test.*", "**/*.stories.*", "**/StoreDecorator.tsx"]
+      }
+    ]
   }
 }
