@@ -2,7 +2,7 @@ import type { MutableRefObject, ReactNode, UIEvent } from 'react'
 import { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-import type { StateSchema } from '@/shared/config/store'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 import { classNames } from '@/shared/lib/common'
 import {
   useAppDispatch,

@@ -10,8 +10,8 @@ import { userReducer } from '@/entities/User'
 import $axiosAPI from '@/shared/api/axios'
 import $rtkApi from '@/shared/api/rtk'
 import { uiReducer } from '@/widgets/PageWrapper'
-import { createReducerManager } from './reducerManager'
 import type { StateSchema } from './StateSchema'
+import { createReducerManager } from './reducerManager'
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
 

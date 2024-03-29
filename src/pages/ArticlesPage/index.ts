@@ -1,2 +1,2 @@
 export type { ArticlesPageSchema } from './model/types/ArticlesPageSchema'
-export { articlesPageActions, articlesPageReducer } from './model/slice/articlesPageSlice'
+export { articlesPageActions } from './model/slice/articlesPageSlice'

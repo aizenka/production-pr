@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { getUserMounted, userActions } from '@/entities/User'
-import { AppRouter } from '@/app/providers/Router'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
 import { useAppDispatch } from '@/shared/lib/hooks'
+import { AppRouter } from './providers/Router'
 import './styles/index.scss'
 
 const App = () => {

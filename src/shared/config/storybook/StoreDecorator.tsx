@@ -1,14 +1,14 @@
 import type { Decorator } from '@storybook/react'
 import type { ReducersMapObject } from '@reduxjs/toolkit'
 import { StoreProvider } from '@/app/providers/StoreProvider'
-import { profileReducer } from '@/features/EditableProfileCard'
+import { profileReducer } from '@/features/EditableProfileCard/testing'
 import { articleDetailsReducer } from '@/entities/Article/testing'
 import { loginReducer } from '@/features/AuthByUsername/testing'
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing'
-import { articlesPageReducer } from '@/pages/ArticlesPage'
+import { articlesPageReducer } from '@/pages/ArticlesPage/testing'
 
+import type { StateSchema } from '@/app/providers/StoreProvider'
 import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
-import type { StateSchema } from '../store'
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,

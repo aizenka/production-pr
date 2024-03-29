@@ -1,4 +1,4 @@
-import type { StateSchema } from '@/shared/config/store'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 import { ValidateProfileError } from '../../consts'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
 

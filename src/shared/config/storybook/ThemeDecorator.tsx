@@ -1,6 +1,8 @@
 import type { Decorator } from '@storybook/react'
-import type { Theme } from '@/app/providers/ThemeProvider'
+// TODO: add ignoreForFile flag in layer imports rule
+// eslint-disable-next-line feature-sliced-design-path-checker/layer-imports
 import { ThemeProvider } from '@/app/providers/ThemeProvider'
+import type { Theme } from '../../constants/theme'
 
 const ThemeDecorator = (theme: Theme):Decorator => (Story) => {
   return (

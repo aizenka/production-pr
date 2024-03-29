@@ -158,7 +158,19 @@
         ]
       }
     ],
-    "feature-sliced-design-path-checker/path-checker": ["error", { "alias": "@" }],
+    "feature-sliced-design-path-checker/path-checker": [
+      "error",
+      {
+        "alias": "@"
+      }
+    ],
+    "feature-sliced-design-path-checker/layer-imports": [
+      "error",
+      {
+        "alias": "@",
+        "ignoreImportPatterns": ["**/StoreProvider", "**/testing"]
+      }
+    ],
     "feature-sliced-design-path-checker/public-api-imports": [
       "error",
       {

@@ -6,7 +6,7 @@ import {
   createSlice
 } from '@reduxjs/toolkit'
 import type { Comment } from '@/entities/Comment'
-import type { StateSchema } from '@/shared/config/store'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 import { fetchCommentsByArticleId } from '../services'
 import type { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 

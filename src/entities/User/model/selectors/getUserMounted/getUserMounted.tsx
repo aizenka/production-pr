@@ -1,3 +1,3 @@
-import type { StateSchema } from '@/shared/config/store'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 
 export const getUserMounted = (state: StateSchema) => state.user._mounted

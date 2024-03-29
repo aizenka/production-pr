@@ -6,7 +6,7 @@ import {
   createSlice
 } from '@reduxjs/toolkit'
 import type { Article } from '@/entities/Article'
-import type { StateSchema } from '@/shared/config/store'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 import { fetchArticleRecommendations } from '../services'
 import type {
   ArticleDetailsRecommendationsSchema
