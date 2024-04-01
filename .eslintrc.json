@@ -133,7 +133,8 @@
           "as",
           "direction",
           "variant",
-          "size"
+          "size",
+          "theme"
         ]
       }
     ],
