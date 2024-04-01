@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { memo, useCallback } from 'react'
 import { classNames } from '@/shared/lib/common'
-import { Card, CardVariant } from '../Card/Card'
+import { Card } from '../Card/Card'
 import { Row } from '../Flex'
 
 export interface TabItem<T extends string> {
@@ -43,7 +43,7 @@ export const Tabs = typedMemo(<T extends string>(props: TabsProps<T>) => {
               key={tab.key}
               style={{ cursor: 'pointer' }}
               variant={
-                tab.key === selectedKey ? CardVariant.NORMAL : CardVariant.OUTLINED
+                tab.key === selectedKey ? 'normal' : 'outlined'
               }
               onClick={onClickTab(tab)}
             >

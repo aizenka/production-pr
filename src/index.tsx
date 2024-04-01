@@ -7,6 +7,7 @@ import App from './app/App'
 import '@/shared/config/i18n/init'
 
 /* TODO (global)
+  remove enums https://github.com/typescript-eslint/typescript-eslint/issues/561
   add test coverage map
   move types to a separate folder and add public api (all components)
   fix consistent-type eslint (webpack, config)

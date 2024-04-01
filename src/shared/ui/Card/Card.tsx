@@ -2,10 +2,7 @@ import type { HTMLAttributes, ReactNode } from 'react'
 import { classNames } from '@/shared/lib/common'
 import cls from './Card.module.scss'
 
-export enum CardVariant {
-  NORMAL = 'normal',
-  OUTLINED = 'outlined'
-}
+type CardVariant = 'normal' | 'outlined'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string,
@@ -17,7 +14,7 @@ export const Card = (props: CardProps) => {
   const {
     className,
     children,
-    variant = CardVariant.NORMAL,
+    variant = 'normal',
     ...extraProps
   } = props
 

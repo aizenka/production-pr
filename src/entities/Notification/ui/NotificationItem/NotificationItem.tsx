@@ -1,7 +1,6 @@
 import { memo } from 'react'
 import { classNames } from '@/shared/lib/common'
 import { AppLink, Card, Text } from '@/shared/ui'
-import { CardVariant } from '@/shared/ui/Card/Card'
 import type { Notification } from '../../model/types/Notification'
 import cls from './NotificationItem.module.scss'
 
@@ -16,7 +15,7 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
   const content = (
     <Card
       className={classNames(cls.notificationItem, {}, [className])}
-      variant={CardVariant.OUTLINED}
+      variant='outlined'
     >
       <Text
         title={notification.title}

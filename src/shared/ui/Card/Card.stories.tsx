@@ -3,7 +3,7 @@ import { Theme } from '@/shared/constants/theme'
 import { ThemeDecorator } from '@/shared/config/storybook'
 import { Text } from '../Text/Text'
 
-import { Card, CardVariant } from './Card'
+import { Card } from './Card'
 
 const meta: Meta<typeof Card> = {
   title: 'shared/Card',
@@ -31,6 +31,6 @@ export const Dark: Story = {
 
 export const Outlined: Story = {
   args: {
-    variant: CardVariant.OUTLINED
+    variant: 'outlined'
   }
 }

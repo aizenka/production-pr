@@ -13,10 +13,7 @@ type ButtonVariant =
   'flat' |
   'flatInverted'
 
-type ButtonSize =
-  'm' |
-  'l' |
-  'xl'
+type ButtonSize = 'm' | 'l' | 'xl'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string,
