@@ -131,7 +131,9 @@
           "vAlign",
           "role",
           "as",
-          "direction"
+          "direction",
+          "variant",
+          "size"
         ]
       }
     ],

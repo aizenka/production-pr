@@ -2,7 +2,6 @@ import { memo, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/common'
 import { Button, Column, Row } from '@/shared/ui'
-import { ButtonVariant, ButtonSize } from '@/shared/ui/Button/Button'
 import { ThemeSwitcher } from '@/features/ThemeSwitcher'
 import { LangSwitcher } from '@/features/LangSwitcher'
 import { SidebarItem } from '../SidebarItem/SidebarItem'
@@ -32,8 +31,8 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         data-testid='sidebarToggleButton'
         className={cls.collapseBtn}
         square
-        size={ButtonSize.L}
-        variant={ButtonVariant.FLAT_INVERTED}
+        size='l'
+        variant='flatInverted'
         onClick={onToggleCollapse}
       >
         {collapsed ? '>' : '<'}

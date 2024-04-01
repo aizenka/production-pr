@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { Button } from '@/shared/ui'
 import { classNames } from '@/shared/lib/common'
 import { LANGUAGE_EN, LANGUAGE_RU } from '@/shared/constants/i18n'
-import { ButtonVariant } from '@/shared/ui/Button/Button'
 
 interface LangSwitcherProps {
   className?: string,
@@ -25,7 +24,7 @@ export const LangSwitcher = memo(({ className, shortLng }: LangSwitcherProps) =>
   return (
     <Button
       className={classNames('', {}, [className])}
-      variant={ButtonVariant.TEXT_INVERTED}
+      variant='textInverted'
       onClick={changeLanguage}
     >
       {t(shortLng ? 'shortLng' :  'translateButton')}

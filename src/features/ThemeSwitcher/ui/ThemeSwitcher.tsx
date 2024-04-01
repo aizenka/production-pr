@@ -1,6 +1,5 @@
 import { memo } from 'react'
 import { Button } from '@/shared/ui'
-import { ButtonVariant } from '@/shared/ui/Button/Button'
 import { classNames } from '@/shared/lib/common'
 import SwitchThemeIcon from '@/shared/assets/icons/icon-switch-theme.svg'
 import { useTheme } from '@/shared/lib/hooks'
@@ -16,7 +15,6 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   return (
     <Button
       className={classNames(cls.themeSwitcher, {}, [className])}
-      variant={ButtonVariant.TEXT}
       onClick={toggleTheme}
     >
       <SwitchThemeIcon className={cls[theme]}/>

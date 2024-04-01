@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { ARTICLE_DETAILS_NAMESPACE } from '@/shared/constants/i18n'
 import { classNames } from '@/shared/lib/common'
-import { Button, ButtonVariant } from '@/shared/ui/Button/Button'
+import { Button } from '@/shared/ui/Button/Button'
 import { getArticleDetailsData } from '@/entities/Article'
 import { Row } from '@/shared/ui'
 import { RoutePath } from '@/shared/constants/router'
@@ -38,7 +38,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
     >
       <Button
         className={cls.backButton}
-        variant={ButtonVariant.OUTLINED}
+        variant='outlined'
         onClick={onBackToList}
       >
         {t('goBack')}
@@ -47,7 +47,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
         canEdit && (
           <Button
             className={cls.edit}
-            variant={ButtonVariant.OUTLINED}
+            variant='outlined'
             onClick={onEditArticle}
           >
             {t('edit')}

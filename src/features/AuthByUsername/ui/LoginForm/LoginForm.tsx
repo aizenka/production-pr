@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux'
 import { classNames } from '@/shared/lib/common'
 import { Button, Column, Input, Text } from '@/shared/ui'
 import { TextType } from '@/shared/ui/Text/Text'
-import { ButtonVariant } from '@/shared/ui/Button/Button'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { useDynamicModuleLoader } from '@/shared/lib/hooks'
 import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
@@ -85,7 +84,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       }
       <Button
         className={cls.loginBtn}
-        variant={ButtonVariant.OUTLINED}
+        variant='outlined'
         onClick={onLoginClick}
         disabled={isLoading}
       >

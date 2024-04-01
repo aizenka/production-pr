@@ -13,7 +13,6 @@ import {
   Text
 } from '@/shared/ui'
 import { RATING_NAMESPACE } from '@/shared/constants/i18n'
-import { ButtonVariant } from '@/shared/ui/Button/Button'
 import { useDetectMobileScreen } from '@/shared/lib/hooks'
 
 interface RatingCardProps {
@@ -91,7 +90,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
               <Column gap={16}>
                 {modalContent}
                 <Button
-                  variant={ButtonVariant.OUTLINED}
+                  variant='outlined'
                   onClick={submitHandler}
                   stretch
                 >
@@ -109,13 +108,13 @@ export const RatingCard = memo((props: RatingCardProps) => {
                   gap={16}
                 >
                   <Button
-                    variant={ButtonVariant.OUTLINED_DANGER}
+                    variant='outlinedDanger'
                     onClick={cancelHandler}
                   >
                     {t('closeBtn')}
                   </Button>
                   <Button
-                    variant={ButtonVariant.OUTLINED}
+                    variant='outlined'
                     onClick={submitHandler}
                   >
                     {t('sendBtn')}

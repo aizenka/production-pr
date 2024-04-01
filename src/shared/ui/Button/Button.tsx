@@ -5,21 +5,18 @@ import type { ClsAdditional } from '@/shared/lib/common/classNames/classNames'
 import cls from './Button.module.scss'
 
 
-//TODO: use union type
-export enum ButtonVariant {
-  TEXT = 'text',
-  TEXT_INVERTED = 'textInverted',
-  OUTLINED = 'outlined',
-  OUTLINED_DANGER = 'outlinedDanger',
-  FLAT = 'flat',
-  FLAT_INVERTED = 'flatInverted'
-}
+type ButtonVariant =
+  'text' |
+  'textInverted' |
+  'outlined' |
+  'outlinedDanger' |
+  'flat' |
+  'flatInverted'
 
-export enum ButtonSize {
-  M = 'm',
-  L = 'l',
-  XL = 'xl'
-}
+type ButtonSize =
+  'm' |
+  'l' |
+  'xl'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string,
@@ -34,8 +31,8 @@ export const Button = memo((props: ButtonProps) => {
   const {
     className,
     children,
-    variant = ButtonVariant.TEXT,
-    size = ButtonSize.M,
+    variant = 'text',
+    size = 'm',
     square,
     disabled,
     stretch,

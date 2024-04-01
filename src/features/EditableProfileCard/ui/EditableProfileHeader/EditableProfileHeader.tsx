@@ -5,7 +5,6 @@ import { getUserAuthData } from '@/entities/User'
 import { PROFILE_PAGE_NAMESPACE } from '@/shared/constants/i18n'
 import { classNames } from '@/shared/lib/common'
 import { Row, Button, Text } from '@/shared/ui'
-import { ButtonVariant } from '@/shared/ui/Button/Button'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { profileActions } from '../../model/slice/profileSlice'
 import { updateProfileData } from '../../model/services'
@@ -50,7 +49,7 @@ export const EditableProfileHeader = memo(({ className }: EditableProfileHeaderP
             {
               readonly ? (
                 <Button
-                  variant={ButtonVariant.OUTLINED}
+                  variant='outlined'
                   onClick={onEdit}
                   data-testid='EditableProfileHeader.EditBtn'
                 >
@@ -60,14 +59,14 @@ export const EditableProfileHeader = memo(({ className }: EditableProfileHeaderP
                 : (
                   <Row gap={16}>
                     <Button
-                      variant={ButtonVariant.OUTLINED_DANGER}
+                      variant='outlinedDanger'
                       onClick={onEditCancel}
                       data-testid='EditableProfileHeader.CancelBtn'
                     >
                       {t('cancelEdit')}
                     </Button>
                     <Button
-                      variant={ButtonVariant.OUTLINED}
+                      variant='outlined'
                       onClick={onSave}
                       data-testid='EditableProfileHeader.SaveBtn'
                     >

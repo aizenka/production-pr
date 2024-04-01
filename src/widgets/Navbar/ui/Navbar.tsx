@@ -2,7 +2,6 @@ import { memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Button, Row } from '@/shared/ui'
-import { ButtonVariant } from '@/shared/ui/Button/Button'
 import { classNames } from '@/shared/lib/common'
 import { LoginModal } from '@/features/AuthByUsername'
 import { getUserAuthData } from '@/entities/User'
@@ -44,7 +43,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         <>
           <Button
             className={cls.link}
-            variant={ButtonVariant.TEXT_INVERTED}
+            variant='textInverted'
             onClick={onOpenAuthModal}
           >
             {t('login')}

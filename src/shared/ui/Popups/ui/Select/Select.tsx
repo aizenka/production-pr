@@ -3,7 +3,7 @@ import { Fragment, memo } from 'react'
 import { Listbox } from '@headlessui/react'
 import { classNames } from '@/shared/lib/common'
 import type { DropdownDirection } from '@/shared/types/ui'
-import { Button, ButtonVariant } from '../../../Button/Button'
+import { Button } from '../../../Button/Button'
 import { Row } from '../../../Flex'
 import cls from './Select.module.scss'
 import popupCls from '../../styles/popups.module.scss'
@@ -72,7 +72,7 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
         >
           <Button
             className={triggerButtonClassName}
-            variant={ButtonVariant.OUTLINED}
+            variant='outlined'
             disabled={readonly}
           >
             {value ?? defaultValue}

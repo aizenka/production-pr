@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/shared/constants/theme'
 import { ThemeDecorator } from '@/shared/config/storybook'
 
-import { Button, ButtonSize, ButtonVariant } from './Button'
+import { Button } from './Button'
 
 const meta: Meta<typeof Button> = {
   title: 'shared/Button',
@@ -17,37 +17,35 @@ type Story = StoryObj<typeof Button>;
 
 export const TextLight: Story = {
   args: {
-    children: 'Text button',
-    variant: ButtonVariant.TEXT
+    children: 'Text button'
   }
 }
 
 export const TextInverted: Story = {
   args: {
     children: 'Text button',
-    variant: ButtonVariant.TEXT_INVERTED
+    variant: 'textInverted'
   }
 }
 
 export const OutlinedLight: Story = {
   args: {
     children: 'Outlined button',
-    variant: ButtonVariant.OUTLINED
+    variant: 'outlined'
   }
 }
 
 export const OutlinedDanger: Story = {
   args: {
     children: 'Outlined button',
-    variant: ButtonVariant.OUTLINED_DANGER,
+    variant: 'outlinedDanger',
     disabled: true
   }
 }
 
 export const TextDark: Story = {
   args: {
-    children: 'Text button',
-    variant: ButtonVariant.TEXT
+    children: 'Text button'
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
@@ -55,7 +53,7 @@ export const TextDark: Story = {
 export const OutlinedDark: Story = {
   args: {
     children: 'Outlined button',
-    variant: ButtonVariant.OUTLINED
+    variant: 'outlined'
   },
   decorators: [ThemeDecorator(Theme.DARK)]
 }
@@ -63,37 +61,37 @@ export const OutlinedDark: Story = {
 export const OutlinedSizeL: Story = {
   args: {
     children: 'Outlined button',
-    variant: ButtonVariant.OUTLINED,
-    size: ButtonSize.L
+    variant: 'outlined',
+    size: 'l'
   }
 }
 
 export const OutlinedSizeXL: Story = {
   args: {
     children: 'Outlined button',
-    variant: ButtonVariant.OUTLINED,
-    size: ButtonSize.XL
+    variant: 'outlined',
+    size: 'xl'
   }
 }
 
 export const Flat: Story = {
   args: {
     children: 'Flat button',
-    variant: ButtonVariant.FLAT
+    variant: 'flat'
   }
 }
 
 export const FlatInverted: Story = {
   args: {
     children: 'Flat button',
-    variant: ButtonVariant.FLAT_INVERTED
+    variant: 'flatInverted'
   }
 }
 
 export const Square: Story = {
   args: {
     children: '>',
-    variant: ButtonVariant.FLAT_INVERTED,
+    variant: 'flatInverted',
     square: true
   }
 }
@@ -101,25 +99,25 @@ export const Square: Story = {
 export const SquareSizeL: Story = {
   args: {
     children: '>',
-    variant: ButtonVariant.FLAT_INVERTED,
+    variant: 'flatInverted',
     square: true,
-    size: ButtonSize.L
+    size: 'l'
   }
 }
 
 export const SquareXL: Story = {
   args: {
     children: '>',
-    variant: ButtonVariant.FLAT_INVERTED,
+    variant: 'flatInverted',
     square: true,
-    size: ButtonSize.XL
+    size: 'xl'
   }
 }
 
 export const Disabled: Story = {
   args: {
     children: '>',
-    variant: ButtonVariant.OUTLINED,
+    variant: 'outlined',
     disabled: true
   }
 }
