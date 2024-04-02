@@ -2,7 +2,7 @@
 
 ```
   yarn - install dependencies
-  yarn start:dev - start server + + frontend project in dev mode
+  yarn start:dev - start server + frontend project in dev mode
 ```
 
 ----
@@ -11,7 +11,7 @@
 
 - `yarn start` - Running a frontend project on webpack dev server
 - `yarn start:dev` - Running a frontend project on webpack dev server + backend
-- `yarn start:dev:server` - Starting backend server
+- `yarn start:dev:server` - Running backend server
 - `yarn build` - Build in dev mode (not minimized)
 - `yarn build:production` - Build in prod mode
 - `yarn lint:ts` - Checking ts files with linter
@@ -35,7 +35,7 @@
 
 ## Project architecture
 
-The project was written in accordance with the Feature Sliced ​​Design methodology
+The project was written in accordance with the Feature Sliced ​​Design methodology.
 
 Link to documentation - [Feature Sliced Design](https://feature-sliced.design/docs/get-started/tutorial)
 
@@ -43,7 +43,7 @@ Link to documentation - [Feature Sliced Design](https://feature-sliced.design/do
 
 ## Working with translations
 
-The project uses the i18next lsibrary to work with translations.
+The project uses the i18next library to work with translations.
 Translation files are stored in public/locales.
 
 Link to i18next document - [i18next](https://react.i18next.com/)
@@ -55,7 +55,7 @@ Link to i18next document - [i18next](https://react.i18next.com/)
 The project uses 3 types of tests:
 1) Unit tests with jest - `yarn test:unit`
 2) Component tests with React testing library - `yarn test:unit`
-3) Screenshot testing with loki `yarn test:ui`
+3) Screenshot testing with loki - `yarn test:ui`
 
 ----
 
@@ -135,17 +135,17 @@ export const OutlinedLight: Story = {
 
 ## Project configuration
 
-For development, the project contains webpack
+For development, the project contains webpack.
 
 Bundler is adapted to the main features of the application.
 
-All configuration is stored in [config](./config)
+All configuration is stored in [config](./config):
 - Babel - [Babel config](./config/babel)
 - Webpack - [Webpack config](./config/build)
 - Tests - [Test environment config](./config/jest)
 - Storybook - [Storybook config](./config/storybook)
 
-The `scripts` folder contains various scripts for refactoring\simplifying code writing\generating reports, etc.
+The `scripts` folder contains various scripts for refactoring/simplifying code writing\generating reports, etc.
 
 ----
 
@@ -154,19 +154,19 @@ The `scripts` folder contains various scripts for refactoring\simplifying code w
 The github actions configuration is located in [pipeline](/.github/workflows).
 All types of tests, project and storybook assembly, and linting are run in ci.
 
-In pre-commit hooks check the project with linters, config in [husky](/.husky)
+In pre-commit hooks check the project with linters, config in [husky](/.husky).
 
 ----
 
 ## Working with data
 
 Interaction with data is carried out using the redux toolkit.
-If possible, reused entities should be normalized using EntityAdapter
+If possible, reused entities should be normalized using EntityAdapter.
 
-Requests to the server are sent using [RTK query](/src/shared/api/rtk.ts)
+Requests to the server are sent using [RTK query](/src/shared/api/rtk.ts).
 
 For asynchronous connection of reducers (so as not to pull them into a common bundle) it is used hook
-[useDynamicModuleLoader](/src/shared/lib/hooks/useDynamicModuleLoader/index.ts)
+[useDynamicModuleLoader](/src/shared/lib/hooks/useDynamicModuleLoader/index.ts).
 
 ----
 
