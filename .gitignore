@@ -4,8 +4,10 @@
 # vscode
 .vscode/
 
-# node.js
+# node_modules
 node_modules/
+
+# npm & yarn
 npm-debug.log
 yarn-error.log
 
