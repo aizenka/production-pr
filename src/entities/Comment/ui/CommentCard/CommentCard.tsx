@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { classNames } from '@/shared/lib/common'
 import { AppLink, Avatar, Column, Row, Text } from '@/shared/ui'
-import { RoutePath } from '@/shared/constants/router'
+import { getRouteProfile } from '@/shared/constants/router'
 import type { Comment } from '../../model/types/Comment'
 import cls from './CommentCard.module.scss'
 
@@ -20,7 +20,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
     <div className={classNames(cls.commentCard, {}, [className])}>
       <Column gap={16}>
         <AppLink
-          to={`${RoutePath.profile}${comment.user.id}`}
+          to={getRouteProfile(comment.user.id)}
         >
           <Row
             gap={8}

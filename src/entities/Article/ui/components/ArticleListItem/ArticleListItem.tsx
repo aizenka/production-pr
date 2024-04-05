@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/common'
 import { AppLink, Avatar, Button, Card, Column, Icon, Row, Text } from '@/shared/ui'
 import { ARTICLES_NAMESPACE } from '@/shared/constants/i18n'
 import EyeIcon from '@/shared/assets/icons/icon-eye-outlined.svg'
-import { RoutePath } from '@/shared/constants/router'
+import { getRouteArticleDetails } from '@/shared/constants/router'
 import type { Article, ArticleTextBlock } from '../../../model/types/Article'
 import { ArticleBlockType, ArticleListView } from '../../../model/consts'
 import {
@@ -91,7 +91,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
               vAlign='center'
             >
               <AppLink
-                to={`${RoutePath.articleDetails}${article.id}`}
+                to={getRouteArticleDetails(article.id)}
                 target={target}
               >
                 <Button variant='outlined'>
@@ -117,7 +117,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         {},
         [className, cls[view]]
       )}
-      to={`${RoutePath.articleDetails}${article.id}`}
+      to={getRouteArticleDetails(article.id)}
       target={target}
     >
       <Card className={cls.card}>

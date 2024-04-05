@@ -7,7 +7,7 @@ import { classNames } from '@/shared/lib/common'
 import { Button } from '@/shared/ui/Button/Button'
 import { getArticleDetailsData } from '@/entities/Article'
 import { Row } from '@/shared/ui'
-import { RoutePath } from '@/shared/constants/router'
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/constants/router'
 import { getCanEditArticle } from '../../selectors/article'
 import cls from './ArticleDetailsPageHeader.module.scss'
 
@@ -23,12 +23,12 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
   const canEdit = useSelector(getCanEditArticle)
 
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
+    navigate(getRouteArticles())
   }, [navigate])
 
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.articleDetails}${article?.id}/edit`)
-  }, [article?.id, navigate])
+    navigate(getRouteArticleEdit(article!.id))
+  }, [article, navigate])
 
   return (
     <Row

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/common'
 import { Dropdown, Avatar } from '@/shared/ui'
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User'
-import { RoutePath } from '@/shared/constants/router'
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/constants/router'
 import { useAppDispatch } from '@/shared/lib/hooks'
 
 interface AvatarDropdownProps {
@@ -40,13 +40,13 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
           isAdminPanelAvailable ? [
             {
               content: t('adminPage'),
-              href: `${RoutePath.adminPanel}`
+              href: getRouteAdminPanel()
             }
           ]: []
         ),
         {
           content: t('profilePage'),
-          href: `${RoutePath.profile}${authData!.id}`
+          href: getRouteProfile(authData!.id)
         },
         {
           content: t('logout'),
