@@ -4,6 +4,7 @@
   "main": "index.js",
   "homepage": "https://aizenka.github.io/production-pr/",
   "scripts": {
+    "postinstall": "ts-node ./scripts/clearCache.ts",
     "start": "webpack serve --env port=3000",
     "start:dev:server": "node ./json-server/index.js",
     "start:dev": "concurrently \"yarn start\" \"yarn start:dev:server\"",
