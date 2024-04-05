@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/common'
 import { Tabs } from '@/shared/ui'
 import type { TabItem } from '@/shared/ui/Tabs/Tabs'
 import { ARTICLES_NAMESPACE } from '@/shared/constants/i18n'
-import { ArticleType } from '../../model/consts'
+import { ArticleType } from '@/entities/Article'
 
 interface ArticlesTypeTabsProps {
   className?: string,

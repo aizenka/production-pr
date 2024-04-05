@@ -6,16 +6,14 @@ import type {
   ArticleSortField,
   ArticleType
 } from '@/entities/Article'
-import {
-  ArticlesSortSelector,
-  ArticlesTypeTabs,
-  ArticlesViewSelector
-} from '@/entities/Article'
 import { classNames } from '@/shared/lib/common'
 import { Card, Column, Input, Row } from '@/shared/ui'
 import { ARTICLES_NAMESPACE } from '@/shared/constants/i18n'
 import type { SortOrder } from '@/shared/types'
 import type { TabItem } from '@/shared/ui/Tabs/Tabs'
+import { ArticlesSortSelector } from '@/features/ArticlesSortSelector'
+import { ArticlesViewSelector } from '@/features/ArticlesViewSelector'
+import { ArticlesTypeTabs } from '@/features/ArticlesTypeTabs'
 import { useAppDispatch, useDebounce } from '@/shared/lib/hooks'
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList'
 import {
