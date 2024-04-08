@@ -12,7 +12,7 @@ import '@/shared/config/i18n/init'
   move types to a separate folder and add public api (all components)
   fix consistent-type eslint (webpack, config)
   review storybook components (all)
-  remove ts-loader from packages
+  refactor code with buildSlice, buildSelector
 */
 
 const container = document.getElementById('root')
