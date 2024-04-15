@@ -1,10 +1,10 @@
+import {
+  combineReducers
+} from '@reduxjs/toolkit'
 import type {
   AnyAction,
   Reducer,
   ReducersMapObject
-} from '@reduxjs/toolkit'
-import {
-  combineReducers
 } from '@reduxjs/toolkit'
 import type {
   ReducerManager,

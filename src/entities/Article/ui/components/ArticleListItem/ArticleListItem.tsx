@@ -1,17 +1,28 @@
-import type { HTMLAttributeAnchorTarget } from 'react'
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/common'
-import { AppLink, Avatar, Button, Card, Column, Icon, Row, Text } from '@/shared/ui'
+import {
+  AppLink,
+  Avatar,
+  Button,
+  Card,
+  Column,
+  Icon,
+  LazyImage,
+  Row,
+  Skeleton,
+  Text
+} from '@/shared/ui'
 import { ARTICLES_NAMESPACE } from '@/shared/constants/i18n'
 import EyeIcon from '@/shared/assets/icons/icon-eye-outlined.svg'
 import { getRouteArticleDetails } from '@/shared/constants/router'
-import type { Article, ArticleTextBlock } from '../../../model/types/Article'
 import { ArticleBlockType, ArticleListView } from '../../../model/consts'
 import {
   ArticleTextBlockComponent
 } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import cls from './ArticleListItem.module.scss'
+import type { Article, ArticleTextBlock } from '../../../model/types/Article'
+import type { HTMLAttributeAnchorTarget } from 'react'
 
 interface ArticleListItemProps {
   className?: string,
@@ -73,10 +84,16 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div className={cls.types}>
               {types}
             </div>
-            <img
+            <LazyImage
               className={cls.img}
               src={article.img}
               alt={article.title}
+              fallback={
+                <Skeleton width='100%' height={230} />
+              }
+              errorFallback={
+                <Skeleton width={200} height={200}/>
+              }
             />
             {
               textBlock && (
@@ -123,10 +140,16 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
       <Card className={cls.card}>
         <Column gap={8}>
           <div className={cls.imageWrapper}>
-            <img
+            <LazyImage
               className={cls.img}
               src={article.img}
               alt={article.title}
+              fallback={
+                <Skeleton width={200} height={200}/>
+              }
+              errorFallback={
+                <Skeleton width={200} height={200}/>
+              }
             />
             <Text
               className={cls.createdAt}

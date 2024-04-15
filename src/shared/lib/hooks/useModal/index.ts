@@ -1,5 +1,5 @@
-import type { MutableRefObject } from 'react'
 import { useState, useRef, useCallback, useEffect } from 'react'
+import type { MutableRefObject } from 'react'
 
 interface UseModalOptions {
   onClose?: () => void

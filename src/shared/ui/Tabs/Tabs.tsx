@@ -1,8 +1,8 @@
-import type { ReactNode } from 'react'
 import { memo, useCallback } from 'react'
 import { classNames } from '@/shared/lib/common'
 import { Card } from '../Card/Card'
 import { Row } from '../Flex'
+import type { ReactNode } from 'react'
 
 export interface TabItem<T extends string> {
   key: T

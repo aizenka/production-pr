@@ -2,11 +2,11 @@ import { screen } from '@testing-library/react'
 import { userEvent } from '@testing-library/user-event'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
-import type { Profile } from '@/entities/Profile'
 import { renderComponent } from '@/shared/lib/tests'
 import axios from 'axios'
 import { profileReducer } from '../model/slice/profileSlice'
 import { EditableProfileCard } from './EditableProfileCard'
+import type { Profile } from '@/entities/Profile'
 
 jest.mock('axios')
 const mAxios = axios as jest.MockedFunction<typeof axios>

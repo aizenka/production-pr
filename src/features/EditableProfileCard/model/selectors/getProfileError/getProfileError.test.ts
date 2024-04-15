@@ -1,5 +1,5 @@
-import type { StateSchema } from '@/app/providers/StoreProvider'
 import { getProfileError } from './getProfileError'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getProfileErrorTest', () => {
   test('should return error string', () => {

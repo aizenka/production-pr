@@ -5,13 +5,13 @@ import { COMMENTS_NAMESPACE } from '@/shared/constants/i18n'
 import { classNames } from '@/shared/lib/common'
 import { Button, Input, Row } from '@/shared/ui'
 import { useAppDispatch, useDynamicModuleLoader } from '@/shared/lib/hooks'
-import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import { getCommentFormText } from '../model/selectors/addCommentFormSelectors'
 import {
   addCommentFormActions,
   addCommentFormReducer
 } from '../model/slice/addCommentFormSlice'
 import cls from './AddCommentForm.module.scss'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 
 export interface AddCommentFormProps {
   className?: string,

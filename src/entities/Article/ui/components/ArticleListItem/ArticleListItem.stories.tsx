@@ -1,10 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/shared/constants/theme'
 import { ThemeDecorator } from '@/shared/config/storybook'
-import type { Article } from '../../../model/types'
 import { ArticleListView } from '../../../model/consts'
 
 import { ArticleListItem } from './ArticleListItem'
+import type { Article } from '../../../model/types'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const article = {
   'id': '1',

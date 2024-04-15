@@ -1,4 +1,3 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/shared/constants/theme'
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
@@ -6,6 +5,7 @@ import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook'
 import UserIcon from '@/shared/assets/tests/storybook-test-avatar.jpg'
 
 import { ProfileCard } from './ProfileCard'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof ProfileCard> = {
   title: 'entities/ProfileCard',

@@ -1,5 +1,5 @@
-import type { MutableRefObject } from 'react'
 import { useCallback, useRef } from 'react'
+import type { MutableRefObject } from 'react'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const useDebounce = (cb: (...args: any[]) => void, delay: number) => {

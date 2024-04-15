@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { classNames } from '@/shared/lib/common'
-import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 import cls from './Text.module.scss'
+import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 
 export enum TextSize {
   S = 's',

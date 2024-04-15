@@ -1,5 +1,5 @@
-import type { PayloadAction } from '@reduxjs/toolkit'
 import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import type { UISchema } from '../types/UISchema'
 
 const initialState: UISchema = {

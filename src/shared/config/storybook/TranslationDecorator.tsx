@@ -1,6 +1,6 @@
 import { I18nextProvider } from 'react-i18next'
-import type { Decorator } from '@storybook/react'
 import i18n from '../i18n/init'
+import type { Decorator } from '@storybook/react'
 
 const TranslationDecorator: Decorator = (Story) => {
   return (

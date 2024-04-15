@@ -1,6 +1,6 @@
+import { Column } from './Column'
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { Column } from './Column'
 
 const meta: Meta<typeof Column> = {
   title: 'shared/Flex/Column',

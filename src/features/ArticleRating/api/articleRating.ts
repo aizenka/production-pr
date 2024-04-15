@@ -1,5 +1,5 @@
-import type { Rating } from '@/entities/Rating'
 import $rtkApi from '@/shared/api/rtk'
+import type { Rating } from '@/entities/Rating'
 
 interface GetArticleRatingQueryArgs {
   articleId: string

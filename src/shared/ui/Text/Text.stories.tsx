@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/shared/constants/theme'
 import { ThemeDecorator } from '@/shared/config/storybook'
 
 import { Text, TextSize, TextType } from './Text'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof Text> = {
   title: 'shared/Text',

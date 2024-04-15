@@ -1,7 +1,7 @@
 import { Country } from '@/entities/Country'
 import { Currency } from '@/entities/Currency'
-import type { StateSchema } from '@/app/providers/StoreProvider'
 import { getProfileForm } from './getProfileForm'
+import type { StateSchema } from '@/app/providers/StoreProvider'
 
 describe('getProfileFormTest', () => {
   test('should return data object', () => {

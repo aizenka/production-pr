@@ -1,13 +1,13 @@
-import type {
-  PayloadAction
-} from '@reduxjs/toolkit'
 import {
   createEntityAdapter,
   createSlice
 } from '@reduxjs/toolkit'
+import { fetchArticleRecommendations } from '../services'
+import type {
+  PayloadAction
+} from '@reduxjs/toolkit'
 import type { Article } from '@/entities/Article'
 import type { StateSchema } from '@/app/providers/StoreProvider'
-import { fetchArticleRecommendations } from '../services'
 import type {
   ArticleDetailsRecommendationsSchema
 } from '../types/ArticleDetailsRecommendationsSchema'

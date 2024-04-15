@@ -1,10 +1,10 @@
 import path from 'path'
-import type { RuleSetRule } from 'webpack'
-import type webpack from 'webpack'
 import { DefinePlugin } from 'webpack'
 import { cssLoader } from '../build/loaders'
-import type { BuildPaths } from '../build/types/config'
 import { ProjectType } from '../build/types/config'
+import type { RuleSetRule } from 'webpack'
+import type webpack from 'webpack'
+import type { BuildPaths } from '../build/types/config'
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {

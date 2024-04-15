@@ -4,9 +4,9 @@ import { Text } from '@/shared/ui'
 import { classNames } from '@/shared/lib/common'
 import { ARTICLES_NAMESPACE } from '@/shared/constants/i18n'
 import { ArticleListItem, ArticleListItemSkeleton } from '../components'
-import type { Article } from '../../model/types'
 import { ArticleListView } from '../../model/consts'
 import cls from './ArticleList.module.scss'
+import type { Article } from '../../model/types'
 
 interface ArticleListProps {
   className?: string,

@@ -1,16 +1,9 @@
 import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import type {
-  ArticleListView,
-  ArticleSortField,
-  ArticleType
-} from '@/entities/Article'
 import { classNames } from '@/shared/lib/common'
 import { Card, Column, Input, Row } from '@/shared/ui'
 import { ARTICLES_NAMESPACE } from '@/shared/constants/i18n'
-import type { SortOrder } from '@/shared/types'
-import type { TabItem } from '@/shared/ui/Tabs/Tabs'
 import { ArticlesSortSelector } from '@/features/ArticlesSortSelector'
 import { ArticlesViewSelector } from '@/features/ArticlesViewSelector'
 import { ArticlesTypeTabs } from '@/features/ArticlesTypeTabs'
@@ -24,6 +17,13 @@ import {
   getArticlesPageSort
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
+import type { TabItem } from '@/shared/ui/Tabs/Tabs'
+import type { SortOrder } from '@/shared/types'
+import type {
+  ArticleListView,
+  ArticleSortField,
+  ArticleType
+} from '@/entities/Article'
 
 interface ArticlesPageFiltersProps {
   className?: string

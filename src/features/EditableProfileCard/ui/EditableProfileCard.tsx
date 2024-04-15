@@ -1,8 +1,6 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import type { Country } from '@/entities/Country'
-import type { Currency } from '@/entities/Currency'
 import { ProfileCard } from '@/entities/Profile'
 import { PROFILE_PAGE_NAMESPACE } from '@/shared/constants/i18n'
 import { Column, Text } from '@/shared/ui'
@@ -13,7 +11,6 @@ import {
   useDynamicModuleLoader,
   useInitialEffect
 } from '@/shared/lib/hooks'
-import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import {
   getProfileForm,
   getProfileLoading,
@@ -25,6 +22,9 @@ import { fetchProfileData } from '../model/services'
 import { profileActions, profileReducer } from '../model/slice/profileSlice'
 import { EditableProfileHeader } from './EditableProfileHeader/EditableProfileHeader'
 import { ValidateProfileError } from '../model/consts'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
+import type { Currency } from '@/entities/Currency'
+import type { Country } from '@/entities/Country'
 
 interface EditableProfileCardProps {
   className?: string,

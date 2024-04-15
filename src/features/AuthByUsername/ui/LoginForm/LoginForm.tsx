@@ -6,7 +6,6 @@ import { Button, Column, Input, Text } from '@/shared/ui'
 import { TextType } from '@/shared/ui/Text/Text'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { useDynamicModuleLoader } from '@/shared/lib/hooks'
-import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import { loginActions, loginReducer } from '../../model/slice/loginSlice'
 import {
   getLoginError,
@@ -16,6 +15,7 @@ import {
 } from '../../model/selectors'
 import { loginByUsername } from '../../model/services'
 import cls from './LoginForm.module.scss'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 
 export interface LoginFormProps {
   className?: string,

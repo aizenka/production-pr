@@ -1,7 +1,7 @@
-import type { CSSProperties, DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import { classNames } from '@/shared/lib/common'
-import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 import cls from './Row.module.scss'
+import type { CSSProperties, DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
+import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 
 type FlexJustify = 'left' | 'center' | 'right' | 'between' | 'around'
 type FlexAlign = 'start' | 'center' | 'end' | 'stretch'

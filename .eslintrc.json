@@ -106,7 +106,6 @@
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
     "unused-imports/no-unused-imports": "error",
-    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "warn",
     "@typescript-eslint/consistent-type-exports": "error",
     "@typescript-eslint/consistent-type-imports": [
@@ -157,10 +156,11 @@
             "/hooks/"
           ],
           [
-            "sibling",
-            "parent"
+            "parent",
+            "sibling"
           ],
-          "/.module.scss/"
+          "/.module.scss/",
+          "type"
         ]
       }
     ],

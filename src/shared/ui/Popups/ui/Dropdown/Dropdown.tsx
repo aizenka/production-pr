@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react'
 import { Fragment } from 'react'
 import { Menu } from '@headlessui/react'
 import { classNames } from '@/shared/lib/common'
-import type { DropdownDirection } from '@/shared/types/ui'
 import { Button } from '../../../Button/Button'
 import { AppLink } from '../../../AppLink/AppLink'
 import cls from './Dropdown.module.scss'
 import popupCls from '../../styles/popups.module.scss'
+import type { DropdownDirection } from '@/shared/types/ui'
+import type { ReactNode } from 'react'
 
 export interface DropdownItem {
   disabled?: boolean,

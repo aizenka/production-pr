@@ -1,12 +1,12 @@
-import type { ReactNode } from 'react'
 import { Fragment, memo } from 'react'
 import { Listbox } from '@headlessui/react'
 import { classNames } from '@/shared/lib/common'
-import type { DropdownDirection } from '@/shared/types/ui'
 import { Button } from '../../../Button/Button'
 import { Row } from '../../../Flex'
 import cls from './Select.module.scss'
 import popupCls from '../../styles/popups.module.scss'
+import type { DropdownDirection } from '@/shared/types/ui'
+import type { ReactNode } from 'react'
 
 export interface SelectItem<T extends string> {
   value: T,

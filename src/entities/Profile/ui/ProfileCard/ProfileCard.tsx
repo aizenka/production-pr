@@ -1,16 +1,16 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
-import type { Currency } from '@/entities/Currency'
 import { CurrencySelect } from '@/entities/Currency'
-import type { Country } from '@/entities/Country'
 import { CountrySelect } from '@/entities/Country'
 import { PROFILE_PAGE_NAMESPACE } from '@/shared/constants/i18n'
 import { classNames } from '@/shared/lib/common'
-import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 import { Avatar, Column, Input, RippleLoader, Text } from '@/shared/ui'
 import { TextAlign, TextType } from '@/shared/ui/Text/Text'
-import type { Profile } from '../../model/types/Profile'
 import cls from './ProfileCard.module.scss'
+import type { Profile } from '../../model/types/Profile'
+import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
+import type { Country } from '@/entities/Country'
+import type { Currency } from '@/entities/Currency'
 
 interface ProfileCardProps {
   className?: string

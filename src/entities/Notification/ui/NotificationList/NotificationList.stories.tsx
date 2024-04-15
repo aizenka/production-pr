@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/shared/constants/theme'
 import { ThemeDecorator } from '@/shared/config/storybook'
 
 import { NotificationList } from './NotificationList'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof NotificationList> = {
   title: 'entities/Notifications/NotificationList',

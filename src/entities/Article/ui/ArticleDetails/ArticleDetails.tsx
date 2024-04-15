@@ -17,10 +17,8 @@ import {
   useDynamicModuleLoader,
   useInitialEffect
 } from '@/shared/lib/hooks'
-import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import { fetchArticleById } from '../../model/services'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
-import type { ArticleBlock } from '../../model/types'
 import { ArticleBlockType } from '../../model/consts'
 import {
   getArticleDetailsData,
@@ -28,6 +26,8 @@ import {
   getArticleDetailsError
 } from '../../model/selectors/articleDetails'
 import cls from './ArticleDetails.module.scss'
+import type { ArticleBlock } from '../../model/types'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 
 interface ArticleDetailsProps {
   className?: string

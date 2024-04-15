@@ -1,8 +1,6 @@
-import type { MutableRefObject, ReactNode, UIEvent } from 'react'
 import { useRef } from 'react'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
-import type { StateSchema } from '@/app/providers/StoreProvider'
 import { classNames } from '@/shared/lib/common'
 import {
   useAppDispatch,
@@ -13,6 +11,8 @@ import {
 import { getScrollByPath } from '../model/selectors/scrollSelectors'
 import { uiActions } from '../model/slice/UISlice'
 import cls from './PageWrapper.module.scss'
+import type { StateSchema } from '@/app/providers/StoreProvider'
+import type { MutableRefObject, ReactNode, UIEvent } from 'react'
 
 interface PageWrapperProps {
   className?: string,

@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
 import { Theme } from '@/shared/constants/theme'
 import { ThemeDecorator } from '@/shared/config/storybook'
 
 import { RatingCard } from './RatingCard'
+import type { Meta, StoryObj } from '@storybook/react'
 
 const meta: Meta<typeof RatingCard> = {
   title: 'entities/Rating/RatingCard',

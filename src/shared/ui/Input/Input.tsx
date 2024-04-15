@@ -1,7 +1,3 @@
-import type {
-  InputHTMLAttributes,
-  MutableRefObject
-} from 'react'
 import {
   memo,
   useEffect,
@@ -10,9 +6,13 @@ import {
   useState
 } from 'react'
 import { classNames } from '@/shared/lib/common'
-import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 import { Row } from '../Flex'
 import cls from './Input.module.scss'
+import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
+import type {
+  InputHTMLAttributes,
+  MutableRefObject
+} from 'react'
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

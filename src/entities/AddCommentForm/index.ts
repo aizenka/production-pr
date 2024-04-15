@@ -1,5 +1,5 @@
-import type { FC } from 'react'
 import { lazy } from 'react'
+import type { FC } from 'react'
 export type { AddCommentFormSchema } from './model/types/AddCommentForm'
 export {
   addCommentFormActions,

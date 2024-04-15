@@ -1,6 +1,6 @@
-import type { HTMLAttributes, ReactNode } from 'react'
 import { classNames } from '@/shared/lib/common'
 import cls from './Card.module.scss'
+import type { HTMLAttributes, ReactNode } from 'react'
 
 type CardVariant = 'normal' | 'outlined'
 

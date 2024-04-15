@@ -1,12 +1,12 @@
 import { useCallback, type ReactNode, useEffect } from 'react'
 import { classNames } from '@/shared/lib/common'
-import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 import { useAnimationLibs } from '@/shared/lib/components'
 import { AnimationProvider } from '@/shared/lib/components'
 import { Portal } from '../Portal/Portal'
 import { Overlay } from '../Overlay/Overlay'
 import { RippleLoader } from '../RippleLoader/RippleLoader'
 import cls from './Drawer.module.scss'
+import type { ClsMods } from '@/shared/lib/common/classNames/classNames'
 
 interface DrawerProps {
   className?: string

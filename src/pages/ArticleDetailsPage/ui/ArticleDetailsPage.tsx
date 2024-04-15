@@ -9,7 +9,6 @@ import { Column } from '@/shared/ui'
 import { ArticleRecommendationList } from '@/features/ArticleRecommendationList'
 import { ArticleRating } from '@/features/ArticleRating'
 import { useDynamicModuleLoader } from '@/shared/lib/hooks'
-import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 import { articleDetailsPageReducer } from '../model/slice'
 import {
   ArticleDetailsPageHeader
@@ -17,6 +16,7 @@ import {
 import {
   ArticleDetailsPageComments
 } from './ArticleDetailsPageComments/ArticleDetailsPageComments'
+import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 
 interface ArticleDetailsPageProps {
   className?: string

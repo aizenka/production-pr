@@ -1,9 +1,9 @@
-import type { ReactNode } from 'react'
 import { memo } from 'react'
-import type { LinkProps } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { classNames } from '@/shared/lib/common'
 import cls from './AppLink.module.scss'
+import type { LinkProps } from 'react-router-dom'
+import type { ReactNode } from 'react'
 
 type AppLinkVariant = 'primary' | 'secondary'
 

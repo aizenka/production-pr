@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { useStore } from 'react-redux'
+import useAppDispatch from '../useAppDispatch'
 import type { Reducer } from '@reduxjs/toolkit'
 import type {
   StateSchema,
   StateSchemaKey,
   ReduxStoreWithManager
 } from '@/app/providers/StoreProvider'
-import useAppDispatch from '../useAppDispatch'
 
 export interface DynamicModuleLoaderOptions {
   removeAfterUnmount?: boolean
