@@ -12,7 +12,10 @@ export default memo(function ProfilePage ({ className }: ProfilePageProps) {
   const { id: profileId } = useParams<{id: string}>()
 
   return (
-    <PageWrapper className={classNames('', {}, [className])}>
+    <PageWrapper
+      className={classNames('', {}, [className])}
+      data-testid='ProfilePage'
+    >
       <EditableProfileCard id={profileId!} />
     </PageWrapper>
   )

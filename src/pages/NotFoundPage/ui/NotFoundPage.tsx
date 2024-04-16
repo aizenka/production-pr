@@ -11,7 +11,10 @@ export default function NotFoundPage ({ className }: NotFoundPageProps) {
   const { t } = useTranslation()
 
   return (
-    <PageWrapper className={classNames(cls.notFoundPage, {}, [className])}>
+    <PageWrapper
+      className={classNames(cls.notFoundPage, {}, [className])}
+      data-testid='NotFoundPage'
+    >
       {t('notFoundPage')}
     </PageWrapper>
   )

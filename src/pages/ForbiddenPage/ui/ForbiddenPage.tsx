@@ -13,7 +13,10 @@ const ForbiddenPage = memo((props: ForbiddenPageProps) => {
   const { t } = useTranslation(FORBIDDEN_PAGE_NAMESPACE)
 
   return (
-    <PageWrapper className={classNames('', {}, [className])}>
+    <PageWrapper
+      className={classNames('', {}, [className])}
+      data-testid='ForbiddenPage'
+    >
       {t('acessDenied')}
     </PageWrapper>
   )

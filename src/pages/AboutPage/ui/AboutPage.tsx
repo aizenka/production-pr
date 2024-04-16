@@ -11,7 +11,7 @@ const AboutPage = memo(() => {
   const { t } = useTranslation(ABOUT_PAGE_NAMESPACE)
 
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='AboutPage'>
       {t('aboutPage')}
     </PageWrapper>
   )

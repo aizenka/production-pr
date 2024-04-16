@@ -18,7 +18,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
 import type { TabItem } from '@/shared/ui/Tabs/Tabs'
-import type { SortOrder } from '@/shared/types'
+import type { SortOrder } from '@/shared/types/sort'
 import type {
   ArticleListView,
   ArticleSortField,

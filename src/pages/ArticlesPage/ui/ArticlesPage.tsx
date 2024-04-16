@@ -42,6 +42,7 @@ const ArticlesPage = ({ className }: ArticlesPageProps) => {
     <PageWrapper
       className={classNames(cls.articlesPage, {}, [className])}
       onScrollEnd={onLoadArticles}
+      data-testid='ArticlesPage'
     >
       <Column gap={24}>
         <ArticlesPageFilters />

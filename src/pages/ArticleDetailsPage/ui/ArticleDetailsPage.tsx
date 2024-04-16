@@ -36,7 +36,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   }
 
   return (
-    <PageWrapper className={classNames('', {}, [className])}>
+    <PageWrapper
+      className={classNames('', {}, [className])}
+      data-testid='ArticleDeatilsPage'
+    >
       <Column gap={24}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />

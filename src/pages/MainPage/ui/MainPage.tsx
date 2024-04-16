@@ -8,7 +8,7 @@ const MainPage = memo(() => {
   const { t } = useTranslation(MAIN_PAGE_NAMESPACE)
 
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='MainPage'>
       {t('mainPage')}
     </PageWrapper>
   )

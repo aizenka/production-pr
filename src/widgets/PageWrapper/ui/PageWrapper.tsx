@@ -11,10 +11,11 @@ import {
 import { getScrollByPath } from '../model/selectors/scrollSelectors'
 import { uiActions } from '../model/slice/UISlice'
 import cls from './PageWrapper.module.scss'
+import type { TestProps } from '@/shared/types/tests'
 import type { StateSchema } from '@/app/providers/StoreProvider'
 import type { MutableRefObject, ReactNode, UIEvent } from 'react'
 
-interface PageWrapperProps {
+interface PageWrapperProps extends TestProps {
   className?: string,
   children: ReactNode,
   onScrollEnd?: () => void
@@ -52,6 +53,7 @@ export const PageWrapper = (props: PageWrapperProps) => {
       ref={wrapperRef}
       className={classNames(cls.pageWrapper, {}, [className])}
       onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       { onScrollEnd ? <div ref={triggerRef} className={cls.triggerDiv} /> : null }

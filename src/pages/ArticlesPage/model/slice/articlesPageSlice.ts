@@ -5,7 +5,7 @@ import { fetchArticleList } from '../services/fetchArticleList/fetchArticleList'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { Article } from '@/entities/Article'
 import type { StateSchema } from '@/app/providers/StoreProvider'
-import type { SortOrder } from '@/shared/types'
+import type { SortOrder } from '@/shared/types/sort'
 import type { ArticlesPageSchema } from '../types/ArticlesPageSchema'
 
 const articlesAdapter = createEntityAdapter<Article>({
