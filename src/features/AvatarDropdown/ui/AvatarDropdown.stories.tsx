@@ -1,5 +1,5 @@
 import { Theme } from '@/shared/constants/theme'
-import { ThemeDecorator } from '@/shared/config/storybook'
+import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook'
 
 import { AvatarDropdown } from './AvatarDropdown'
 import type { Meta, StoryObj } from '@storybook/react'
@@ -8,7 +8,8 @@ const meta: Meta<typeof AvatarDropdown> = {
   title: 'features/AvatarDropdown',
   component:  AvatarDropdown,
   parameters: {},
-  argTypes: {}
+  argTypes: {},
+  decorators: [StoreDecorator()]
 }
 
 export default meta

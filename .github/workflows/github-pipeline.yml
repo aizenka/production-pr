@@ -7,9 +7,6 @@ on:
     branches: [ main ]
 jobs:
   pipeline:
-    # TODO: fix CI ui tests
-    # ubuntu crash some UI tests (tests with rgba color)
-    # macos with Colima (Loki takes too long to execute and also fails some tests)
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,14 +18,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      # - name: Install Colima
-      #   run: brew install colima docker
-      #   if: always()
-      # - name: Provide Docker Daemon
-      #   run: colima start --arch x86_64
-      #   if: always()
       - name: Install node_modules
-        run: yarn
+        run: yarn install --frozen-lockfile
       - name: Build production
         run: yarn build:production
         if: always()
@@ -41,8 +32,8 @@ jobs:
       - name: Unit testing
         run: yarn test:unit
         if: always()
-      # - name: UI testing
-      #   run: yarn test:ui
-      #   if: always()
+      - name: UI testing
+        run: yarn test:ui
+        if: always()
       # - name: deploy
       #   run: yarn deploy

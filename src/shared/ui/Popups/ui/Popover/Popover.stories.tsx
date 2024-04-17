@@ -8,7 +8,11 @@ const meta: Meta<typeof Popover> = {
   title: 'shared/Popover',
   component:  Popover,
   parameters: {},
-  argTypes: {}
+  argTypes: {},
+  args: {
+    trigger: <button type='button'>trigger</button>,
+    children: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolorum impedit incidunt blanditiis sunt distinctio eum nemo! Expedita temporibus culpa quaerat placeat ipsa, distinctio necessitatibus aliquid nesciunt laboriosam corporis laborum.'
+  }
 }
 
 export default meta
