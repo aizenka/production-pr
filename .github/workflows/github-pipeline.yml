@@ -18,10 +18,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Remove lock
-        run: rm -rf node_modules && rm -rf yarn.lock
       - name: Install node_modules
-        run: yarn install
+        run: yarn
       - name: Build production
         run: yarn build:production
         if: always()
