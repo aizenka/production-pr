@@ -95,7 +95,6 @@
     "jest": "^27.5.1",
     "jest-html-reporters": "^3.1.7",
     "json-server": "^0.17.4",
-    "lint-staged": "^13.0.3",
     "loki": "^0.33.1",
     "mini-css-extract-plugin": "2.5.3",
     "reg-cli": "^0.17.7",
@@ -115,10 +114,6 @@
   },
   "resolutions": {
     "string-width": "^1.0.2 || 2 || 3 || 4"
-  },
-  "lint-staged": {
-    "**/*.{ts,tsx}": "eslint",
-    "**/*.scss": "stylelint"
   },
   "loki": {
     "fetchFailIgnore": ".*",
