@@ -1,17 +1,26 @@
 name: linting, testing, building
-run-name: linting, testing, building
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 jobs:
-  pipeline:
+  build-and-ui-testing:
     runs-on: ubuntu-latest
+    concurrency: ci-${{ github.ref }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
         node-version: [ 19.x ]
-
     steps:
       - uses: actions/checkout@v2
       - name: Starting Node.js ${{ matrix.node-version }}
@@ -23,17 +32,44 @@ jobs:
       - name: Build production
         run: yarn build:production
         if: always()
-      - name: Linting typescript
-        run: yarn lint:ts
-        if: always()
-      - name: Linting scss
-        run: yarn lint:scss
-        if: always()
-      - name: Unit testing
-        run: yarn test:unit
-        if: always()
-      - name: UI testing
+      - name: Screenshot testing
         run: yarn test:ui
         if: always()
-      # - name: deploy
-      #   run: yarn deploy
+      - name: Generate HTML report
+        run: yarn test:ui:report
+        if: always()
+      - name: Setup GH-pages
+        uses: actions/configure-pages@v2
+        if: always()
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        if: always()
+        with:
+          path: .loki
+      - name: Deploy report to GH-pages
+        id: deployment
+        if: always()
+        uses: actions/deploy-pages@v1
+
+  linting-and-unit-testing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 19.x ]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Starting Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Install node_modules
+      run: yarn install --frozen-lockfile
+    - name: Linting typescript
+      run: yarn lint:ts
+      if: always()
+    - name: Linting scss
+      run: yarn lint:scss
+      if: always()
+    - name: Unit testing
+      run: yarn test:unit
+      if: always()
