@@ -13,6 +13,9 @@ import '@/shared/config/i18n/init'
   fix consistent-type eslint (webpack, config)
   review storybook components (all)
   refactor code with buildSlice, buildSelector
+  add lint-staged
+  fix custom linter (absolute path for inside public api file)
+  disable animations in storybook components for loki (https://loki.js.org/flaky-tests.html#transitions-and-animations)
 */
 
 const container = document.getElementById('root')
