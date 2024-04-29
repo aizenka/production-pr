@@ -672,6 +672,13 @@
       "password": "123",
       "roles": "[manager]",
       "username": "manager"
+    },
+    {
+      "avatarUrl": "https://ideastest.org.uk/wp-content/uploads/2019/04/default.jpg",
+      "id": "4",
+      "password": "123",
+      "roles": "[admin]",
+      "username": "testuser123"
     }
   ]
 }

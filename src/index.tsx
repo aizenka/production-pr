@@ -16,6 +16,7 @@ import '@/shared/config/i18n/init'
   add lint-staged
   fix custom linter (absolute path for inside public api file)
   disable animations in storybook components for loki (https://loki.js.org/flaky-tests.html#transitions-and-animations)
+  fix errors on ("@reduxjs/toolkit": "^2.2.3", react-redux": "^9.1.1")
 */
 
 const container = document.getElementById('root')

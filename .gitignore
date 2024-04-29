@@ -17,6 +17,7 @@ yarn-error.log
 
 # storybook
 /storybook-static
+doctor-storybook.log
 
 # tests
 /reports

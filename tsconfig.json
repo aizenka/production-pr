@@ -27,6 +27,8 @@
     "./src/**/*.ts",
     "./src/**/*.tsx",
     "./webpack.config.ts",
+    "./cypress.config.ts",
+    "cypress"
   ],
   "exclude": [
     "**/.fttemplates/**"

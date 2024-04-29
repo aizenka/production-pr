@@ -20,6 +20,7 @@
 - `yarn lint:scss:fix` - Fix scss style files with a linter
 - `yarn test:unit` - Running unit tests with jest
 - `yarn test:ui` - Running screenshot tests with loki
+- `yarn test:e2e` - Running e2e testing with cypress
 - `yarn test:ui:approve` - Running screenshot tests with loki
 - `yarn test:ui:report` - Generating a full report for screenshot tests
 - `yarn test:ui:json` - Generating a JSON report for screenshot tests
@@ -56,6 +57,7 @@ The project uses 3 types of tests:
 1) Unit tests with jest - `yarn test:unit`
 2) Component tests with React testing library - `yarn test:unit`
 3) Screenshot testing with loki - `yarn test:ui`
+4) e2e testing with cypress - `yarn test:e2e`
 
 ----
 
@@ -142,7 +144,7 @@ Bundler is adapted to the main features of the application.
 All configuration is stored in [config](./config):
 - Babel - [Babel config](./config/babel)
 - Webpack - [Webpack config](./config/build)
-- Tests - [Test environment config](./config/jest)
+- Unit tests - [Test environment config](./config/jest)
 - Storybook - [Storybook config](./config/storybook)
 
 The `scripts` folder contains various scripts for refactoring/simplifying code writing\generating reports, etc.
