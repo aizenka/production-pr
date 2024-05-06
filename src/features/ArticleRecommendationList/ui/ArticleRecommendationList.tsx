@@ -25,6 +25,7 @@ export const ArticleRecommendationList = memo((props: ArticleRecommendationListP
     <Column
       className={classNames('', {}, [className])}
       gap={16}
+      data-testid='ArticleRecommendationList'
     >
       <Text title={t('recommended')}/>
       <ArticleList

@@ -31,7 +31,7 @@ import type { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoader'
 
 interface ArticleDetailsProps {
   className?: string
-   id: string
+  id: string
 }
 
 const reducers: ReducersList = {
@@ -109,7 +109,10 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
       )
     } else {
       return (
-        <Column gap={24}>
+        <Column
+          gap={24}
+          data-testid='ArticleDetails'
+        >
           <Avatar
             className={cls.avatar}
             size={200}
@@ -120,6 +123,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
             title={article?.title}
             text={article?.subtitle}
             size={TextSize.L}
+            data-testid='ArticleDetails'
           />
           <Column gap={8}>
             <Row

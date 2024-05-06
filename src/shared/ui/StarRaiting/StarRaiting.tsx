@@ -46,6 +46,7 @@ export const StarRaiting = memo((props: StarRaitingProps) => {
     <Row
       className={classNames(cls.starRating, {}, [className])}
       gap={16}
+      data-testid='StarRating'
     >
       {
         STARS.map(starNumber => {
@@ -62,6 +63,8 @@ export const StarRaiting = memo((props: StarRaitingProps) => {
               onClick={onSelectStar(starNumber)}
               onMouseEnter={onHover(starNumber)}
               onMouseLeave={onLeave}
+              data-testid={`StarRating.${starNumber}`}
+              data-selected={currentStarsCount >= starNumber}
             />
           )
         })

@@ -56,6 +56,7 @@ export const CommentList = memo((props: CommentListProps) => {
     <Column
       className={classNames('', {}, [className])}
       gap={16}
+      data-testid='CommentList'
     >
       {
         comments?.length

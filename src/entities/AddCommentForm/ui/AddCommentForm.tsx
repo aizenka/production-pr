@@ -42,16 +42,19 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
       className={classNames(cls.addCommentForm, {}, [className])}
       align='between'
       vAlign='center'
+      data-testid='AddCommentForm'
     >
       <Input
         className={cls.input}
         placeholder={t('typeCommentText')}
         value={text}
         onChange={onTextChange}
+        data-testid='AddCommentForm.Input'
       />
       <Button
         variant='outlined'
         onClick={onSendHandler}
+        data-testid='AddCommentForm.SendBtn'
       >
         {t('send')}
       </Button>

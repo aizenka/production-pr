@@ -68,12 +68,16 @@ export const RatingCard = memo((props: RatingCardProps) => {
         placeholder={t('leaveFeedback')}
         value={feedback}
         onChange={setFeedback}
+        data-testid='RatingCard.FeedbackModal.Input'
       />
     </>
   )
 
   return (
-    <Card className={classNames('', {}, [className])}>
+    <Card
+      className={classNames('', {}, [className])}
+      data-testid='RatingCard'
+    >
       <Column align='center' gap={16}>
         <Text title={starsCount ? t('thanksForReview') : title} />
         <StarRaiting
@@ -110,12 +114,14 @@ export const RatingCard = memo((props: RatingCardProps) => {
                   <Button
                     variant='outlinedDanger'
                     onClick={cancelHandler}
+                    data-testid='RatingCard.CloseBtn'
                   >
                     {t('closeBtn')}
                   </Button>
                   <Button
                     variant='outlined'
                     onClick={submitHandler}
+                    data-testid='RatingCard.SendBtn'
                   >
                     {t('sendBtn')}
                   </Button>

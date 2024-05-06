@@ -649,6 +649,17 @@
       "id": "2",
       "lastName": "dsdkdkdkdkdka",
       "username": "admin 123"
+    },
+    {
+      "age": 23,
+      "avatarUrl": "https://ideastest.org.uk/wp-content/uploads/2019/04/default.jpg",
+      "city": "Moscow",
+      "country": "Russia",
+      "currency": "RUB",
+      "firstName": "testuser123",
+      "id": "4",
+      "lastName": "test",
+      "username": "testuser123"
     }
   ],
   "users": [

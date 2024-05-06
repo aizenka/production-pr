@@ -17,29 +17,33 @@ export const CommentCard = memo((props: CommentCardProps) => {
   } = props
 
   return (
-    <div className={classNames(cls.commentCard, {}, [className])}>
-      <Column gap={16}>
-        <AppLink
-          to={getRouteProfile(comment.user.id)}
+    <Column
+      gap={16}
+      className={classNames(cls.commentCard, {}, [className])}
+    >
+      <AppLink
+        to={getRouteProfile(comment.user.id)}
+      >
+        <Row
+          gap={8}
+          vAlign='center'
         >
-          <Row
-            gap={8}
-            vAlign='center'
-          >
-            {
-              !!comment.user.avatarUrl && (
-                <Avatar
-                  src={comment.user.avatarUrl}
-                  size={30}
-                  alt='comment user avatar'
-                />
-              )
-            }
-            <Text text={comment.user.username} />
-          </Row>
-        </AppLink>
-        <Text text={comment.text} />
-      </Column>
-    </div>
+          {
+            !!comment.user.avatarUrl && (
+              <Avatar
+                src={comment.user.avatarUrl}
+                size={30}
+                alt='comment user avatar'
+              />
+            )
+          }
+          <Text text={comment.user.username} />
+        </Row>
+      </AppLink>
+      <Text
+        text={comment.text}
+        data-testid='CommentCard'
+      />
+    </Column>
   )
 })
