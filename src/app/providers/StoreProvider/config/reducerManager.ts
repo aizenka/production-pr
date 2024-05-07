@@ -32,7 +32,7 @@ export function createReducerManager (
         keysToRemove = []
       }
 
-      // @ts-expect-error TODO: remove rudecer manager and use combine slices with lazy load
+      // @ts-expect-error TODO: remove reducer manager and use combine slices with lazy load
       return combinedReducer(state, action)
     },
     add: (key: StateSchemaKey, reducer: Reducer) => {
