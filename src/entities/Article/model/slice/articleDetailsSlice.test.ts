@@ -1,5 +1,6 @@
 import { fetchArticleById } from '../services'
 import { articleDetailsReducer } from './articleDetailsSlice'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import type { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
 
 const articleData = {
@@ -23,9 +24,23 @@ describe('articleDetailsSliceTest', () => {
       isLoading: false
     }
 
+    // TODO: rewrite thunk
+    const action:
+     PayloadAction<undefined, string,
+     { arg: string; requestId: string; requestStatus: 'pending'; }, never> = {
+       type: fetchArticleById.pending.type,
+       payload: undefined,
+       meta: {
+         arg: 'some argument',
+         requestId: 'some request id',
+         requestStatus: 'pending'
+       }
+     }
+
+
     expect(articleDetailsReducer(
       state as ArticleDetailsSchema,
-      fetchArticleById.pending
+      action
     )).toEqual({
       isLoading: true,
       error: undefined

@@ -8,7 +8,6 @@ import { uiReducer } from '@/widgets/PageWrapper'
 import { createReducerManager } from './reducerManager'
 import type { StateSchema } from './StateSchema'
 import type {
-  CombinedState,
   Reducer,
   ReducersMapObject
 } from '@reduxjs/toolkit'
@@ -29,7 +28,7 @@ export function createReduxStore (
   const reducerManager = createReducerManager(rootReducer)
 
   const store = configureStore({
-    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
+    reducer: reducerManager.reduce as Reducer<StateSchema>,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: {

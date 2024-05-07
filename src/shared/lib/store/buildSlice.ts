@@ -15,7 +15,6 @@ export const buildSlice = <
   const useActions = (): typeof slice.actions => {
     const dispatch = useAppDispatch()
 
-    // @ts-expect-error TODO: fix bind creators type
     return useMemo(() => bindActionCreators(slice.actions, dispatch), [dispatch])
   }
 

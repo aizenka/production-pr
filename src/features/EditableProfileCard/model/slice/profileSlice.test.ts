@@ -3,6 +3,7 @@ import { Currency } from '@/entities/Currency'
 import { updateProfileData } from '../services'
 import { profileActions, profileReducer } from './profileSlice'
 import { ValidateProfileError } from '../consts'
+import type { PayloadAction } from '@reduxjs/toolkit'
 import type { ProfileSchema } from '../types/EditableProfileCardSchema'
 
 const profileData = {
@@ -65,9 +66,22 @@ describe('profileSliceTest', () => {
       validateProfileErrors: [ValidateProfileError.SERVER_ERROR]
     }
 
+    // TODO: rewrite thunk
+    const action:
+     PayloadAction<undefined, string,
+     { arg: string; requestId: string; requestStatus: 'pending'; }, never> = {
+       type: updateProfileData.pending.type,
+       payload: undefined,
+       meta: {
+         arg: 'some argument',
+         requestId: 'some request id',
+         requestStatus: 'pending'
+       }
+     }
+
     expect(profileReducer(
       state as ProfileSchema,
-      updateProfileData.pending
+      action
     )).toEqual({
       isLoading: true,
       validateProfileErrors: undefined

@@ -1,6 +1,5 @@
 import type {
-  AnyAction,
-  CombinedState,
+  UnknownAction,
   EnhancedStore,
   Reducer,
   ReducersMapObject
@@ -29,13 +28,14 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema
   addCommentForm?: AddCommentFormSchema
   articleDetailsPage?: ArticleDetailsPageSchema
+
 }
 
 export type StateSchemaKey = keyof StateSchema
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>
-  reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>
+  reduce: (state: StateSchema, action: UnknownAction) => StateSchema
   add: (key: StateSchemaKey, reducer: Reducer) => void
   remove: (key: StateSchemaKey) => void
 }
