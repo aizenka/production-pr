@@ -1,6 +1,7 @@
 describe('Article list', () => {
   beforeEach(() => {
     cy.login()
+    // cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' })
     cy.visit('articles')
   })
 

@@ -5,6 +5,7 @@ let currentArticle: Article
 describe('Article details', () => {
   beforeEach(() => {
     cy.login()
+    // cy.intercept('GET', '**/articles/*', { fixture: 'articleDetails.json' })
     cy.createArticle().then(article => {
       currentArticle = article
       cy.visit(`articles/${article.id}`)

@@ -1,16 +1,6 @@
-import {
-  combineReducers
-} from '@reduxjs/toolkit'
-import type {
-  UnknownAction,
-  Reducer,
-  ReducersMapObject
-} from '@reduxjs/toolkit'
-import type {
-  ReducerManager,
-  StateSchema,
-  StateSchemaKey
-} from './StateSchema'
+import { combineReducers } from '@reduxjs/toolkit'
+import type { UnknownAction, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
+import type { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema'
 
 export function createReducerManager (
   initialReducers:  ReducersMapObject<StateSchema>
