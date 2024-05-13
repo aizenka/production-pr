@@ -10,8 +10,8 @@ import type { Comment } from '@/entities/Comment'
 import type { StateSchema } from '@/app/providers/StoreProvider'
 import type { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema'
 
-const commentsAdapter = createEntityAdapter<Comment>({
-  selectId: (comment) => comment.id
+const commentsAdapter = createEntityAdapter<Comment, string>({
+  selectId: (comment: Comment) => comment.id
 })
 
 

@@ -2,7 +2,7 @@ import {
   combineReducers
 } from '@reduxjs/toolkit'
 import type {
-  AnyAction,
+  UnknownAction,
   Reducer,
   ReducersMapObject
 } from '@reduxjs/toolkit'
@@ -22,7 +22,7 @@ export function createReducerManager (
 
   return {
     getReducerMap: () => reducers,
-    reduce: (state: StateSchema, action: AnyAction) => {
+    reduce: (state: StateSchema, action: UnknownAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state }
         for (const key of keysToRemove) {
@@ -32,6 +32,7 @@ export function createReducerManager (
         keysToRemove = []
       }
 
+      // @ts-expect-error TODO: remove reducer manager and use combine slices with lazy load
       return combinedReducer(state, action)
     },
     add: (key: StateSchemaKey, reducer: Reducer) => {

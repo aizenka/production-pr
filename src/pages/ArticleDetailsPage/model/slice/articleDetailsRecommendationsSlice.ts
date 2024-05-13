@@ -12,8 +12,8 @@ import type {
   ArticleDetailsRecommendationsSchema
 } from '../types/ArticleDetailsRecommendationsSchema'
 
-const recommendationsAdapter = createEntityAdapter<Article>({
-  selectId: (article) => article.id
+const recommendationsAdapter = createEntityAdapter<Article, string>({
+  selectId: (article: Article) => article.id
 })
 
 

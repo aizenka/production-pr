@@ -8,8 +8,8 @@ import type { StateSchema } from '@/app/providers/StoreProvider'
 import type { SortOrder } from '@/shared/types/sort'
 import type { ArticlesPageSchema } from '../types/ArticlesPageSchema'
 
-const articlesAdapter = createEntityAdapter<Article>({
-  selectId: (article) => article.id
+const articlesAdapter = createEntityAdapter<Article, string>({
+  selectId: (article: Article) => article.id
 })
 
 
